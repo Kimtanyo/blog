@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2020-07-30T11:52:20.589Z</updated>
+    <updated>2020-07-30T12:15:10.231Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
@@ -16,7 +16,14 @@
         <link href="https://kimtanyo.github.io/post/markdown-yu-fa-da-quan/">
         </link>
         <updated>2020-07-30T11:45:54.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="markdown语法大全">Markdown语法大全</h1>
+        <summary type="html"><![CDATA[<p>Markdown 是一种「电子邮件」风格的「标记语言」，我在此强烈推荐所有写作者(不仅限于码农)学习和掌握该语言。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Markdown 是一种「电子邮件」风格的「标记语言」，我在此强烈推荐所有写作者(不仅限于码农)学习和掌握该语言。</p>
+<!-- more -->
+<blockquote>
+<p>前言：最初接触到markdown是在notepad++和从dropbox的paper中，发现这种写作格式不用排版且可读性极强，并且作为纯文本兼容性极强，可以用任何文本编辑器打开，还可以完美转换为 Word、PDF、HTML、Latex等格式。<br>
+Note：如果你接触过Latex和Lyx，那么你一定会爱上Markdown的语法，在我看来Markdown可以粗略认为是介于Lyx和Latex之间的一种格式，自由度、美观性、排版效率介于二者之间，不需要像Latex那样引用一大堆的package才能达到很好看的效果，也不像Lyx一样自由度过低，效率高但美观不足，同时Markdown的编译用时几乎可以忽略。</p>
+</blockquote>
 <h2 id="span-id1一-概述span"><span id="1">一、概述</span></h2>
 <h3 id="11-设计理念">1.1 设计理念</h3>
 <ul>
@@ -88,10 +95,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7410385"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-7410385"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7795897"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-7795897"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7707433"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-7707433"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9258381"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-9258381"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
@@ -502,6 +509,7 @@ c2(no)-&gt;op2-&gt;e
 </tr>
 </tbody>
 </table>
+</center>
 <h3 id="35-latex-公式">3.5 LaTeX 公式</h3>
 <ul>
 <li><strong>表示行内公式</strong></li>
@@ -610,7 +618,8 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 <p>第二个例子：</p>
 <center>
 <table> <tr> <th rowspan="2">值班人员</th> <th>星期一</th> <th>星期二</th> <th>星期三</th> </tr> <tr> <td>李强</td> <td>张明</td> <td>王平</td> </tr> </table>
-<h3 id="38-特殊字符">3.8 特殊字符</h3>
+</center>
+### 3.8 特殊字符
 <center>
 <table>
 <thead>
@@ -688,6 +697,7 @@ s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></sp
 </tr>
 </tbody>
 </table>
+</center>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
