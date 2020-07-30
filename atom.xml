@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2020-07-30T13:37:04.414Z</updated>
+    <updated>2020-07-30T14:17:09.587Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
@@ -136,11 +136,9 @@ cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
 &lt;/div&gt;
 </code></pre>
 <ul>
-<li>
-<h5 id="html注释推荐"><strong>html注释</strong>(推荐)</h5>
-</li>
+<li><strong>html注释</strong>(推荐)</li>
 </ul>
-<p>既然支持html语法，那也支持html注释，快捷键 comment + /。</p>
+<p>既然支持html语法，那也支持html注释，这也是Typora的默认注释方式。</p>
 <pre><code class="language-xml">&lt;!--哈哈我是注释，不会在浏览器中显示。--&gt;
 
 &lt;!--
@@ -171,7 +169,7 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 ##### 五级标题
 ###### 六级标题  &lt;!--最多6级标题--&gt;
 </code></pre>
-<p>由于用了标记编辑器会把所有标题写到目录大纲中，在这里写的演示标题也会列进去，所以就不演示了。同学们自己在编辑器中观察，很简单，一级标题字号最大，依级递减。</p>
+<p>由于用了标记编辑器会把所有标题写到目录大纲中，在这里写的演示标题也会列进去，所以就不演示了。可以自己在编辑器中观察，很简单，一级标题字号最大，依级递减。</p>
 <ul>
 <li><strong>任务列表</strong></li>
 </ul>
@@ -182,10 +180,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5733715"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-5733715"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2082359"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-2082359"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1794227"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-1794227"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3038746"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-3038746"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
@@ -240,11 +238,11 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>[]里写链接文字，()里写链接地址, ()中的&quot;&quot;中可以为链接指定title属性，title属性可加可不加。title属性的效果是鼠标悬停在链接上会出现指定的 title文字，链接地址与title前有一个空格。（<mark>按住Ctrl + LeftClick可以访问超链接</mark>）</p>
 <p>注意在网页前必须要加<code>http://</code>，如果不加<code>http://</code>，表示直接访问本地目录文件</p>
 <p>代码：</p>
-<pre><code class="language-bash">欢迎阅读[择势勤](https://www.jianshu.com/u/16d77399d3a7 &quot;择势勤&quot;)
+<pre><code class="language-bash">欢迎阅读[Kimtanyo的个人博客](https://kimtanyo.github.io &quot;kimtanyo blog&quot;)
 内容我保存为了[本地文件](D:/自我鉴定.docx)
 </code></pre>
 <p>显示效果：</p>
-<p>欢迎阅读 <a href="https://www.jianshu.com/u/16d77399d3a7">择势勤</a></p>
+<p>欢迎阅读 <a href="https://kimtanyo.github.io" title="kimtanyo blog">Kimtanyo的个人博客</a></p>
 <p>内容我保存为了<a href="D:/%E8%87%AA%E6%88%91%E9%89%B4%E5%AE%9A.docx">本地文件</a></p>
 <ul>
 <li><strong>参考式</strong></li>
@@ -269,11 +267,11 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>在需要添加注脚的文字后加上脚注名字[^注脚名字],称为加注。 然后在文本的任意位置(一般在最后)添加脚注，脚注前必须有对应的脚注名字。</p>
 <p>注意：经测试<mark>注脚与注脚之间必须空一行</mark>，不然会失效。成功后会发现，即使你没有把注脚写在文末，经Markdown转换后，也会<mark>自动归类到文章的最后</mark>。</p>
 <p>代码：</p>
-<pre><code class="language-css">使用 Markdown[^1]可以效率的书写文档, 直接转换成 HTML[^2]。
+<pre><code class="language-css">使用 Markdown[^2]可以效率的书写文档, 直接转换成 HTML[^3]。
 
-[^1]:Markdown是一种纯文本标记语言
+[^2]:Markdown是一种纯文本标记语言
 
-[^2]:HyperText Markup Language 超文本标记语言
+[^3]:HyperText Markup Language 超文本标记语言
 </code></pre>
 <p>显示效果：</p>
 <p>使用 Markdown<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>可以效率的书写文档, 直接转换成 HTML<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。</p>
@@ -281,7 +279,7 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <ul>
 <li><strong>锚点（页内超链接）</strong></li>
 </ul>
-<p>网页中，锚点其实就是页内超链接，也就是链接本文档内部的某些元素，实现当前页面中的跳转。比如我这里写下一个锚点，点击回到目录，就能跳转到目录。 在目录中点击这一节，就能跳过来。还有下一节的注脚。这些根本上都是用锚点来实现的，只支持在标题后插入锚点，其它地方无效。</p>
+<p>网页中，锚点其实就是页内超链接，也就是链接本文档内部的某些元素，实现当前页面中的跳转。比如我这里写下一个锚点，点击回到目录，就能跳转到目录。 在目录中点击这一节，就能跳过来。还有下一节的注脚。这些根本上都是用锚点来实现的，Typora只支持在标题后插入锚点，其它地方无效。</p>
 <p>代码：</p>
 <pre><code class="language-css">## &lt;span id=&quot;1&quot;&gt;一、概述&lt;/span&gt;
 
@@ -449,8 +447,10 @@ Markdown 支持以比较简短的自动链接形式来处理网址和电子邮�
 <p>在段落中填写 [TOC] 以显示全文内容的目录结构。</p>
 <pre><code class="language-json">[TOC]
 </code></pre>
-<p>效果参见最上方的目录。</p>
-<p>[TOC]</p>
+<p>效果如下。</p>
+<p>[TOC]<br>
+<mark>此处可能由于Gridea解析器不支持此写法无法正确显示目录</mark><br>
+<mark>欲查看请在Typora或其他支持此写法的编辑器内自行尝试</mark></p>
 <h3 id="32-代码块">3.2 代码块</h3>
 <p>对于程序员来说这个功能是必不可少的，插入程序代码的方式有两种，一种是利用缩进(Tab), 另一种是利用“`”符号（一般在ESC键下方）包裹代码。</p>
 <ul>
@@ -530,7 +530,9 @@ c2(yes)-&gt;io-&gt;e
 c2(no)-&gt;op2-&gt;e
 ```
 </code></pre>
-<p>显示效果：</p>
+<p>显示效果：<br>
+<mark>此处可能由于Gridea解析器不支持mermaid和flow从而无法正确显示图片</mark><br>
+<mark>欲查看流程图请复制代码到Typora或其他支持解析的编辑器内渲染</mark></p>
 <pre><code class="language-mermaid">graph LR
 A--&gt;B
 </code></pre>
