@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2020-07-30T14:21:32.681Z</updated>
+    <updated>2020-07-30T14:23:57.809Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
@@ -95,8 +95,9 @@ cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
         <content type="html"><![CDATA[<p>Markdown 是一种「电子邮件」风格的「标记语言」，在此强烈推荐所有写作者(不仅限于码农)学习和掌握该语言。</p>
 <!-- more -->
 <blockquote>
-<p>前言：最初接触到markdown是在notepad++和从dropbox的paper中，发现这种写作格式不用排版且可读性极强，并且作为纯文本兼容性极强，可以用任何文本编辑器打开，还可以完美转换为 Word、PDF、HTML、Latex等格式。</p>
-<p>Note：如果你接触过Latex和Lyx，那么你一定会爱上Markdown的语法，在我看来Markdown可以粗略认为是介于Lyx和Latex之间的一种格式，自由度、美观性、排版效率介于二者之间，不需要像Latex那样引用一大堆的package才能达到很好看的效果，也不像Lyx一样自由度过低，效率高但美观不足，同时Markdown的编译用时几乎可以忽略。</p>
+<p>前言：最初接触到markdown是在notepad++和从dropbox的paper中，发现这种写作格式不用排版且可读性极强，并且作为纯文本兼容性极强，可以用任何文本编辑器打开，还可以完美转换为 Word、PDF、HTML、Latex等格式。<br>
+ <br>
+Note：如果你接触过Latex和Lyx，那么你一定会爱上Markdown的语法，在我看来Markdown可以粗略认为是介于Lyx和Latex之间的一种格式，自由度、美观性、排版效率介于二者之间，不需要像Latex那样引用一大堆的package才能达到很好看的效果，也不像Lyx一样自由度过低，效率高但美观不足，同时Markdown的编译用时几乎可以忽略。</p>
 </blockquote>
 <h2 id="span-id1一-概述span"><span id="1">一、概述</span></h2>
 <h3 id="11-常见误解纠正">1.1 常见误解纠正</h3>
@@ -180,10 +181,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3694853"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-3694853"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2125764"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-2125764"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7411772"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-7411772"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-436864"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-436864"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
