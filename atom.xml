@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
-    <title>Kimtanyo的知识记录</title>
-    <updated>2020-07-30T05:20:40.402Z</updated>
+    <title>Kimtanyo Blog</title>
+    <updated>2020-07-30T05:22:35.014Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
     <subtitle>📝 『记录兴趣  记录梦想』</subtitle>
     <logo>https://kimtanyo.github.io/images/avatar.png</logo>
     <icon>https://kimtanyo.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Kimtanyo的知识记录</rights>
+    <rights>All rights reserved 2020, Kimtanyo Blog</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://kimtanyo.github.io/post/hello-gridea/</id>
