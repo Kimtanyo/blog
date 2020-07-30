@@ -2,7 +2,7 @@
 <html lang="zh-CN">
  <head>
      <meta charset="utf-8" />
-  <title>关于 | Kimtanyo Blog</title>
+  <title>Github访问缓慢/图片无法加载解决方案 | Kimtanyo Blog</title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
   <link rel="stylesheet" href="https://kimtanyo.github.io/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
@@ -89,23 +89,77 @@
      <div class="post-page">
       <div class="post animated fadeInDown">
        <div class="post-title">
-        <h3><a>关于</a></h3>
+        <h3><a>Github访问缓慢/图片无法加载解决方案</a></h3>
        </div>
        <div class="post-content">
-        <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+        <p>在度娘上找了很多解决方案，殊途同归，基本都是修改系统hosts文件，绕过国内dns解析，直接访问GitHub的CDN节点。只不过解析对应的链接大都不全，故在此记录分享完整版的dns解析地址。</p>
+<blockquote>
+<p>前一段时间在github上想clone一个项目代码，下载速度3kb/s，并且Readme.md页面还无法加载图片。虽然以前也很慢，大概100kb/s的样子，但这个3kb/s着实过分😒。</p>
 </blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+<!-- more -->
+<p>只想要hosts修改结果的，请直接移步<a href="#1">此处</a></p>
+<h1 id="一-获取github官方cdn地址">一、获取GitHub官方CDN地址</h1>
+<p>打开 <a href="https://www.ipaddress.com/">https://www.ipaddress.com/</a><br>
+查询以下链接的地址</p>
+<pre><code class="language-undefined">github.com
+gist.github.com
+assets-cdn.github.com
+github.global.ssl.fastly.net
+
+cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
+</code></pre>
+<div align="center">
+	<img src="https://upload-images.jianshu.io/upload_images/468490-3a383bea2cd02ba1.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp"/>
+    <div align="center">
+    	Github官方CDN地址
+    </div>
+</div>
+记录下查询到的ip地址
+<h1 id="span-id1二-修改系统hosts文件span"><span id="1">二、修改系统Hosts文件</span></h1>
+<p>用记事本打开系统hosts文件(需管理员权限)<br>
+路径：C:\Windows\System32\drivers\etc<br>
+在<mark>记事本末尾添加</mark><code>IP地址 域名</code>并保存。(需管理员权限，注意IP地址与域名间需留有空格)<br>
+不必按照我下面的完全复制，github可能随时间更换ip地址，尽量按照自己查询到的为准<br>
+<strong>注意不要删掉或覆盖原本的hosts内容</strong></p>
+<pre><code class="language-undefined">140.82.114.3 github.com
+140.82.112.4 gist.github.com
+185.199.108.153 assets-cdn.github.com
+199.232.69.194 github.global.ssl.fastly.net
+
+（以下所有子域名的Domain都是githubusercontent.com，故ip完全一致不用重复查询）
+199.232.68.133 cloud.githubusercontent.com
+199.232.68.133 camo.githubusercontent.com
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 gist.githubusercontent.com
+199.232.68.133 avatars0.githubusercontent.com
+199.232.28.133 avatars1.githubusercontent.com
+199.232.28.133 avatars2.githubusercontent.com
+199.232.68.133 avatars3.githubusercontent.com
+199.232.68.133 avatars4.githubusercontent.com
+199.232.68.133 avatars5.githubusercontent.com
+199.232.68.133 avatars6.githubusercontent.com
+199.232.68.133 avatars7.githubusercontent.com
+199.232.68.133 avatars8.githubusercontent.com
+</code></pre>
+<h1 id="三-刷新系统dns缓存">三、刷新系统DNS缓存</h1>
+<p>win + R 打开命令行或 win + X 打开powershell<br>
+输入并运行 ipconfig /flushdns 手动刷新系统DNS缓存</p>
+<div align="center">
+	<img src="https://upload-images.jianshu.io/upload_images/468490-a16d3e78189b9ad5.png?imageMogr2/auto-orient/strip|imageView2/2/w/747/format/webp"/>
+    <div align="center">
+    	刷新系统DNS缓存
+    </div>
+</div>
+现在尝试重新clone和刷新页面，clone速度应当一定程度上提高了，图片可以加载出来。
+<h1 id="四-如果无效提速不够">四、如果无效/提速不够</h1>
+<p>不太可能完全无效，但如果觉得速度还是太慢，你就还是需要一个SSR或者VPN了，推荐环日+ShadowsocksR，多的不说了= =。</p>
 
        </div>
        <div class="post-footer">
         <div class="meta">
          <div class="info">
           <i class="fa fa-sun-o"></i>
-          <span class="date">2019-01-25</span>
+          <span class="date">2020-07-30</span>
           <i class="fa fa-tag"></i>
           
          </div>
@@ -120,12 +174,14 @@
         <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
        </div>
        <div class="twitter">
-        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://kimtanyo.github.io/post/about/,;"></a>
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://kimtanyo.github.io/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/,;"></a>
        </div>
       </div>
       <div class="pagination">
        <ul class="clearfix">
 
+        
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://kimtanyo.github.io/post/markdown-yu-fa-da-quan/" title=" Markdown语法大全(搜集改良版)">下一篇</a></li>
         
        </ul>
       </div>

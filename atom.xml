@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2020-07-30T12:56:38.891Z</updated>
+    <updated>2020-07-30T13:28:56.824Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
@@ -10,6 +10,80 @@
     <logo>https://kimtanyo.github.io/images/avatar.png</logo>
     <icon>https://kimtanyo.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Kimtanyo Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Github访问缓慢/图片无法加载解决方案]]></title>
+        <id>https://kimtanyo.github.io/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/</id>
+        <link href="https://kimtanyo.github.io/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/">
+        </link>
+        <updated>2020-07-30T12:57:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>在度娘上找了很多解决方案，殊途同归，基本都是修改系统hosts文件，绕过国内dns解析，直接访问GitHub的CDN节点。只不过解析对应的链接大都不全，故在此记录分享完整版的dns解析地址。</p>
+<blockquote>
+<p>前一段时间在github上想clone一个项目代码，下载速度3kb/s，并且Readme.md页面还无法加载图片。虽然以前也很慢，大概100kb/s的样子，但这个3kb/s着实过分😒。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<p>在度娘上找了很多解决方案，殊途同归，基本都是修改系统hosts文件，绕过国内dns解析，直接访问GitHub的CDN节点。只不过解析对应的链接大都不全，故在此记录分享完整版的dns解析地址。</p>
+<blockquote>
+<p>前一段时间在github上想clone一个项目代码，下载速度3kb/s，并且Readme.md页面还无法加载图片。虽然以前也很慢，大概100kb/s的样子，但这个3kb/s着实过分😒。</p>
+</blockquote>
+<!-- more -->
+<p>只想要hosts修改结果的，请直接移步<a href="#1">此处</a></p>
+<h1 id="一-获取github官方cdn地址">一、获取GitHub官方CDN地址</h1>
+<p>打开 <a href="https://www.ipaddress.com/">https://www.ipaddress.com/</a><br>
+查询以下链接的地址</p>
+<pre><code class="language-undefined">github.com
+gist.github.com
+assets-cdn.github.com
+github.global.ssl.fastly.net
+
+cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
+</code></pre>
+<div align="center">
+	<img src="https://upload-images.jianshu.io/upload_images/468490-3a383bea2cd02ba1.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp"/>
+    <div align="center">
+    	Github官方CDN地址
+    </div>
+</div>
+记录下查询到的ip地址
+<h1 id="span-id1二-修改系统hosts文件span"><span id="1">二、修改系统Hosts文件</span></h1>
+<p>用记事本打开系统hosts文件(需管理员权限)<br>
+路径：C:\Windows\System32\drivers\etc<br>
+在<mark>记事本末尾添加</mark><code>IP地址 域名</code>并保存。(需管理员权限，注意IP地址与域名间需留有空格)<br>
+不必按照我下面的完全复制，github可能随时间更换ip地址，尽量按照自己查询到的为准<br>
+<strong>注意不要删掉或覆盖原本的hosts内容</strong></p>
+<pre><code class="language-undefined">140.82.114.3 github.com
+140.82.112.4 gist.github.com
+185.199.108.153 assets-cdn.github.com
+199.232.69.194 github.global.ssl.fastly.net
+
+（以下所有子域名的Domain都是githubusercontent.com，故ip完全一致不用重复查询）
+199.232.68.133 cloud.githubusercontent.com
+199.232.68.133 camo.githubusercontent.com
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 gist.githubusercontent.com
+199.232.68.133 avatars0.githubusercontent.com
+199.232.28.133 avatars1.githubusercontent.com
+199.232.28.133 avatars2.githubusercontent.com
+199.232.68.133 avatars3.githubusercontent.com
+199.232.68.133 avatars4.githubusercontent.com
+199.232.68.133 avatars5.githubusercontent.com
+199.232.68.133 avatars6.githubusercontent.com
+199.232.68.133 avatars7.githubusercontent.com
+199.232.68.133 avatars8.githubusercontent.com
+</code></pre>
+<h1 id="三-刷新系统dns缓存">三、刷新系统DNS缓存</h1>
+<p>win + R 打开命令行或 win + X 打开powershell<br>
+输入并运行 ipconfig /flushdns 手动刷新系统DNS缓存</p>
+<div align="center">
+	<img src="https://upload-images.jianshu.io/upload_images/468490-a16d3e78189b9ad5.png?imageMogr2/auto-orient/strip|imageView2/2/w/747/format/webp"/>
+    <div align="center">
+    	刷新系统DNS缓存
+    </div>
+</div>
+现在尝试重新clone和刷新页面，clone速度应当一定程度上提高了，图片可以加载出来。
+<h1 id="四-如果无效提速不够">四、如果无效/提速不够</h1>
+<p>不太可能完全无效，但如果觉得速度还是太慢，你就还是需要一个SSR或者VPN了，推荐环日+ShadowsocksR，多的不说了= =。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Markdown语法大全(搜集改良版)]]></title>
         <id>https://kimtanyo.github.io/post/markdown-yu-fa-da-quan/</id>
@@ -21,8 +95,8 @@
         <content type="html"><![CDATA[<p>Markdown 是一种「电子邮件」风格的「标记语言」，在此强烈推荐所有写作者(不仅限于码农)学习和掌握该语言。</p>
 <!-- more -->
 <blockquote>
-<p>前言：最初接触到markdown是在notepad++和从dropbox的paper中，发现这种写作格式不用排版且可读性极强，并且作为纯文本兼容性极强，可以用任何文本编辑器打开，还可以完美转换为 Word、PDF、HTML、Latex等格式。<br>
-Note：如果你接触过Latex和Lyx，那么你一定会爱上Markdown的语法，在我看来Markdown可以粗略认为是介于Lyx和Latex之间的一种格式，自由度、美观性、排版效率介于二者之间，不需要像Latex那样引用一大堆的package才能达到很好看的效果，也不像Lyx一样自由度过低，效率高但美观不足，同时Markdown的编译用时几乎可以忽略。</p>
+<p>前言：最初接触到markdown是在notepad++和从dropbox的paper中，发现这种写作格式不用排版且可读性极强，并且作为纯文本兼容性极强，可以用任何文本编辑器打开，还可以完美转换为 Word、PDF、HTML、Latex等格式。</p>
+<p>Note：如果你接触过Latex和Lyx，那么你一定会爱上Markdown的语法，在我看来Markdown可以粗略认为是介于Lyx和Latex之间的一种格式，自由度、美观性、排版效率介于二者之间，不需要像Latex那样引用一大堆的package才能达到很好看的效果，也不像Lyx一样自由度过低，效率高但美观不足，同时Markdown的编译用时几乎可以忽略。</p>
 </blockquote>
 <h2 id="span-id1一-概述span"><span id="1">一、概述</span></h2>
 <h3 id="11-常见误解纠正">1.1 常见误解纠正</h3>
@@ -108,10 +182,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5250785"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-5250785"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1827858"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-1827858"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5630218"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-5630218"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1432854"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-1432854"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
