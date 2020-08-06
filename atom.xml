@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2020-08-01T13:27:29.425Z</updated>
+    <updated>2020-08-06T13:13:04.596Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
@@ -26,8 +26,32 @@
 <p>前一段时间在github上想clone一个项目代码，下载速度3kb/s，并且Readme.md页面还无法加载图片。虽然以前也很慢，大概100kb/s的样子，但这个3kb/s着实过分😒。</p>
 </blockquote>
 <!-- more -->
+<h1 id="推荐法一油猴github镜像脚本插件">(推荐)法一：油猴github镜像脚本插件</h1>
+<h2 id="一-下载脚本插件管理器">一、下载脚本插件管理器</h2>
+<p>在油猴官网<a href="https://greasyfork.org/zh-CN">https://greasyfork.org/zh-CN</a>下载一个脚本插件管理器<br>
+*推荐Chrome + Tampermonkey *<br>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/GreasyFork.png" alt="" loading="lazy"></p>
+<center>
+    GreasyFork
+</center>
+<h2 id="二-下载github镜像插件">二、下载github镜像插件</h2>
+<p>插件下载地址：<a href="https://greasyfork.org/zh-CN/scripts/397419-github%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E8%AE%BF%E9%97%AE-%E5%85%8B%E9%9A%86%E5%92%8C%E4%B8%8B%E8%BD%BD">https://greasyfork.org/zh-CN/scripts/397419-github镜像加速访问-克隆和下载</a><br>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/github%E9%95%9C%E5%83%8F%E6%8F%92%E4%BB%B6.png" alt="" loading="lazy"></p>
+<center>
+   Github镜像插件
+</center>
+<p>安装完成后在<a href="https://github.com/RC1844/FastGithub">https://github.com/RC1844/FastGithub</a>上展示的github镜像站中按需选择镜像<br>
+<mark><strong>注意不要拿自己账号登录镜像站</strong></mark><br>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/github%E9%95%9C%E5%83%8F%E7%AB%99%E7%82%B9.png" alt="" loading="lazy"></p>
+<center>
+   Github镜像站点
+</center>
+<p>然后在镜像站中搜索仓名 或 直接在镜像域名后加上<code>/用户名/仓名</code>跳转，下载或克隆所需即可<br>
+<mark>此处以<a href="https://github.wuyanzheshui.workers.dev">https://github.wuyanzheshui.workers.dev</a>和PicGo的图床releases下载为例</mark></p>
+<figure data-type="image" tabindex="1"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%9F%9F%E5%90%8D%E4%BF%AE%E6%94%B9.png" alt="" loading="lazy"></figure>
+<h1 id="法二更改默认dns">法二：更改默认DNS</h1>
 <p>只想要hosts修改结果的，请直接移步<a href="#1">此处</a></p>
-<h1 id="一-获取github官方cdn地址">一、获取GitHub官方CDN地址</h1>
+<h2 id="一-获取github官方cdn地址">一、获取GitHub官方CDN地址</h2>
 <p>打开 <a href="https://www.ipaddress.com/">https://www.ipaddress.com/</a><br>
 查询以下链接的地址</p>
 <pre><code class="language-undefined">github.com
@@ -44,7 +68,7 @@ cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
     </div>
 </div>
 记录下查询到的ip地址
-<h1 id="span-id1二-修改系统hosts文件span"><span id="1">二、修改系统Hosts文件</span></h1>
+<h3 id="span-id1二-修改系统hosts文件span"><span id="1">二、修改系统Hosts文件</span></h3>
 <p>用记事本打开系统hosts文件(需管理员权限)<br>
 路径：C:\Windows\System32\drivers\etc<br>
 在<mark>记事本末尾添加</mark><code>IP地址 域名</code>并保存。(需管理员权限，注意IP地址与域名间需留有空格)<br>
@@ -70,7 +94,7 @@ cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
 199.232.68.133 avatars7.githubusercontent.com
 199.232.68.133 avatars8.githubusercontent.com
 </code></pre>
-<h1 id="三-刷新系统dns缓存">三、刷新系统DNS缓存</h1>
+<h2 id="三-刷新系统dns缓存">三、刷新系统DNS缓存</h2>
 <p>win + R 打开命令行或 win + X 打开powershell<br>
 输入并运行 ipconfig /flushdns 手动刷新系统DNS缓存</p>
 <div align="center">
@@ -80,7 +104,7 @@ cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
     </div>
 </div>
 现在尝试重新clone和刷新页面，clone速度应当一定程度上提高了，图片可以加载出来。
-<h1 id="四-如果无效提速不够">四、如果无效/提速不够</h1>
+<h2 id="四-如果无效提速不够">四、如果无效/提速不够</h2>
 <p>不太可能完全无效，但如果觉得速度还是太慢，你就还是需要一个SSR或者VPN了，推荐环日+ShadowsocksR，多的不说了= =。</p>
 ]]></content>
     </entry>
@@ -181,10 +205,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6645492"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-6645492"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8634413"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-8634413"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7220955"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-7220955"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1132776"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-1132776"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
