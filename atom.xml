@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2020-08-06T13:29:52.207Z</updated>
+    <updated>2020-08-26T03:29:50.226Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
@@ -10,6 +10,122 @@
     <logo>https://kimtanyo.github.io/images/avatar.png</logo>
     <icon>https://kimtanyo.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Kimtanyo Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Jupyter Lab基础使用与插件扩展]]></title>
+        <id>https://kimtanyo.github.io/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/</id>
+        <link href="https://kimtanyo.github.io/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/">
+        </link>
+        <updated>2020-08-26T03:23:55.000Z</updated>
+        <summary type="html"><![CDATA[<p>上手Jupyter Lab半小时之后，果断抛弃了Notebook，界面简直友好得不要太多，功能升级得也更加完善</p>
+<p>且Lab向下兼容Notebook，文件类型仍为ipynb</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>上手Jupyter Lab半小时之后，果断抛弃了Notebook，界面简直友好得不要太多，功能升级得也更加完善</p>
+<p>且Lab向下兼容Notebook，文件类型仍为ipynb</p>
+<!-- more -->
+<h1 id="一-安装及设置右键菜单">一、安装及设置右键菜单</h1>
+<p>与Jupyter Notebook相仿，通过pip安装</p>
+<pre><code>pip install jupyterlab
+</code></pre>
+<p>为了使其更像一个IDE的打开方式，我们设置通过右键菜单<code>Jupyter Lab Here</code>打开，方法如下：</p>
+<ul>
+<li>新建注册表文件<code>Jupyter Lab Here.reg</code>，内容：</li>
+</ul>
+<pre><code>Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\directory\background\shell\Jupyter Lab Here]
+&quot;icon&quot;=&quot;C:\\Users\\xxxx\\python\\3.6.8\\Lib\\site-packages\\notebook\\static\\favicon.ico&quot;
+
+[HKEY_CLASSES_ROOT\directory\background\shell\Jupyter Lab Here\command]
+@=&quot;C:\\Users\\xxxx\\python\\3.6.8\\Scripts\\jupyter-lab.exe&quot;
+</code></pre>
+<blockquote>
+<p>其中<code>favicon.ico</code>,<code>jupyter-lab.exe</code>的路径按实际情况修改</p>
+</blockquote>
+<ul>
+<li>双击<code>Jupyter Lab Here.reg</code>文件，注入注册表即可</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95.png" alt="" loading="lazy"></figure>
+<h1 id="二-基础使用">二、基础使用</h1>
+<p><strong>由于Lab是Notebook的升级版，原本Notebook就有的功能就在此不再提及</strong></p>
+<p><em>注意：其中用到的插件均在标题中指出，具体安装方法参考<code>三、插件扩展</code></em></p>
+<h2 id="1-csv文件显示格式">1. csv文件显示格式</h2>
+<p>在Notebook中，csv文件能直接打开但是会显示分隔符，跟记事本打开显示格式一样，不便查看</p>
+<p>而在Lab中，这个问题得到了解决，Lab会自动判断分隔符并单独标注出，显示格式与excel中一样</p>
+<figure data-type="image" tabindex="2"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/csv.png" alt="" loading="lazy"></figure>
+<h2 id="2-pdf预览">2. pdf预览</h2>
+<p>Notebook中原本无法预览pdf，打开pdf会自动下载，而在Lab中直接点击pdf可以很方便地在Lab的子窗口中打开预览pdf</p>
+<figure data-type="image" tabindex="3"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/pdf.png" alt="" loading="lazy"></figure>
+<h2 id="3-多窗口自由排布">3. 多窗口自由排布</h2>
+<p>较之Notebook，对写代码体验改善最大的一点在于，可以进行多窗口的自由排布，cell可拖拽移动</p>
+<p><mark>cell的output也可以单独拖动出新窗口，还可以随时开启终端交互</mark></p>
+<figure data-type="image" tabindex="4"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/%E5%A4%9A%E7%AA%97%E5%8F%A3%E8%87%AA%E7%94%B1%E6%8E%92%E5%B8%83.png" alt="" loading="lazy"></figure>
+<h2 id="4-代码提示">4. 代码提示</h2>
+<p>Notebook相比pycharm这样的IDE最明显的一点就是，缺少代码提示，有时非常不方便，而Lab完善了这一功能</p>
+<figure data-type="image" tabindex="5"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%A8.png" alt="" loading="lazy"></figure>
+<h2 id="5-绘图插件jupyterlab-drawio">5. 绘图（插件jupyterlab-drawio）</h2>
+<p>在论文写作过程中常常需要绘制简单的流程图或示意图，需要求助于visio等专业绘图软件，而论文中的大部分简单绘图在Lab上可以通过内置的绘图工具来完成</p>
+<figure data-type="image" tabindex="6"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/%E7%BB%98%E5%9B%BE.png" alt="" loading="lazy"></figure>
+<h2 id="6-tex编辑与编译预览插件jupyterlab-latex">6. Tex编辑与编译预览（插件jupyterlab-latex）</h2>
+<p>原本的Notebook虽然可以打开tex文件查看代码进行编辑，但是无法编译预览tex文件，而在Lab中这项功能得到了实现</p>
+<p>打开tex文件，在任意一处右键，点击<code>Show LaTex Preview</code>即可编译预览</p>
+<p><em>注意：Lab的Tex默认编译器不支持中文</em></p>
+<figure data-type="image" tabindex="7"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/latex.png" alt="" loading="lazy"></figure>
+<h2 id="7-html网页浏览插件jupyterlab_html">7. HTML网页浏览（插件jupyterlab_html）</h2>
+<p>Lab的这项功能在需要网页呈现动态可视化效果时非常有用</p>
+<img src="https://raw.githubusercontent.com/mflevine/jupyterlab_html/master/docs/example1.gif" alt="Example GIF" style="max-width:100%;">
+<h2 id="8-即时查看变量及属性插件jupyterlab_variableinspector">8. 即时查看变量及属性（插件jupyterlab_variableinspector）</h2>
+<p>用过Matlab的人相比很怀念的一个功能就是，可以在菜单中随时查看变量的属性和值的变化，而Lab中同样可以做到</p>
+<p><em>注意：需要先安装<code>jupyterlab-manager</code>和<code>ipywidgets</code></em></p>
+<img src="https://github.com/lckr/jupyterlab-variableInspector/raw/master/early_demo.gif" alt="Demogif" style="max-width:100%;">
+<h2 id="9-查看excel表格插件jupyterlab-spreadsheet">9. 查看excel表格（插件jupyterlab-spreadsheet）</h2>
+<p>Lab可以打开显示XLS, XLSX, ODS表格，但是仅只读模式</p>
+<img src="https://github.com/quigleyj97/jupyterlab-spreadsheet/raw/main/screenshot.png" alt="Image depicting the plugin displaying a simple XLS workbook" style="max-width:100%;">
+<h1 id="三-插件扩展">三、插件扩展</h1>
+<h2 id="1-设置插件栏">1. 设置插件栏</h2>
+<p>在Lab中安装插件与Notebook一样，只需要在插件栏点击即可安装，但是需要经过一点简单设置，因为<strong>插件栏默认不显示</strong></p>
+<ol>
+<li>点击菜单栏<code>Settings</code>下拉框中的Advanced Settings Editor选项，会出现一个设置页面。</li>
+<li>接着，点击<code>Extension Manager</code>，并且在<code>User Preferences</code>的空白框里填上<code>{'enabled':true}</code>，并且按右上角的保存按钮。</li>
+<li>然后最左侧最下方就多出了一个插件栏</li>
+</ol>
+<figure data-type="image" tabindex="8"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/%E6%8F%92%E4%BB%B6%E6%A0%8F%E8%AE%BE%E7%BD%AE.png" alt="" loading="lazy"></figure>
+<p>与Notebook不同的是，Notebook光列出所有的插件名称不显示功能，而Lab不仅有一行简单的功能介绍，还显示了所有的插件github主页链接，可以点击查看插件的详细用法</p>
+<p><mark>此外如果server报错Error: 500则可以在github上搜索插件全名，自行安装</mark></p>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/error.png" style="zoom:80%;" />
+<h2 id="2-插件推荐">2. 插件推荐</h2>
+<h3 id="1-jupyterlab-github">1. jupyterlab-github</h3>
+<p>安装这个插件后，Lab左侧会出现一个github栏按钮，你可以在里面搜索github项目，并且打开项目里面的文件，如果是notebook文件，能够直接运行代码</p>
+<p><em>这个插件非常适合在Lab上学习github项目，方便高效</em></p>
+<img src="https://github.com/jupyterlab/jupyterlab-github/raw/master/gitception.png" alt="gitception" title="Gitception" style="max-width:100%;">
+<h3 id="2-jupyterlab-toc">2. jupyterlab-toc</h3>
+<p>这是一个Lab的目录插件，安装后就能很方便地在Lab上展示notebook或者markdown的目录<br>
+目录可以滚动，并且能展示或隐藏子目录</p>
+<img src="https://github.com/jupyterlab/jupyterlab-toc/raw/master/toc.gif" alt="Table of Contents" title="Table of Contents" style="max-width:100%;">
+<h3 id="3-ipympl">3. ipympl</h3>
+<p>ipympl是matplotlib的插件，可以启用matplotlib的可视化交互功能，是插件中少数几个需要通过pip安装的</p>
+<pre><code>pip install ipympl
+</code></pre>
+<p>且需要通过magic命令声明启用</p>
+<pre><code>%matplotlib widget
+</code></pre>
+<img src="https://github.com/matplotlib/ipympl/raw/master/matplotlib.gif" alt="matplotlib screencast" style="max-width:100%;">
+<h3 id="4-nbgather">4. nbgather</h3>
+<p>在Lab中清理代码，恢复丢失的代码以及比较代码版本的工具</p>
+<img src="https://github.com/microsoft/gather/raw/master/docs/demo.gif" alt="Code gathering tools can help you clean your code and review versions of results." style="max-width:100%;">
+<h3 id="5-jupyterlab_go_to_definition">5. jupyterlab_go_to_definition</h3>
+<p>该插件用于在Lab笔记本和文件编辑器中跳转到变量或函数的定义，按住<code>Alt</code>+<code>LeftClick</code>对应变量或函数即可跳转</p>
+<img src="https://raw.githubusercontent.com/krassowski/jupyterlab-go-to-definition/master/examples/demo.gif" alt="Go to definition" style="max-width:100%;">
+<h3 id="6-jupyter-lsp">6. jupyter-lsp</h3>
+<p>该插件用于<mark>自动补全、参数建议、函数文档查询、跳转定义</mark>等</p>
+<p><strong>该插件不仅需要通过插件栏安装，也需要通过pip安装</strong></p>
+<pre><code>pip install jupyter-lsp
+</code></pre>
+<img src="https://raw.githubusercontent.com/krassowski/jupyterlab-lsp/master/examples/screenshots/signature.png" alt="signature" style="max-width:100%;">
+<img src="https://raw.githubusercontent.com/krassowski/jupyterlab-lsp/master/examples/screenshots/autocompletion.png" alt="autocompletion" style="max-width:100%;">
+<p>同时，该插件还有类似pycharm的检查纠错功能</p>
+<img src="https://raw.githubusercontent.com/krassowski/jupyterlab-lsp/master/examples/screenshots/inspections.png" alt="inspections" style="max-width:100%;">
+<img src="https://raw.githubusercontent.com/krassowski/jupyterlab-lsp/master/examples/screenshots/panel.png" alt="panel" style="max-width:100%;">]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Github访问缓慢及图片无法加载的解决方案]]></title>
         <id>https://kimtanyo.github.io/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/</id>
@@ -205,10 +321,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4307304"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-4307304"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9498970"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-9498970"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3910784"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-3910784"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7238498"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-7238498"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
