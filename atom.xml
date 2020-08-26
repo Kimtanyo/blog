@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2020-08-26T03:36:09.294Z</updated>
+    <updated>2020-08-26T03:39:57.211Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
@@ -24,13 +24,13 @@
 <!-- more -->
 <h1 id="一-安装及设置右键菜单">一、安装及设置右键菜单</h1>
 <p>与Jupyter Notebook相仿，通过pip安装</p>
-<pre><code>pip install jupyterlab
+<pre><code class="language-shell">pip install jupyterlab
 </code></pre>
 <p>为了使其更像一个IDE的打开方式，我们设置通过右键菜单<code>Jupyter Lab Here</code>打开，方法如下：</p>
 <ul>
 <li>新建注册表文件<code>Jupyter Lab Here.reg</code>，内容：</li>
 </ul>
-<pre><code>Windows Registry Editor Version 5.00
+<pre><code class="language-shell">Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\directory\background\shell\Jupyter Lab Here]
 &quot;icon&quot;=&quot;C:\\Users\\xxxx\\python\\3.6.8\\Lib\\site-packages\\notebook\\static\\favicon.ico&quot;
@@ -103,10 +103,10 @@
 <img src="https://github.com/jupyterlab/jupyterlab-toc/raw/master/toc.gif" alt="Table of Contents" title="Table of Contents" style="max-width:100%;">
 <h3 id="3-ipympl">3. ipympl</h3>
 <p>ipympl是matplotlib的插件，可以启用matplotlib的可视化交互功能，是插件中少数几个需要通过pip安装的</p>
-<pre><code>pip install ipympl
+<pre><code class="language-shell">pip install ipympl
 </code></pre>
 <p>且需要通过magic命令声明启用</p>
-<pre><code>%matplotlib widget
+<pre><code class="language-python">%matplotlib widget
 </code></pre>
 <img src="https://github.com/matplotlib/ipympl/raw/master/matplotlib.gif" alt="matplotlib screencast" style="max-width:100%;">
 <h3 id="4-nbgather">4. nbgather</h3>
@@ -118,7 +118,7 @@
 <h3 id="6-jupyter-lsp">6. jupyter-lsp</h3>
 <p>该插件用于<mark>自动补全、参数建议、函数文档查询、跳转定义</mark>等</p>
 <p><strong>该插件不仅需要通过插件栏安装，也需要通过pip安装</strong></p>
-<pre><code>pip install jupyter-lsp
+<pre><code class="language-shell">pip install jupyter-lsp
 </code></pre>
 <img src="https://raw.githubusercontent.com/krassowski/jupyterlab-lsp/master/examples/screenshots/signature.png" alt="signature" style="max-width:100%;">
 <img src="https://raw.githubusercontent.com/krassowski/jupyterlab-lsp/master/examples/screenshots/autocompletion.png" alt="autocompletion" style="max-width:100%;">
@@ -321,10 +321,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4848523"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-4848523"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8847303"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-8847303"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5495830"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-5495830"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-894563"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-894563"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>

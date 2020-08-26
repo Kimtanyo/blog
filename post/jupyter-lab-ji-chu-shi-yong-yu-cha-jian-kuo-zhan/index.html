@@ -13,7 +13,7 @@
      <div class="sidebar animated fadeInDown">
    <div class="logo-title">
     <div class="title">
-     <img src="https://kimtanyo.github.io/images/avatar.png?v=1598412966175" style="width:127px;" />
+     <img src="https://kimtanyo.github.io/images/avatar.png?v=1598413193616" style="width:127px;" />
 
      <h3 title=""><a href="/">kimtanyo</a></h3>
 
@@ -97,13 +97,13 @@
 <!-- more -->
 <h1 id="一-安装及设置右键菜单">一、安装及设置右键菜单</h1>
 <p>与Jupyter Notebook相仿，通过pip安装</p>
-<pre><code>pip install jupyterlab
+<pre><code class="language-shell">pip install jupyterlab
 </code></pre>
 <p>为了使其更像一个IDE的打开方式，我们设置通过右键菜单<code>Jupyter Lab Here</code>打开，方法如下：</p>
 <ul>
 <li>新建注册表文件<code>Jupyter Lab Here.reg</code>，内容：</li>
 </ul>
-<pre><code>Windows Registry Editor Version 5.00
+<pre><code class="language-shell">Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\directory\background\shell\Jupyter Lab Here]
 &quot;icon&quot;=&quot;C:\\Users\\xxxx\\python\\3.6.8\\Lib\\site-packages\\notebook\\static\\favicon.ico&quot;
@@ -176,10 +176,10 @@
 <img src="https://github.com/jupyterlab/jupyterlab-toc/raw/master/toc.gif" alt="Table of Contents" title="Table of Contents" style="max-width:100%;">
 <h3 id="3-ipympl">3. ipympl</h3>
 <p>ipympl是matplotlib的插件，可以启用matplotlib的可视化交互功能，是插件中少数几个需要通过pip安装的</p>
-<pre><code>pip install ipympl
+<pre><code class="language-shell">pip install ipympl
 </code></pre>
 <p>且需要通过magic命令声明启用</p>
-<pre><code>%matplotlib widget
+<pre><code class="language-python">%matplotlib widget
 </code></pre>
 <img src="https://github.com/matplotlib/ipympl/raw/master/matplotlib.gif" alt="matplotlib screencast" style="max-width:100%;">
 <h3 id="4-nbgather">4. nbgather</h3>
@@ -191,7 +191,7 @@
 <h3 id="6-jupyter-lsp">6. jupyter-lsp</h3>
 <p>该插件用于<mark>自动补全、参数建议、函数文档查询、跳转定义</mark>等</p>
 <p><strong>该插件不仅需要通过插件栏安装，也需要通过pip安装</strong></p>
-<pre><code>pip install jupyter-lsp
+<pre><code class="language-shell">pip install jupyter-lsp
 </code></pre>
 <img src="https://raw.githubusercontent.com/krassowski/jupyterlab-lsp/master/examples/screenshots/signature.png" alt="signature" style="max-width:100%;">
 <img src="https://raw.githubusercontent.com/krassowski/jupyterlab-lsp/master/examples/screenshots/autocompletion.png" alt="autocompletion" style="max-width:100%;">
