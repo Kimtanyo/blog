@@ -2,14 +2,239 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2020-08-26T03:39:57.211Z</updated>
+    <updated>2021-01-23T16:10:07.139Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
     <subtitle>📝 『记录兴趣  记录梦想』</subtitle>
     <logo>https://kimtanyo.github.io/images/avatar.png</logo>
     <icon>https://kimtanyo.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Kimtanyo Blog</rights>
+    <rights>All rights reserved 2021, Kimtanyo Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Excel嵌入式jupyter工具——Pyxll]]></title>
+        <id>https://kimtanyo.github.io/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/</id>
+        <link href="https://kimtanyo.github.io/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/">
+        </link>
+        <updated>2021-01-23T16:09:13.000Z</updated>
+        <summary type="html"><![CDATA[<p>前几天有朋友在群里发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多，尤其是我这种懒癌患者的福音</p>
+<blockquote>
+<p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<p>前几天有朋友在群里发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多，尤其是我这种懒癌患者的福音</p>
+<blockquote>
+<p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
+</blockquote>
+<!-- more -->
+<h1 id="一-安装pyxll">一、安装Pyxll</h1>
+<p><strong>1. 首先需要通过pip安装pyxll</strong></p>
+<pre><code>pip install pyxll
+</code></pre>
+<p>到官网https://www.pyxll.com/index.html下载pyxll的excel内嵌插件</p>
+<p>选择自己的python版本以及excel版本</p>
+<p><mark><strong>注意python和excel必须同为32位或64位</strong></mark></p>
+<p>私人电脑一般默认安装的都是32位的office</p>
+<p>所以如果你装的是64位的python则必须在 <code>重装32位python</code>和<code>重装64位office</code>之中二选一</p>
+<p>个人推荐重装office，因为python的重装还需要安装各种以前的第三方库，类似tensorflow或pytorch这种尤为复杂</p>
+<p>网上搜索到的一般都是32位的office，这里给出64位office的下载地址http://ucff.cn/WenKu/Data/2016061917461560.html</p>
+<p><mark><strong>注意不要从注册表更改默认安装位置</strong></mark>，否则下一步会识别不到excel的安装位置</p>
+<figure data-type="image" tabindex="1"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Excel%E5%B5%8C%E5%85%A5%E5%BC%8Fjupyter%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94Pyxll/2.png" alt="" loading="lazy"></figure>
+<p><strong>2. 然后再用<code>PyXLL</code>的命令行工具安装Excel插件</strong></p>
+<pre><code>pyxll install
+</code></pre>
+<p>注意选择一定要自行下载插件，输入下载的插件地址</p>
+<p>如果遇到询问license，输入n即可</p>
+<figure data-type="image" tabindex="2"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Excel%E5%B5%8C%E5%85%A5%E5%BC%8Fjupyter%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94Pyxll/1.png" alt="" loading="lazy"></figure>
+<p><strong>3. 使用pip安装<code>pyxll-jupyter</code>软件包：</strong></p>
+<pre><code>pip install pyxll-jupyter
+</code></pre>
+<p>如果需要换镜像源加速，请使用清华镜像源https://pypi.tuna.tsinghua.edu.cn/simple，其他国内镜像目前没有（后续可能更新）</p>
+<h1 id="二-使用方法">二、使用方法</h1>
+<p>安装完毕后，启动Excel，将在<code>PyXLL</code>选项卡中看到一个新的<code>Jupyter</code>按钮</p>
+<figure data-type="image" tabindex="3"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzxsWfQ4TOdv4yePnbjd9voc4XAHWTqAYLWz0T2dXOD2dAib2pLS3UzKh5xRWftA1H2maDXyhZsicZyQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片" loading="lazy"></figure>
+<p>单击此按钮可在Excel工作簿的侧面板中打开Jupyter Notebook。该面板是Excel界面的一部分，可以通过拖放操作取消停靠或停靠在其他位置</p>
+<p>在Jupyter面板中，你可以选择一个现有的Notebook或创建一个新的Notebook。创建一个新的Notebook，选择新建按钮，然后选择<code>Python 3</code></p>
+<figure data-type="image" tabindex="4"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzxsWfQ4TOdv4yePnbjd9vocgspibCssn6ECzgmYicLzrL8tKH7LhntTqUhrCaxibNJXFWpNIwrSo7U4g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片" loading="lazy"></figure>
+<p><strong>注意</strong>：</p>
+<ol>
+<li>每次alt+tab切屏回来，默认输入窗口都在表格页面，编辑jupyter需要点击它</li>
+<li>jupyter默认在<code>我的文档</code>打开，只能在此处创建ipynb脚本</li>
+<li>未保存情况下关闭excel会导致表格和jupyter同时未保存</li>
+<li>保存需要分别选中表格和jupyter按两次<code>Ctrl+S</code></li>
+</ol>
+<h1 id="三-表格导入导出">三、表格导入导出</h1>
+<h2 id="1-导入">1、导入</h2>
+<p>因为PyXLL在与Excel相同的进程中运行Python，所以用Python访问Excel数据以及在Python和Excel之间快速调用。</p>
+<p>为了使事情尽可能简单，<code>pyxll-jupyter</code>包附带了一些<code>IPython</code>“魔法”函数，可以在你的Jupyter笔记本中使用。</p>
+<p><strong>1. 将表格导入python内存</strong></p>
+<pre><code>%xl_get # 打印表
+df =％xl_get # 将表赋值给名为df的DataFrame（不用import pandas）
+</code></pre>
+<figure data-type="image" tabindex="5"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzxsWfQ4TOdv4yePnbjd9vocg3Lianhf9ibUOEMq0qBklibSB2NTuu8F6DxqibN08BqfB6sJicssSOO3v4g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片" loading="lazy"></figure>
+<p>excel sheet 与 Pandas DataFrames 同步</p>
+<p>使用魔术函数<code>％xl_get</code>可以获取Python中<mark>当前的Excel框选区域</mark>，默认包含head行</p>
+<p>选择左上角单独一个单元格的话，则读取整张表非空的部分</p>
+<p><code>％xl_get</code>魔术函数有几个选项：</p>
+<pre><code> -c或--cell。 传递单元格的地址以获取值，例如％xl_get --cell A1：D5
+ -t或--type。 指定获取值时要使用的数据类型，例如％xl_get --type numpy_array
+ -x或--no-auto-resize。 仅获取选定范围或给定范围的数据。 不要扩展到包括周围的数据范围
+</code></pre>
+<p>PyXLL还有其他与Excel交互以将数据读入Python的方式。 <code>％xl_get</code>魔术功能只是使事情变得更简单</p>
+<p>当Jupyter笔记本在Excel中运行时，所有其他方法（例如，使用XLCell类，Excel的COM API甚至xlwings）仍然可用</p>
+<h2 id="2-导出">2、导出</h2>
+<p>从Python到Excel的另一种传输方式也可以正常工作。 无论你是使用Python加载数据集并将其传输到Excel工作簿，还是通过Excel处理数据集并希望将结果返回Excel，从Python复制数据到Excel都很容易。</p>
+<pre><code>％xl_set df # 将格式为DataFrame的df写入表中
+</code></pre>
+<figure data-type="image" tabindex="6"><img src="https://img-blog.csdnimg.cn/20201224093737547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NTEwMjQ1,size_16,color_FFFFFF,t_70" alt="img" loading="lazy"></figure>
+<p>与<code>％xl_get</code>一样，<code>％xl_set</code>也具有一系列选项来控制其行为，你甚至可以使用PyXLL的单元格格式设置功能在将结果写入Excel的同时自动应用格式设置</p>
+<pre><code>-c或--cell。将值写入单元格地址，例如％xl_set VALUE --cell A1
+-t或--type。将值写入Excel时要使用的数据类型说明符，例如％xl_set VALUE --type dataframe &lt;index = False&gt;
+-f或--formatter。 PyXLL单元格格式化程序对象，例如％xl_set VALUE --formatter DataFrameFormatter（）
+-x或--no-auto-resize。不要自动调整范围大小以适合数据。仅将值写入当前选择或指定范围
+</code></pre>
+<p>格式化单元格DataFrameFormatter的参数请参阅https://www.pyxll.com/docs/userguide/formatting/index.html</p>
+<p>与<code>％xl_get</code>一样，<code>％xl_set</code>只是一个快捷方式，所有其他写回Excel的方式仍然可以在Jupyter笔记本中使用</p>
+<h1 id="四-在excel中直接绘图">四、在Excel中直接绘图</h1>
+<p>在jupyter中进行数据处理的一大优点是可用的功能强大的绘图程序包， 例如df.plot()</p>
+<p>PyXLL集成了所有主要的绘图库，因此你也可以在Excel中充分利用它们。 这包括matplotlib（由pandas使用），plotly，bokeh和altair</p>
+<p>使用<code>%xl_plot</code>可以在在jupyter上画图的同时将图像输出到excel中</p>
+<pre><code>%xl_plot FIGURE # 任意一个图形对象
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://img-blog.csdnimg.cn/20201224093745551.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NTEwMjQ1,size_16,color_FFFFFF,t_70" alt="img" loading="lazy"></figure>
+<p>使用<code>％xl_plot</code>可以在Excel中绘制任何Python图表。，从一个受支持的绘图库中向其传递任何图形对象，或一个pyplot图形，使用pandas plot的效果也很好，例如：</p>
+<pre><code>%xl_plot df.plot(kind=‘scatter’)
+</code></pre>
+<p>％xl_plot魔术函数具有一些选项来控制其工作方式：</p>
+<pre><code> -n或--name。 Excel中图片对象的名称。 如果使用已经存在的图片名称，则该图片将被替换
+ -c或--cell。 用作新图片位置的单元格地址。 如果图片已经存在，则无效
+ -w或--width。 Excel中图片的宽度（以磅为单位）。 如果更新现有图片，则无效
+ -h或--height。 Excel中图片的高度（以磅为单位）。 如果更新现有图片，则无效
+</code></pre>
+<p>％xl_plot是pyxll.plot函数的快捷方式，也可以通过pyxll.plot()来绘制</p>
+<h1 id="五-在excel调用自定义python函数">五、在Excel调用自定义Python函数</h1>
+<p>你可以直接从Excel工作簿中调用Python函数，而不是在Excel和Jupyter之间不断移动数据然后运行一些Python代码</p>
+<p>PyXLL的主要用例之一是用Python编写自定义Excel工作表函数（或<code>UDF</code>），这些函数可以使用其他Python库（例如pandas和scipy）</p>
+<p>你也可以在Jupyter笔记本中编写Excel工作表函数。 这是在不离开Excel即可使用Python IDE的情况下尝试想法的绝佳方法。</p>
+<p>例如下面，编写一个简单的函数，然后将“ pyxll.xl_func”修饰符添加到excel的函数中：</p>
+<pre><code>from pyxll import xl_func
+
+@xl_func
+def test_func(a, b, c):
+    # This function can be called from Excel!
+    return (a * b) + c
+</code></pre>
+<p>输入代码并在Jupyter中运行单元格后，即可从Excel工作簿中打字调用Python函数，<mark>注意excel调用函数的时候，参数是和python定义的对应的</mark></p>
+<p>不只是简单的功能，可以将整个数据范围作为pandas DataFrames传递给函数，并返回任何Python类型，包括numpy数组和DataFrames，你可以通过给@xl_func装饰器一个参数字符串，来指定这个函数期望的数据类型</p>
+<p>例如，尝试以下方法：</p>
+<pre><code>from pyxll import xl_func
+
+# 装饰器签名告诉 PyXLL 如何转换函数参数和返回的值
+@xl_func(&quot;dataframe df: dataframe&lt;index=True&gt;&quot;, auto_resize=True)
+def df_describe(df):
+    # df 是一个从数据集里创建的 pandas DataFrame 传递给函数
+    desc = df.describe()
+    
+    # desc 是新的 DataFrame（PyXLL转换为一组值并返回给Excel所创建的）
+    return desc
+</code></pre>
+<p>你可以编写复杂的Python函数来进行数据转换和分析，Excel中如何调用或排序这些函数。 更改输入会导致调用函数，并且计算出的输出会==<strong>实时更新</strong>==，这与你期望的一样</p>
+<h1 id="六-在excel中使用python编写的宏">六、在Excel中使用Python编写的宏</h1>
+<h2 id="1-python作为vba的替代品">1、Python作为VBA的替代品</h2>
+<p>在VBA中可以执行的所有操作也可以在Python中完成，编写VBA时将使用Excel对象模型，但是Python也提供相同的API</p>
+<p>在Excel中运行的Jupyter笔记本中，可以使用整个Excel对象模型，因此你可以使用与Excel VBA编辑器中完全相同的方式编写Excel脚本</p>
+<p>由于PyXLL在Excel进程内运行Python，因此从Python调用Excel不会对性能造成任何影响。也可以从外部Python进程调用Excel，但这通常要慢得多，在Excel中运行Jupyter笔记本也使一切变得更加便捷</p>
+<p>使用PyXLL的<code>xl_app</code>函数获取<code>Excel.Application</code>对象，该对象等效于VBA中的Application对象，尝试进行诸如获取当前选择和更改单元格内部颜色之类的操作，但是在Python中，我们是**<mark>显式获取当前的活动表</mark>**</p>
+<p>弄清楚如何使用Excel对象模型进行操作的一种好方法是记录VBA宏，然后将该宏转换为Python。</p>
+<p>PyXLL文档页面Python作为VBA的替代品提供了一些有关如何做到这一点的技巧，详情可参阅https://www.pyxll.com/docs/userguide/vba.html</p>
+<p>例如下方的更改选定区域单元格颜色</p>
+<pre><code>from pyxll import xl_app
+xl = xl_app()
+xl.Selection.Interior.Color = 0xff00ff
+</code></pre>
+<figure data-type="image" tabindex="8"><img src="https://img-blog.csdnimg.cn/20201224093758979.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NTEwMjQ1,size_16,color_FFFFFF,t_70" alt="img" loading="lazy"></figure>
+<h2 id="2-python的宏功能">2、Python的宏功能</h2>
+<p>你可以在python中编写一个Excel宏，以执行以前使用VBA所做的任何事情。宏的工作方式与工作表功能非常相似。要将函数注册为宏，请使用@<code>xl_macro</code>装饰器</p>
+<h3 id="将python函数设定为宏">将Python函数设定为宏</h3>
+<p>IPython的魔法函数<code>@xl_macro</code>可以作为装饰器修饰需要设定为宏的函数</p>
+<pre><code>from pyxll import xl_macro, xl_app, xlcAlert
+
+@xl_macro
+def popup_messagebox():
+    xlcAlert(&quot;Hello&quot;) # 弹窗提示Hello
+
+@xl_macro
+def set_current_cell(value):
+    xl = xl_app()
+    xl.Selection.Value = value
+
+@xl_macro(&quot;string n: int&quot;) # 设定期望数据类型
+def py_strlen(n):
+    return len(x)
+</code></pre>
+<p>例如下方，实现选中B11到K11的功能</p>
+<pre><code>from pyxll import xl_macro, xl_app
+
+
+@xl_macro
+def macro1():
+    xl = xl_app()
+
+    # 'xl' is an instance of the Excel.Application object
+
+    # Get the current ActiveSheet (same as in VBA)
+    sheet = xl.ActiveSheet
+
+    # Call the 'Range' method on the Sheet
+    xl_range = sheet.Range('B11:K11')
+
+    # Call the 'Select' method on the Range.
+    # Note the parentheses which are not required in VBA but are in Python.
+    xl_range.Select()
+</code></pre>
+<h3 id="键盘快捷键">键盘快捷键</h3>
+<p>您可以通过使用<code>@xl_macro</code>装饰器的<code>shortcut</code>关键字参数，或编辑Pyxll安装文件夹下的pyxll.cfg配置文件，在<em>SHORTCUTS</em>部分中进行设置，将键盘快捷键分配给宏</p>
+<p>快捷键应为一个或多个修饰键名称（<em>Ctrl</em>，<em>Shift</em>或<em>Alt</em>）和一个键，并以'+'符号分隔。例如，“ Ctrl + Shift + R”。</p>
+<pre><code>from pyxll import xl_macro, xl_app
+
+@xl_macro(shortcut=&quot;Alt+F3&quot;)
+def macro_with_shortcut():
+    xlcAlert(&quot;Alt+F3 pressed&quot;)
+</code></pre>
+<p>如果Excel已经使用了组合键，则可能无法为该组合键分配宏</p>
+<p>除字母，数字和功能键外，还可以使用以下特殊键（它们不区分大小写）</p>
+<ul>
+<li>Backspace</li>
+<li>Break</li>
+<li>CapsLock</li>
+<li>Clear</li>
+<li>Delete</li>
+<li>Down</li>
+<li>End</li>
+<li>Enter</li>
+<li>Escape</li>
+<li>Home</li>
+<li>Insert</li>
+<li>Left</li>
+<li>NumLock</li>
+<li>PgDn</li>
+<li>PgUp</li>
+<li>Right</li>
+<li>ScrollLock</li>
+<li>Tab</li>
+</ul>
+<h3 id="从excel调用宏">从Excel调用宏</h3>
+<p>与其他Excel宏一样，可以从Excel调用用PyXLL定义的宏。</p>
+<p>最常用的方法是将宏分配给控件。为此，首先通过转到Excel中的<code>开发工具</code>菜单来选中<code>插入</code>工具箱，然后选中<code>表单控件</code>中的任意一个，创建一个控件按钮</p>
+<figure data-type="image" tabindex="9"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Excel%E5%B5%8C%E5%85%A5%E5%BC%8Fjupyter%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94Pyxll/3.png" alt="" loading="lazy"></figure>
+<p>然后右键单击按钮并选择<code>指定宏</code>。输入宏的名称，在本例中为<em>popup_messagebox</em>。现在，当您单击该按钮时，将调用该宏。</p>
+<figure data-type="image" tabindex="10"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Excel%E5%B5%8C%E5%85%A5%E5%BC%8Fjupyter%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94Pyxll/4.png" alt="" loading="lazy"></figure>
+<p><mark>Excel中的<code>指定宏</code>对话框将仅列出工作簿中定义的宏。在Python中使用<code>@xl_macro</code>定义的任何宏都不会显示在此列表中。相反，你必须手动输入宏的名称，Excel会接受它</mark></p>
+<blockquote>
+<p>关于Pyxll的更多细微功能请参考官网文档https://www.pyxll.com/docs/userguide/udfs/index.html</p>
+<p>日后可能再补充更新一些常用的表格编辑功能</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Jupyter Lab基础使用与插件扩展]]></title>
         <id>https://kimtanyo.github.io/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/</id>
@@ -321,10 +546,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8847303"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-8847303"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9634979"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-9634979"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-894563"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-894563"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4267959"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-4267959"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
