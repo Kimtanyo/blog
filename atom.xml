@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2021-01-23T16:13:05.853Z</updated>
+    <updated>2021-01-24T13:42:25.009Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
@@ -36,7 +36,7 @@
 <p>私人电脑一般默认安装的都是32位的office</p>
 <p>所以如果你装的是64位的python则必须在 <code>重装32位python</code>和<code>重装64位office</code>之中二选一</p>
 <p>个人推荐重装office，因为python的重装还需要安装各种以前的第三方库，类似tensorflow或pytorch这种尤为复杂</p>
-<p>网上搜索到的一般都是32位的office，这里给出64位office的下载地址http://ucff.cn/WenKu/Data/2016061917461560.html</p>
+<p>网上搜索到的一般都是32位的office，这里给出64位office的下载地址<a href="http://ucff.cn/WenKu/Data/2016061917461560.html">http://ucff.cn/WenKu/Data/2016061917461560.html</a></p>
 <p><mark><strong>注意不要从注册表更改默认安装位置</strong></mark>，否则下一步会识别不到excel的安装位置</p>
 <figure data-type="image" tabindex="1"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Excel%E5%B5%8C%E5%85%A5%E5%BC%8Fjupyter%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94Pyxll/2.png" alt="" loading="lazy"></figure>
 <p><strong>2. 然后再用<code>PyXLL</code>的命令行工具安装Excel插件</strong></p>
@@ -49,6 +49,8 @@
 <pre><code>pip install pyxll-jupyter
 </code></pre>
 <p>如果需要换镜像源加速，请使用清华镜像源https://pypi.tuna.tsinghua.edu.cn/simple，其他国内镜像目前没有（后续可能更新）</p>
+<pre><code>pip install pyxll-jupyter -i https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
 <h1 id="二-使用方法">二、使用方法</h1>
 <p>安装完毕后，启动Excel，将在<code>PyXLL</code>选项卡中看到一个新的<code>Jupyter</code>按钮</p>
 <figure data-type="image" tabindex="3"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzxsWfQ4TOdv4yePnbjd9voc4XAHWTqAYLWz0T2dXOD2dAib2pLS3UzKh5xRWftA1H2maDXyhZsicZyQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片" loading="lazy"></figure>
@@ -546,10 +548,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4701846"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-4701846"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6971313"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-6971313"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3817090"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-3817090"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1364104"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-1364104"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
