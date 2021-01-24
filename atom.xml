@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kimtanyo.github.io</id>
     <title>Kimtanyo Blog</title>
-    <updated>2021-01-24T13:42:25.009Z</updated>
+    <updated>2021-01-24T13:45:45.580Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kimtanyo.github.io"/>
     <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
@@ -53,10 +53,10 @@
 </code></pre>
 <h1 id="二-使用方法">二、使用方法</h1>
 <p>安装完毕后，启动Excel，将在<code>PyXLL</code>选项卡中看到一个新的<code>Jupyter</code>按钮</p>
-<figure data-type="image" tabindex="3"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzxsWfQ4TOdv4yePnbjd9voc4XAHWTqAYLWz0T2dXOD2dAib2pLS3UzKh5xRWftA1H2maDXyhZsicZyQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://img-blog.csdnimg.cn/2020122409371162.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NTEwMjQ1,size_16,color_FFFFFF,t_70" alt="图片" loading="lazy"></figure>
 <p>单击此按钮可在Excel工作簿的侧面板中打开Jupyter Notebook。该面板是Excel界面的一部分，可以通过拖放操作取消停靠或停靠在其他位置</p>
 <p>在Jupyter面板中，你可以选择一个现有的Notebook或创建一个新的Notebook。创建一个新的Notebook，选择新建按钮，然后选择<code>Python 3</code></p>
-<figure data-type="image" tabindex="4"><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/NOM5HN2icXzxsWfQ4TOdv4yePnbjd9vocgspibCssn6ECzgmYicLzrL8tKH7LhntTqUhrCaxibNJXFWpNIwrSo7U4g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="图片" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://img-blog.csdnimg.cn/20201224093717155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NTEwMjQ1,size_16,color_FFFFFF,t_70" alt="图片" loading="lazy"></figure>
 <p><strong>注意</strong>：</p>
 <ol>
 <li>每次alt+tab切屏回来，默认输入窗口都在表格页面，编辑jupyter需要点击它</li>
@@ -548,10 +548,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6971313"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-6971313"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9815009"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-9815009"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1364104"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-1364104"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6779336"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-6779336"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
