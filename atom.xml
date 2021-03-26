@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://kimtanyo.github.io</id>
+    <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com</id>
     <title>Kimtanyo Blog</title>
-    <updated>2021-01-24T13:45:45.580Z</updated>
+    <updated>2021-03-26T20:19:30.405Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://kimtanyo.github.io"/>
-    <link rel="self" href="https://kimtanyo.github.io/atom.xml"/>
+    <link rel="alternate" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com"/>
+    <link rel="self" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml"/>
     <subtitle>📝 『记录兴趣  记录梦想』</subtitle>
-    <logo>https://kimtanyo.github.io/images/avatar.png</logo>
-    <icon>https://kimtanyo.github.io/favicon.ico</icon>
+    <logo>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png</logo>
+    <icon>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico</icon>
     <rights>All rights reserved 2021, Kimtanyo Blog</rights>
     <entry>
         <title type="html"><![CDATA[Excel嵌入式jupyter工具——Pyxll]]></title>
-        <id>https://kimtanyo.github.io/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/</id>
-        <link href="https://kimtanyo.github.io/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/">
+        <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/</id>
+        <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/">
         </link>
         <updated>2021-01-23T16:09:13.000Z</updated>
         <summary type="html"><![CDATA[<p>前几天有朋友在群里发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多，尤其是我这种懒癌患者的福音</p>
@@ -239,8 +239,8 @@ def macro_with_shortcut():
     </entry>
     <entry>
         <title type="html"><![CDATA[Jupyter Lab基础使用与插件扩展]]></title>
-        <id>https://kimtanyo.github.io/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/</id>
-        <link href="https://kimtanyo.github.io/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/">
+        <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/</id>
+        <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/">
         </link>
         <updated>2020-08-26T03:23:55.000Z</updated>
         <summary type="html"><![CDATA[<p>上手Jupyter Lab半小时之后，果断抛弃了Notebook，界面简直友好得不要太多，功能升级得也更加完善</p>
@@ -355,8 +355,8 @@ def macro_with_shortcut():
     </entry>
     <entry>
         <title type="html"><![CDATA[Github访问缓慢及图片无法加载的解决方案]]></title>
-        <id>https://kimtanyo.github.io/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/</id>
-        <link href="https://kimtanyo.github.io/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/">
+        <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/</id>
+        <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/">
         </link>
         <updated>2020-07-30T12:57:08.000Z</updated>
         <summary type="html"><![CDATA[<p>在度娘上找了很多解决方案，殊途同归，基本都是修改系统hosts文件，绕过国内dns解析，直接访问GitHub的CDN节点。只不过解析对应的链接大都不全，故在此记录分享完整版的dns解析地址。</p>
@@ -453,8 +453,8 @@ cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
     </entry>
     <entry>
         <title type="html"><![CDATA[Markdown语法大全(个人总结版 for Typora)]]></title>
-        <id>https://kimtanyo.github.io/post/markdown-yu-fa-da-quan/</id>
-        <link href="https://kimtanyo.github.io/post/markdown-yu-fa-da-quan/">
+        <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/markdown-yu-fa-da-quan/</id>
+        <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/markdown-yu-fa-da-quan/">
         </link>
         <updated>2020-07-30T11:45:54.000Z</updated>
         <summary type="html"><![CDATA[<p>Markdown 是一种「电子邮件」风格的「标记语言」，在此强烈推荐所有写作者(不仅限于码农)学习和掌握该语言。</p>
@@ -548,10 +548,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9815009"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-9815009"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3899348"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-3899348"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6779336"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-6779336"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-854596"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-854596"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
