@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+     <meta charset="utf-8" />
+  <title>如何零基础建立个人博客(Coding Page + Gridea + COSBrowser) | Kimtanyo Blog</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <link rel="stylesheet" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ </head>
+ <body>
+     <div class="sidebar animated fadeInDown">
+   <div class="logo-title">
+    <div class="title">
+     <img src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1617044990687" style="width:127px;" />
+
+     <h3 title=""><a href="/">kimtanyo</a></h3>
+
+     <div class="description">
+      <p>📝 『分享记录DS&DE&SDE的日常』</p>
+     </div>
+    </div>
+   </div>
+   <ul class="social-links">
+
+
+    
+
+    <li><a href="https://twitter.com/kim_tanyo"><i class="fa fa-twitter"></i></a></li>
+ 
+    
+
+    <li><a href="https://www.facebook.com/profile.php?id=100023806624626"><i class="fa fa-facebook"></i></a></li>
+ 
+    
+
+    <li><a href="https://github.com/Kimtanyo"><i class="fa fa-github"></i></a></li>
+ 
+    
+
+    <li><a href="https://www.linkedin.com/in/kimtanyo/"><i class="fa fa-linkedin"></i></a></li>
+ 
+    
+
+    <li><a href="https://space.bilibili.com/327418851"><i class="fa fa-youtube"></i></a></li>
+ 
+    
+
+    <li><a href="https://www.instagram.com/kim_tanyo/"><i class="fa fa-instagram"></i></a></li>
+ 
+    
+
+    <li><a href="https://weibo.com/5857729503/profile?topnav=1&amp;wvr=6"><i class="fa fa-weibo"></i></a></li>
+ 
+    
+
+    
+
+    
+
+   </ul>
+   <div class="footer">
+    <div class="by_farbox">
+   If you want to use any of my articles, please site the source.
+    </div>
+    
+
+    </div>
+   </div>
+  </div>
+  <div class="main">
+     <div class="page-top animated fadeInDown">
+    <div class="nav">
+    
+     <li><a  href="/">首页</a></li>
+
+     <li><a  href="/archives">归档</a></li>
+
+     <li><a  href="/tags">标签</a></li>
+
+     <li><a  href="/post/about">关于</a></li>
+
+    </div>
+    <div class="information">
+     <div class="back_btn">
+      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
+     </div>
+    </div>
+   </div>
+   <div class="autopagerize_page_element">
+    <div class="content">
+     <div class="post-page">
+      <div class="post animated fadeInDown">
+       <div class="post-title">
+        <h3><a>如何零基础建立个人博客(Coding Page + Gridea + COSBrowser)</a></h3>
+       </div>
+       <div class="post-content">
+        <p>在建博客的道路上也踩了几个小坑，本着纯粹建博客给自己看的原则，本篇主要讨论<br>
+<strong>如何以最低的成本制作一个完整的个人博客</strong><br>
+不差钱的和前端大佬自行绕道</p>
+<!-- more -->
+<h1 id="前言">前言</h1>
+<p>很多人会质疑都2021年了，有必要建个人博客吗，又没有人看。我个人认为，个人博客对于像我这样从其他领域转码的rookie来说，还是很有必要的，可以记录自己的一些经验，防止以后忘记，方便自我回顾。同时，自学转码的路上，光看视频或网课是远远不够的，必须要做实操项目，而实操项目和视频网课之间的鸿沟巨大，个人博客就是很好的一个过渡，可以巩固知识点，加深记忆和熟练掌握的程度。</p>
+<h1 id="coding-page">Coding Page</h1>
+<p><strong>Coding</strong>是一个提供代码托管和协作研发的工具网站，在建博客中的功能是托管博客网站的html代码，提供的原始博客网址称为Coding Page。网站本身类似<strong>Github</strong>和<strong>码云</strong>，三者选其一即可，各有优缺点</p>
+<ul>
+<li>Github Page在国内无法正常访问，需要VPN/SSR</li>
+<li>码云的Gitee Page无法在后续所用到的Gridea软件上直接配置，需要通过编程批量替换Gridea的字符串，再批处理拉取远程仓库，更新文件（我用python写的脚本，但是pyinstaller需要python版本较低，我不想重装因此放弃）。在此贴出参考<a href="https://blog.csdn.net/ZXYhappiness/article/details/107564963">如何采用Gitee Pages + Gridea 搭建个人主页</a></li>
+<li>Coding Page的域名不像Github和码云的page一样是以io结尾的固定域名，而是随机分配的，所以非常复杂，所以几乎必定得购买注册域名，例如本博客的原始Page域名是https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/markdown-yu-fa-da-quan/</li>
+</ul>
+<h2 id="coding-page配置"><strong>Coding Page配置</strong></h2>
+<p>首先进入<a href="https://coding.net/">coding官网</a>点开右上角的登录/注册，选择免费注册。</p>
+<p>第一行团队名称随意，第二行的<mark>团队域名</mark>请谨慎填写，在之后配置Gridea时会用到。</p>
+<figure data-type="image" tabindex="1"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/1.png" alt="img" loading="lazy"></figure>
+<p>随后点击下一步，进入创建用户阶段，选择邮箱注册，不要选微信注册，这里<mark>注册邮箱</mark>需要记录下来后续会用到</p>
+<figure data-type="image" tabindex="2"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/2.png" alt="img" loading="lazy"></figure>
+<p>下一步完成注册后回到登陆页面登录即可。登陆后流程如下所示：</p>
+<ol>
+<li>点击左侧项目，然后选择创建项目。</li>
+</ol>
+<p><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/3.png" alt="在这里插入图片描述" loading="lazy"><br>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/4.png" alt="在这里插入图片描述" loading="lazy"></p>
+<p>我这里是已经创建好了项目kimtanyo</p>
+<ol start="2">
+<li>项目模板选择代码托管项目</li>
+</ol>
+<figure data-type="image" tabindex="3"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/5.png" alt="img" loading="lazy"></figure>
+<p>填写项目名称、项目标识，其中<mark>项目标识</mark>请谨慎填写，在之后配置Gridea时会用到。</p>
+<figure data-type="image" tabindex="4"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/6.png" alt="img" loading="lazy"></figure>
+<p>弹出的邀请成员加入项目关掉即可，不用理会。</p>
+<ol start="3">
+<li>进入到新建的项目中，创建代码仓库（此处我已经创建了，仍为kimtanyo）</li>
+</ol>
+<figure data-type="image" tabindex="5"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/10.png" alt="img" loading="lazy"></figure>
+<p>填写仓库名称创建，如果是从github或者码云的原博客想转过来，也可以选择<strong>导入外部仓库</strong></p>
+<figure data-type="image" tabindex="6"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/11.png" alt="img" loading="lazy"></figure>
+<ol start="4">
+<li>在项目中，选择左下角的项目设置。</li>
+</ol>
+<figure data-type="image" tabindex="7"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/7.png" alt="img" loading="lazy"></figure>
+<p>点击功能开关</p>
+<figure data-type="image" tabindex="8"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/8.png" alt="" loading="lazy"></figure>
+<p>打开持续部署和持续集成</p>
+<figure data-type="image" tabindex="9"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/9.png" alt="" loading="lazy"></figure>
+<ol start="5">
+<li>此时可以看到左边菜单栏多出持续部署和持续集成选项，展开持续部署后选择<strong>网站托管</strong>，点击新建网站</li>
+</ol>
+<figure data-type="image" tabindex="10"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/12.png" alt="" loading="lazy"></figure>
+<p>选择静态网站即可（因为后续所用的Gridea只能写静态博客）</p>
+<figure data-type="image" tabindex="11"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/13.png" alt="" loading="lazy"></figure>
+<p>网站名称随意，代码仓库选择刚刚新建的，分支选择默认的master，注意节点一定要选择香港，选大陆地区的话，涉及配置自定义域名时需要自行备案，如不备案，则会部署失败</p>
+<p>等待几分钟网站部署好之后，进入部署好的网站，记录下来<mark>网站地址</mark>后续会用到</p>
+<figure data-type="image" tabindex="12"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/14.png" alt="" loading="lazy"></figure>
+<ol start="6">
+<li>点击右上角的个人账户设置</li>
+</ol>
+<figure data-type="image" tabindex="13"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/16.png" alt="" loading="lazy"></figure>
+<p>选择访问令牌——新建令牌，此处要记录<mark>令牌用户名</mark>，之后会用到</p>
+<figure data-type="image" tabindex="14"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/17.png" alt="" loading="lazy"></figure>
+<p>随意填写令牌描述，勾选第一项project:depot，完成创建，创建后会得到<mark>令牌</mark>，也需要记录下来</p>
+<figure data-type="image" tabindex="15"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/18.png" alt="" loading="lazy"></figure>
+<h1 id="gridea">Gridea</h1>
+<p>简而言之，Gridea就是个静态博客写作客户端，帮助构建和管理博客或静态站点的工具。使用简单，支持Markdown语法，且windows/Mac OS/Linux全平台支持，这也是我选择它的理由之一。虽然目前还不支持云端同步，配合onedrive同步盘工具还是可以实现三平台无缝衔接。</p>
+<p>不过通常我并不会直接在Gridea里面写博客，而是在Typora或其他Markdown写作工具上写好之后，再复制进去直接发布即可，因为Gridea里面的Markdown实时解析偶尔会卡顿显示不出图像，如果写了html代码在文章中，显示的排版也有点小问题，和实际发布后访问网站的结果不太一样。</p>
+<h2 id="gridea配置">Gridea配置</h2>
+<p>先去Gridea官网<a href="https://gridea.dev/">下载</a>并安装，而后选择<strong>远程</strong>中的Coding Pages，其中要填写的所有内容都在前面<mark>高亮标记</mark>出来了</p>
+<figure data-type="image" tabindex="16"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/15.png" alt="" loading="lazy"></figure>
+<p>域名：填写在coding配置中静态网站的访问地址</p>
+<p>仓库名称：填写创建项目时填写的项目标识/项目标识，例如我的项目标识为kimtanyo，则填写kimtanyo/kimtanyo</p>
+<p>分支：填写master即可</p>
+<p>仓库用户名：填写注册coding账户时的团队域名</p>
+<p>邮箱：填写注册coding账户时的邮箱</p>
+<p>令牌用户名和令牌：个人账户设置中创建访问令牌时的令牌用户名和令牌</p>
+<p>CNAME：这里先不填写即可，如果已经有了个人域名则输入个人域名，后面会讲</p>
+<h2 id="gridea博客写作">Gridea博客写作</h2>
+<p>Gridea配置好之后，首先需要给自己的博客设置一个主题，也就是一个模板</p>
+<figure data-type="image" tabindex="17"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/19.png" alt="" loading="lazy"></figure>
+<p>主题设置好之后可以点击左下角的预览打开本地文件，嫌麻烦也可以去官网查看并预览更多主题，此外还可以在自定义配置中设置名片和社交超链接，还可以设置网页的图标，也就是favicon.ico，还有主题中显示的个人头像</p>
+<p>设置好之后点击同步，就可以更新到你的博客了，<strong>注意以后每次更改设置或者发布博客之后都要点击同步</strong>（即使是添加标签也算）</p>
+<p>现在可以开始写博客了，点击文章——新建，把在typora里写好的文章复制到这里来，点击右上角保存即可</p>
+<figure data-type="image" tabindex="18"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/20.png" alt="" loading="lazy"></figure>
+<p>注意文章右侧的设置中，可以设置文章的URL、分类标签（需要提前在主界面先创建）以及封面图</p>
+<figure data-type="image" tabindex="19"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/21.png" alt="" loading="lazy"></figure>
+<p>封面图不要上传本地文件，一定要用外链，这里推荐把封面图上传到图床，再在此处使用链接（关于图床后面会说）</p>
+<h2 id="gitalk评论配置"><strong>Gitalk评论配置</strong></h2>
+<p>Gridea支持Gitalk和Disqus两种评论系统，这里我使用Gitalk评论系统。</p>
+<p>首先你需要有一个 <strong>「GitHub OAuth Application」</strong> ，点击<a href="https://github.com/settings/applications/new">这里</a>创建</p>
+<figure data-type="image" tabindex="20"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/28.png" alt="" loading="lazy"></figure>
+<p>这里Homepage和Authorization callback的URL都填博客主页的域名，application name随意</p>
+<p>设置完成后，会生成一个Client ID，需要自己手动创建一个Client Secret，这里先复制或者记录下来，在接下来的配置中使用。</p>
+<figure data-type="image" tabindex="21"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/29.png" alt="" loading="lazy"></figure>
+<p>创建用于存放评论的仓库，<strong>注意仓库名中间不允许空格，如果有空格会被默认替换成<code>-</code></strong></p>
+<figure data-type="image" tabindex="22"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/31.png" alt="" loading="lazy"></figure>
+<p><strong>注意检查新建的仓库有没有打开Issues栏，如果没有则要去仓库的Setting—Options—Features，勾上Issues</strong></p>
+<p>回到Gridea的评论配置，依次填写即可</p>
+<figure data-type="image" tabindex="23"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/32.png" alt="" loading="lazy"></figure>
+<p>这里Owner即Github名</p>
+<p>完成后点击同步，在博客网页的文章最下方就会出现评论栏</p>
+<p><mark><strong>此处尚未完成，差一个本文的评论</strong></mark></p>
+<p><em>注意：有部分帖子称会发生点击评论处的登录Github时，会跳转到博客首页，此时将刚刚创建的Application的Homepage和Authorization callback的URL都改成Coding Page的原始URL即可解决问题</em></p>
+<h2 id="个人域名绑定">个人域名绑定</h2>
+<p>此时其实已经可以通过coding中静态网站的访问地址，访问你的博客网站了</p>
+<p>但是coding分配的域名没有规则，难以记忆，B格不高。这时候如果我们就可以花上一点小钱，买上一个域名，就可以拥有一个更加🐂🍺的体验。域名服务自己购买即可。这里最好还是选择腾讯云的服务，毕竟白嫖了人家的coding服务器，而且腾讯云的域名非常便宜。</p>
+<p>点击腾讯云主页,注册登陆后搜索<strong>域名注册</strong>，购买域名，并完成实名制，这里就不详述过程了。</p>
+<figure data-type="image" tabindex="24"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/22.png" alt="" loading="lazy"></figure>
+<p>在Coding项目的静态网站中，选中自定义域名，点击新建域名，输入买的域名（<strong>前面要加上www</strong>）</p>
+<figure data-type="image" tabindex="25"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/26.png" alt="" loading="lazy"></figure>
+<p>此时先跳过证书的相关步骤，记下来这里的<mark>CNAME指向</mark></p>
+<p>回到腾讯云——域名注册——我的域名，点击<strong>解析</strong></p>
+<figure data-type="image" tabindex="26"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/23.png" alt="" loading="lazy"></figure>
+<p>默认的两条记录不要进行删改，点击添加记录</p>
+<figure data-type="image" tabindex="27"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/24.png" alt="" loading="lazy"></figure>
+<p>第一条：主机记录www；记录类型CNAME；记录值填写CNAME指向的域名</p>
+<p>第二条：主机记录@ ；记录类型A ；记录值：</p>
+<p>Win+R打开cmd，输入ping+空格+CNAME指向的域名，例如</p>
+<pre><code>ping www.kimtanyo.cloud.cdn.dnsv1.com
+</code></pre>
+<figure data-type="image" tabindex="28"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/27.png" alt="" loading="lazy"></figure>
+<p>记录值填写返回的数字ip地址即可，例如此处是18.166.25.109</p>
+<p>然后我们点击这两条新建记录右侧的SSL，申请CA证书，等待几分钟通过</p>
+<figure data-type="image" tabindex="29"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/25.png" alt="" loading="lazy"></figure>
+<p>然后回到Coding重新检查证书颁发状态</p>
+<figure data-type="image" tabindex="30"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/26.png" alt="" loading="lazy"></figure>
+<p>最后进入Gridea填写自己的个人域名到CNAME中去，并点击同步</p>
+<figure data-type="image" tabindex="31"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/15.png" alt="" loading="lazy"></figure>
+<p>现在你可以访问你的个人域名来打开博客了</p>
+<h1 id="cosbrowser">COSBrowser</h1>
+<p>经常发博客的人可能会头疼，图片如果用本地的路径写入Markdown文本中，那只有自己才能看得到，别人打开博客是加载不出来的。</p>
+<p>图床就是一个在网络上存储图片的地方，目的是为了节省本地服务器空间，将图片传到图床后，每张图片都会有自己的链接，即可写入Markdown中引用外链共享。</p>
+<p>图床推荐<strong>腾讯云的COS对象存储</strong>，搭配官方的可视化界面工具<strong>COSBrowser</strong>，首次使用有很长的免费期，且收费也非常便宜，并且Coding也是腾讯的、域名也是腾讯的，就一条路到黑最方便了。</p>
+<p>进入【对象存储】→【存储桶列表】→【创建存储桶】</p>
+<p>这里所属地域要选择和你的网站同样地区（也就是香港），权限一定要选择公有读私有写</p>
+<figure data-type="image" tabindex="32"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/33.png" alt="" loading="lazy"></figure>
+<p>创建完毕后点击【密钥管理】→【云API密钥】→【新建密钥】</p>
+<figure data-type="image" tabindex="33"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/34.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="34"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/35.png" alt="" loading="lazy"></figure>
+<p>这里的SecretId和SecretKey要记录或复制下来</p>
+<p>回到【对象存储】→【工具】→【客户端下载】，下载Windows版本的<strong>COSBrowser</strong></p>
+<figure data-type="image" tabindex="35"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/36.png" alt="" loading="lazy"></figure>
+<p>安装后用SecretId和SecretKey登录，其他不用填</p>
+<figure data-type="image" tabindex="36"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/37.png" alt="" loading="lazy"></figure>
+<p>打开新建的存储桶，尽量为每篇博客都新建一个文件夹分好类，写文章的时候，将需要用到的图片都拖动进来上传</p>
+<figure data-type="image" tabindex="37"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/38.png" alt="" loading="lazy"></figure>
+<p>相比COSBrowser，可能很多人用的是PicGo，因为泛用性强，可以兼容市面上几乎所有的图床，但是经常出毛病上传失败，所以如果你不是用的腾讯云的COS作为图床，那可以改用PicGo。</p>
+
+       </div>
+       <div class="post-footer">
+        <div class="meta">
+         <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">2021-03-30</span>
+          <i class="fa fa-tag"></i>
+          
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="share">
+       <div class="evernote">
+        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
+       </div>
+       <div class="weibo">
+        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+       </div>
+       <div class="twitter">
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/ru-he-ling-ji-chu-jian-li-ge-ren-bo-ke-coding-page-gridea-cosbrowser/,;"></a>
+       </div>
+      </div>
+      <div class="pagination">
+       <ul class="clearfix">
+
+        
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/" title=" Excel嵌入式jupyter工具——Pyxll">下一篇</a></li>
+        
+       </ul>
+      </div>
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '90e31f206302cdb803ba',
+    clientSecret: '89d1ba49f8520e87eeef23227c3eb90c5ca6adda',
+    repo: 'Gitalk-System',
+    owner: 'Kimtanyo',
+    admin: ['Kimtanyo'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+          
+        
+     </div>
+    </div>
+   </div>
+  </div>
+  <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/scripts/jquery.js"></script>
+  <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/scripts/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/scripts/jquery.appear.js"></script>
+
+
+ </body>
+</html>
