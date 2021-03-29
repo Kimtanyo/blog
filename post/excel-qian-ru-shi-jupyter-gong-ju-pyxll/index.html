@@ -1,116 +1,102 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Kimtanyo Blog</title>
-<meta name="description" content="📝 『分享记录DS&DE&SDE的日常』" />
-<link rel="shortcut icon" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico?v=1617047702771">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<!DOCTYPE html>
+<html lang="zh-CN">
+ <head>
+     <meta charset="utf-8" />
+  <title>Excel嵌入式jupyter工具——Pyxll | Kimtanyo Blog</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <link rel="stylesheet" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+ </head>
+ <body>
+     <div class="sidebar animated fadeInDown">
+   <div class="logo-title">
+    <div class="title">
+     <img src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1617048358592" style="width:127px;" />
 
-<link rel="stylesheet" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/styles/main.css">
+     <h3 title=""><a href="/">kimtanyo</a></h3>
 
-
-
-  </head>
-  <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1617047702771" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Kimtanyo Blog</h1>
-      </div>
-      
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            文章目录
-          </p>
-          <div class="toc-container hidden lg:block">
-            <ul class="markdownIt-TOC">
-<li><a href="#%E4%B8%80-%E5%AE%89%E8%A3%85pyxll">一、安装Pyxll</a></li>
-<li><a href="#%E4%BA%8C-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">二、使用方法</a></li>
-<li><a href="#%E4%B8%89-%E8%A1%A8%E6%A0%BC%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA">三、表格导入导出</a>
-<ul>
-<li><a href="#1-%E5%AF%BC%E5%85%A5">1、导入</a></li>
-<li><a href="#2-%E5%AF%BC%E5%87%BA">2、导出</a></li>
-</ul>
-</li>
-<li><a href="#%E5%9B%9B-%E5%9C%A8excel%E4%B8%AD%E7%9B%B4%E6%8E%A5%E7%BB%98%E5%9B%BE">四、在Excel中直接绘图</a></li>
-<li><a href="#%E4%BA%94-%E5%9C%A8excel%E8%B0%83%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89python%E5%87%BD%E6%95%B0">五、在Excel调用自定义Python函数</a></li>
-<li><a href="#%E5%85%AD-%E5%9C%A8excel%E4%B8%AD%E4%BD%BF%E7%94%A8python%E7%BC%96%E5%86%99%E7%9A%84%E5%AE%8F">六、在Excel中使用Python编写的宏</a>
-<ul>
-<li><a href="#1-python%E4%BD%9C%E4%B8%BAvba%E7%9A%84%E6%9B%BF%E4%BB%A3%E5%93%81">1、Python作为VBA的替代品</a></li>
-<li><a href="#2-python%E7%9A%84%E5%AE%8F%E5%8A%9F%E8%83%BD">2、Python的宏功能</a>
-<ul>
-<li><a href="#%E5%B0%86python%E5%87%BD%E6%95%B0%E8%AE%BE%E5%AE%9A%E4%B8%BA%E5%AE%8F">将Python函数设定为宏</a></li>
-<li><a href="#%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE">键盘快捷键</a></li>
-<li><a href="#%E4%BB%8Eexcel%E8%B0%83%E7%94%A8%E5%AE%8F">从Excel调用宏</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      
+     <div class="description">
+      <p>📝 『分享记录DS&DE&SDE的日常』</p>
+     </div>
     </div>
-  </div>
-</div>
+   </div>
+   <ul class="social-links">
 
-<div class="menu-container">
-  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
+
     
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          首页
-        </a>
-      
+
+    <li><a href="https://twitter.com/kim_tanyo"><i class="fa fa-twitter"></i></a></li>
+ 
     
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          归档
-        </a>
-      
+
+    <li><a href="https://www.facebook.com/profile.php?id=100023806624626"><i class="fa fa-facebook"></i></a></li>
+ 
     
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          标签
-        </a>
-      
+
+    <li><a href="https://github.com/Kimtanyo"><i class="fa fa-github"></i></a></li>
+ 
     
-      
-        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
-          关于
-        </a>
-      
+
+    <li><a href="https://www.linkedin.com/in/kimtanyo/"><i class="fa fa-linkedin"></i></a></li>
+ 
     
+
+    <li><a href="https://space.bilibili.com/327418851"><i class="fa fa-youtube"></i></a></li>
+ 
+    
+
+    <li><a href="https://www.instagram.com/kim_tanyo/"><i class="fa fa-instagram"></i></a></li>
+ 
+    
+
+    <li><a href="https://weibo.com/5857729503/profile?topnav=1&amp;wvr=6"><i class="fa fa-weibo"></i></a></li>
+ 
+    
+
+    
+
+    
+
+   </ul>
+   <div class="footer">
+    <div class="by_farbox">
+   If you want to use any of my articles, please site the source.
+    </div>
+    
+
+    </div>
+   </div>
   </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">If you want to use any of my articles, please site the source.</div>
-    <a class="rss" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">Excel嵌入式jupyter工具——Pyxll</h1>
-        <div class="text-sm text-gray-700 lg:my-8">
-          2021-01-24 / 12 min read
-        </div>
-        
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://www.pyxll.com/_static/navbar.png" alt="">
-        
-        <div class="post-content yue">
-          <p>前几天有朋友在群里发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多，尤其是我这种懒癌患者的福音</p>
+  <div class="main">
+     <div class="page-top animated fadeInDown">
+    <div class="nav">
+    
+     <li><a  href="/">首页</a></li>
+
+     <li><a  href="/archives">归档</a></li>
+
+     <li><a  href="/tags">标签</a></li>
+
+     <li><a  href="/post/about">关于</a></li>
+
+    </div>
+    <div class="information">
+     <div class="back_btn">
+      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li>
+     </div>
+    </div>
+   </div>
+   <div class="autopagerize_page_element">
+    <div class="content">
+     <div class="post-page">
+      <div class="post animated fadeInDown">
+       <div class="post-title">
+        <h3><a>Excel嵌入式jupyter工具——Pyxll</a></h3>
+       </div>
+       <div class="post-content">
+        <p>前几天有朋友在群里发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多，尤其是我这种懒癌患者的福音</p>
 <blockquote>
 <p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
 </blockquote>
@@ -325,39 +311,41 @@ def macro_with_shortcut():
 <p>日后可能再补充更新一些常用的表格编辑功能</p>
 </blockquote>
 
+       </div>
+       <div class="post-footer">
+        <div class="meta">
+         <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">2021-01-24</span>
+          <i class="fa fa-tag"></i>
+          
+          <a class="tag" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/tag/iy1N9jAwz/" title="自动化办公">自动化办公 </a>
+          
+         </div>
         </div>
+       </div>
+      </div>
+      <div class="share">
+       <div class="evernote">
+        <a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a>
+       </div>
+       <div class="weibo">
+        <a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a>
+       </div>
+       <div class="twitter">
+        <a class="fa fa-twitter" href="http://twitter.com/home?status=,https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/,;"></a>
+       </div>
+      </div>
+      <div class="pagination">
+       <ul class="clearfix">
 
+        <li class="pre pagbuttons"><a class="btn" role="navigation" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/ru-he-ling-ji-chu-jian-li-ge-ren-bo-ke-coding-page-gridea-cosbrowser/" title="如何零基础建立个人博客(Coding Page + Gridea + COSBrowser)">上一篇</a></li>
+         
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/tag/iy1N9jAwz/">
-            <span class="flex-auto">自动化办公</span>
-          </a>
+        <li class="next pagbuttons"><a class="btn" role="navigation" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/" title=" Jupyter Lab基础使用与插件扩展">下一篇</a></li>
         
-
-
-        <div class="flex justify-between py-8">
-          
-            <div class="prev-post">
-              <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/ru-he-ling-ji-chu-jian-li-ge-ren-bo-ke-coding-page-gridea-cosbrowser/">
-                <h3 class="post-title">
-                  <i class="ri-arrow-left-line"></i>
-                  如何零基础建立个人博客(Coding Page + Gridea + COSBrowser)
-                </h3>
-              </a>
-            </div>
-          
-
-          
-            <div class="next-post">
-              <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/">
-                <h3 class="post-title">
-                  Jupyter Lab基础使用与插件扩展
-                  <i class="ri-arrow-right-line"></i>
-                </h3>
-              </a>
-            </div>
-          
-        </div>
-
+       </ul>
+      </div>
         
           
             <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -382,110 +370,16 @@ def macro_with_shortcut():
 </script>
 
           
-
           
         
-
-      </div>
+     </div>
     </div>
-
-    <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/prism.js"></script>  
-<script>
-
-Prism.highlightAll()
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
+   </div>
+  </div>
+  <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/scripts/jquery.js"></script>
+  <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/scripts/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/scripts/jquery.appear.js"></script>
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
-</script>
-  
-  </body>
+ </body>
 </html>
