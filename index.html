@@ -1,230 +1,342 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
- <head>
-     <meta charset="utf-8" />
-  <title>Kimtanyo Blog</title>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <link rel="stylesheet" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/styles/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-   <script src="https://cdn.staticfile.org/highlight.js/9.15.9/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
- </head>
- <body>
-     <div class="sidebar animated fadeInDown">
-   <div class="logo-title">
-    <div class="title">
-     <img src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1617046254055" style="width:127px;" />
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kimtanyo Blog</title>
+<meta name="description" content="📝 『分享记录DS&DE&SDE的日常』" />
+<link rel="shortcut icon" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico?v=1617046435608">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-     <h3 title=""><a href="/">kimtanyo</a></h3>
-
-     <div class="description">
-      <p>📝 『分享记录DS&DE&SDE的日常』</p>
-     </div>
-    </div>
-   </div>
-   <ul class="social-links">
+<link rel="stylesheet" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/styles/main.css">
 
 
-    
 
-    <li><a href="https://twitter.com/kim_tanyo"><i class="fa fa-twitter"></i></a></li>
- 
-    
-
-    <li><a href="https://www.facebook.com/profile.php?id=100023806624626"><i class="fa fa-facebook"></i></a></li>
- 
-    
-
-    <li><a href="https://github.com/Kimtanyo"><i class="fa fa-github"></i></a></li>
- 
-    
-
-    <li><a href="https://www.linkedin.com/in/kimtanyo/"><i class="fa fa-linkedin"></i></a></li>
- 
-    
-
-    <li><a href="https://space.bilibili.com/327418851"><i class="fa fa-youtube"></i></a></li>
- 
-    
-
-    <li><a href="https://www.instagram.com/kim_tanyo/"><i class="fa fa-instagram"></i></a></li>
- 
-    
-
-    <li><a href="https://weibo.com/5857729503/profile?topnav=1&amp;wvr=6"><i class="fa fa-weibo"></i></a></li>
- 
-    
-
-    
-
-    
-
-   </ul>
-   <div class="footer">
-    <div class="by_farbox">
-   If you want to use any of my articles, please site the source.
-    </div>
-    
-
-    </div>
-   </div>
-  </div>
-  <div class="main">
-      <div class="page-top animated fadeInDown">
-    <div class="nav">
-
-     <li><a  href="/">首页</a></li>
-
-     <li><a  href="/archives">归档</a></li>
-
-     <li><a  href="/tags">标签</a></li>
-
-     <li><a  href="/post/about">关于</a></li>
-
-
-    </div>
-    <div class="information">
-     <div class="back_btn">
-      <li><a class="fa fa-chevron-left" onclick="window.history.go(-1)" style="display:none;"> </a></li>
-     </div>
-    </div>
-   </div>
-   <div class="autopagerize_page_element">
-    <div class="content">
-              
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/ru-he-ling-ji-chu-jian-li-ge-ren-bo-ke-coding-page-gridea-cosbrowser/">如何零基础建立个人博客(Coding Page + Gridea + COSBrowser)</a></h3>
+  </head>
+  <body>
+    <div class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1617046435608" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Kimtanyo Blog</h1>
       </div>
-      <div class="post-content">
-       <p><p>在建博客的道路上也踩了几个小坑，本着纯粹建博客给自己看的原则，本篇主要讨论<br>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            📝 『分享记录DS&DE&SDE的日常』
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/Kimtanyo" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-github-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://twitter.com/kim_tanyo" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-twitter-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://weibo.com/5857729503/profile?topnav=1&amp;wvr=6" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-weibo-line"></i>
+                </a>
+              
+            
+              
+            
+              
+                <a href="https://www.facebook.com/profile.php?id=100023806624626" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-facebook-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+                <a href="https://www.instagram.com/kim_tanyo/" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-instagram-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">If you want to use any of my articles, please site the source.</div>
+    <a class="rss" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="latest-article text-lg text-gray-700 mb-8">
+          <i class="ri-article-line"></i>
+          最新文章
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/ru-he-ling-ji-chu-jian-li-ge-ren-bo-ke-coding-page-gridea-cosbrowser/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/%E5%A6%82%E4%BD%95%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%8B%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%28Coding%20Page%20%2B%20Gridea%20%2B%20COSBrowser%29/%E5%B0%81%E9%9D%A2.jpeg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/ru-he-ling-ji-chu-jian-li-ge-ren-bo-ke-coding-page-gridea-cosbrowser/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">如何零基础建立个人博客(Coding Page + Gridea + COSBrowser)</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>在建博客的道路上也踩了几个小坑，本着纯粹建博客给自己看的原则，本篇主要讨论<br>
 <strong>如何以最低的成本制作一个完整的个人博客</strong><br>
 不差钱的和前端大佬自行绕道</p>
-</p>
+
       </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2021-03-30</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/tag/aF1LNVyvT/" title="其他">其他 </a>
-         
+      <div class="text-gray-400 text-sm font-light">2021-03-30 / 11 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
+    
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://www.pyxll.com/_static/navbar.png'">
         </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/">Excel嵌入式jupyter工具——Pyxll</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>前几天有朋友在群里发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多，尤其是我这种懒癌患者的福音</p>
+      </a>
+    
+    <div class="content">
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Excel嵌入式jupyter工具——Pyxll</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>前几天有朋友在群里发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多，尤其是我这种懒癌患者的福音</p>
 <blockquote>
 <p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
 </blockquote>
-</p>
+
       </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2021-01-24</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/tag/iy1N9jAwz/" title="自动化办公">自动化办公 </a>
-         
+      <div class="text-gray-400 text-sm font-light">2021-01-24 / 12 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
+    
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Jupyter%20Lab%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E4%B8%8E%E6%8F%92%E4%BB%B6%E6%89%A9%E5%B1%95/%E5%B0%81%E9%9D%A2%E5%9B%BE.png'">
         </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/">Jupyter Lab基础使用与插件扩展</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>上手Jupyter Lab半小时之后，果断抛弃了Notebook，界面简直友好得不要太多，功能升级得也更加完善</p>
+      </a>
+    
+    <div class="content">
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Jupyter Lab基础使用与插件扩展</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>上手Jupyter Lab半小时之后，果断抛弃了Notebook，界面简直友好得不要太多，功能升级得也更加完善</p>
 <p>且Lab向下兼容Notebook，文件类型仍为ipynb</p>
-</p>
+
       </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-08-26</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/tag/dA4jRgxS3/" title="Jupyter">Jupyter </a>
-         
+      <div class="text-gray-400 text-sm font-light">2020-08-26 / 5 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
+    
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://picb.zhimg.com/80/v2-0d264a4b3c0a4717548bda5a0d3dfe5c_720w.jpg'">
         </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/">Github访问缓慢及图片无法加载的解决方案</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>在度娘上找了很多解决方案，殊途同归，基本都是修改系统hosts文件，绕过国内dns解析，直接访问GitHub的CDN节点。只不过解析对应的链接大都不全，故在此记录分享完整版的dns解析地址。</p>
+      </a>
+    
+    <div class="content">
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Github访问缓慢及图片无法加载的解决方案</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>在度娘上找了很多解决方案，殊途同归，基本都是修改系统hosts文件，绕过国内dns解析，直接访问GitHub的CDN节点。只不过解析对应的链接大都不全，故在此记录分享完整版的dns解析地址。</p>
 <blockquote>
 <p>前一段时间在github上想clone一个项目代码，下载速度3kb/s，并且Readme.md页面还无法加载图片。虽然以前也很慢，大概100kb/s的样子，但这个3kb/s着实过分😒。</p>
 </blockquote>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-07-30</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/tag/9PUQgtcra/" title="Git">Git </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-       
-     <div class="post animated fadeInDown">
-      <div class="post-title">
-       <h3><a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/markdown-yu-fa-da-quan/">Markdown语法大全(个人总结版 for Typora)</a></h3>
-      </div>
-      <div class="post-content">
-       <p><p>Markdown 是一种「电子邮件」风格的「标记语言」，在此强烈推荐所有写作者(不仅限于码农)学习和掌握该语言。</p>
-</p>
-      </div>
-      <div class="post-footer">
-       <div class="meta">
-        <div class="info">
-         <i class="fa fa-sun-o"></i>
-         <span class="date">2020-07-30</span>
-         <i class="fa fa-tag"></i>
-         
-         <a class="tag" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/tag/DHwmxofmh/" title="Markdown">Markdown </a>
-         
-        </div>
-       </div>
-      </div>
-     </div>
-     
-     <div class="pagination">
-      <ul class="clearfix">
-            
-        
 
-      </ul>
-     </div>
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-07-30 / 4 min read</div>
     </div>
-   </div>
-  </div>
-  <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/scripts/jquery.js"></script>
-  <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/scripts/jquery-migrate-1.2.1.min.js"></script>
-  <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/scripts/jquery.appear.js"></script>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
+    
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/markdown-yu-fa-da-quan/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://pic1.zhimg.com/v2-2a56e92cf72cd1268d299f47b8d2cf14_r.jpg?source=172ae18b'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/markdown-yu-fa-da-quan/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Markdown语法大全(个人总结版 for Typora)</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>Markdown 是一种「电子邮件」风格的「标记语言」，在此强烈推荐所有写作者(不仅限于码农)学习和掌握该语言。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2020-07-30 / 19 min read</div>
+    </div>
+  </section>
+
+        <div class="read-more">
+          
+        </div>
+        <div class="index-page">
+          <div class="pagination-container animated fadeIn">
+  
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
 
 
- </body>
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
 </html>
