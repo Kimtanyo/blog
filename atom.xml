@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com</id>
     <title>Kimtanyo Blog</title>
-    <updated>2021-03-29T20:09:29.819Z</updated>
+    <updated>2021-04-21T22:03:05.207Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com"/>
     <link rel="self" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml"/>
@@ -10,6 +10,418 @@
     <logo>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png</logo>
     <icon>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico</icon>
     <rights>All rights reserved 2021, Kimtanyo Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[[笔记]Git简明教程]]></title>
+        <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/bi-ji-git-jian-ming-jiao-cheng/</id>
+        <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/bi-ji-git-jian-ming-jiao-cheng/">
+        </link>
+        <updated>2021-04-21T21:55:12.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近被朋友发了个Git Basic的英文笔记，很多地方懵逼，因为原来也只是学了点皮毛，用得稀碎还不懂原理，因此抽空系统地学了一下Git的入门知识（划重点），以狂神的课和课件为蓝本总结一下（大部分从课件直接copy的，仅个人纪录用，未取得狂神授权，严禁转载）</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近被朋友发了个Git Basic的英文笔记，很多地方懵逼，因为原来也只是学了点皮毛，用得稀碎还不懂原理，因此抽空系统地学了一下Git的入门知识（划重点），以狂神的课和课件为蓝本总结一下（大部分从课件直接copy的，仅个人纪录用，未取得狂神授权，严禁转载）</p>
+<!-- more -->
+<h1 id="版本控制">版本控制</h1>
+<h2 id="什么是版本控制">什么是版本控制</h2>
+<p>版本控制（Reversion Control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便哈看或更改历史记录，备份以便恢复以前的版本的软件工程技术。</p>
+<ul>
+<li>实现跨区域多人协同开发</li>
+<li>追踪和记载一个或者多个文件的历史记录</li>
+<li>组织和保护你的源代码和文档</li>
+<li>统计工作量</li>
+<li>并行开发、提高开发效率</li>
+<li>跟踪记录整个软件的开发过程</li>
+<li>减轻开发人员的负担，节省时间，同时降低人为错误</li>
+</ul>
+<p>简单说就是用于管理多人协同开发项目的技术。</p>
+<p>没有进行版本控制的后果：</p>
+<figure data-type="image" tabindex="1"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-04-20%20013235.png" alt="屏幕截图 2021-04-20 013235" loading="lazy"></figure>
+<p>多人开发就必须要使用版本控制，否则代价太大</p>
+<h2 id="常见的版本控制工具">常见的版本控制工具</h2>
+<p>主流的版本控制器有如下这些：</p>
+<ul>
+<li><strong>Git</strong></li>
+<li><strong>SVN</strong>（Subversion）</li>
+<li>CSV（Concurrent Versions System）</li>
+<li>VSS（Microsoft Visual SourceSafe）</li>
+<li>Visual Studio Online</li>
+</ul>
+<p>版本控制产品非常的多（Perforce、Rational ClearCase、RCS（GNU Revision Control System）、Serena Dimention、SVK、I BitKeeper、Monotone、Bazaar、Mercurial、SourceGear Vault），现在影响力最大且使用最广泛的是<strong>Git</strong>与<strong>SVN</strong></p>
+<h2 id="版本控制分类">版本控制分类</h2>
+<p>1、本地版本控制</p>
+<p>记录文件每次的更新，可以对每个版本做一个快照（Snapshot），或者记录补丁文件，适合个人用，如RCS</p>
+<p>简单说就是如上图那样每更新一次自己加个标识另存到本地的上一个版本旁边</p>
+<figure data-type="image" tabindex="2"><img src="https://git-scm.com/book/en/v2/images/local.png" alt="" loading="lazy"></figure>
+<p>2、集中版本控制</p>
+<p>所有的版本数据都保存在服务器上，协同开发者从服务器上同步更新或上传自己的修改</p>
+<figure data-type="image" tabindex="3"><img src="https://git-scm.com/book/en/v2/images/centralized.png" alt="" loading="lazy"></figure>
+<p>所有的版本数据都存在服务器上，用户的本地只有自己以前所同步的版本，如果不连网的话，用户就看不到历史版本，也无法切换版本验证问题，或在不同分支工作。而且，所有数据都保存在单一的服务器上，有很大的风险这个服务器会损坏，这样就会丢失所有的数据，当然可以定期备份。代表产品：SVN、CVS、VSS</p>
+<p>3、分布式版本控制所有版本信息仓库全部同步到本地的每个用户，这样就可以在本地查看所有版本历史，可以离线在本地提交，只需在连网时push到相应的服务器或其他用户那里。由于每个用户那里保存的都是所有的版本数据，只要有一个用户的设备没有问题就可以恢复所有的数据，但这增加了本地存储空间的占用。</p>
+<p>不会因为服务器损坏或者网络问题，造成不能工作的情况。</p>
+<p>但每个人都拥有全部的代码，存在一定安全隐患（删库跑路）</p>
+<figure data-type="image" tabindex="4"><img src="https://git-scm.com/book/en/v2/images/distributed.png" alt="" loading="lazy"></figure>
+<blockquote>
+<p>Git与SVN'最主要区别</p>
+</blockquote>
+<p><strong><mark>笔试常见问题</mark></strong></p>
+<p>SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而工作的时候，用的都是自己的电脑，所以首先要从中央服务器得到最新的版本，然后工作，完成工作后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，对网络带宽要求较高。</p>
+<p>Git是分布式版本控制系统，没有中央服务器，每个人的电脑就是一个完整的版本库，工作的时候不需要联网了，因为版本都在自己电脑上。协同的方法是这样的：比如说自己在电脑上改了文件A，其他人也在电脑上改了文件A，这时，你们两之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。Git可以直接看到更新了哪些代码和文件。</p>
+<p><strong>Git是目前世界上最先进的分布式版本控制系统。</strong></p>
+<p>更纤细的对比见<a href="https://www.cnblogs.com/kevingrace/p/5904595.html">SVN和Git对比梳理</a></p>
+<h1 id="git历史">Git历史</h1>
+<p>同生活中的许多伟大事物一样，Git 诞生于一个极富纷争大举创新的年代。<br>
+Linux内核开源项目有着为数众广的参与者。绝大多数的Linux内核维护工作都花在了提交补丁和保存归档的繁琐事务上（1991-2002年间）。到2002年，整个项目组开始启用一个专有的分布式版本控制系统BitKeeper来管理和维护代码。<br>
+Linux社区中存在很多的大佬，破解研究 BitKeeper。到了2005年，开发BitKeeper的商业公司同Linux内核开源社区的合作关系结束，他们收回了Linux内核社区免费使用BitKeeper的权力。这就迫使Linux开源社区（特别是Linux的缔造者Linus Torvalds）基于使用Bitkeeper时的经验教训，开发出自己的版本系统（2周左右），也就是后来的Git。</p>
+<p>Git是目前世界上最先进的分布式版本控制系统。<br>
+Git是免费、开源的，最初Git是为辅助Linux内核开发的，来替代BitKeeper！</p>
+<h1 id="git安装及环境配置">Git安装及环境配置</h1>
+<h2 id="安装">安装</h2>
+<p>打开<a href="https://git-scm.com/">Git官网</a>下载，太慢的话找阿里的镜像站或者开VPN，</p>
+<figure data-type="image" tabindex="5"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-04-20%20022011.png" alt="屏幕截图 2021-04-20 022011" loading="lazy"></figure>
+<p>安装完成后再开始菜单栏会有Git项，注意在任意文件夹下右键也可以直接打开Git，相当于免去切换目录的麻烦</p>
+<figure data-type="image" tabindex="6"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202021-04-20%20022155.png" alt="屏幕截图 2021-04-20 022155" loading="lazy"></figure>
+<ul>
+<li>Git Bash：Unix与Linux风格的命令行，使用最多，推荐最多</li>
+<li>Git CMD：Windows风格的命令行</li>
+<li>Git GUl：图形界面的Git，不建议初学者使用，尽量先熟悉常用命令</li>
+</ul>
+<h2 id="基本的linux命令">基本的Linux命令</h2>
+<p>1）cd：改变目录。<br>
+2）cd..：回退到上一个目录，直接cd进入默认目录<br>
+3）pwd：显示当前所在的目录路径。<br>
+4）Is（ll）：都是列出当前目录中的所有文件，只不过（两个l）列出的内容更为详细。<br>
+5）touch：新建一个文件如touch index.js就会在当前目录下新建一个index.js文件。<br>
+6）rm：删除一个文件，rm index.js 就会把index.js文件删除。<br>
+7）mkdir：新建一个目录，就是新建一个文件夹。<br>
+8）rm -r：删除一个文件夹，rm -r src删除src目录</p>
+<pre><code>rm -rf / 是递归强制清除根目录下的所有文件，在Linux中切勿尝试
+</code></pre>
+<p>9）mv移动文件，mv index.html src，index.html是我们要移动的文件，src是目标文件夹，当然，这样写必须文件夹在同一目录下。<br>
+10）reset 重新初始化终端/清屏。<br>
+11）clear 清屏。<br>
+12）history 查看命令历史。<br>
+13）help帮助。<br>
+14）exit退出。<br>
+15）#表示注释</p>
+<h2 id="git环境配置">Git环境配置</h2>
+<p>所有的配置文件，其实都保存在本地。</p>
+<p>查看配置</p>
+<pre><code class="language-bash">git config -l
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210420024037349.png" alt="image-20210420024037349" loading="lazy"></figure>
+<p>查看不同级别的配置文件：</p>
+<pre><code class="language-bash">#查看系统配置
+git config --system --list　　
+#查看当前用户（global）配置
+git config --global  --list
+</code></pre>
+<p><strong>Git相关的配置文件：</strong></p>
+<p>1）Git\etc\gitconfig  ：Git 安装目录下的 gitconfig   --system 系统级</p>
+<figure data-type="image" tabindex="8"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210420024955270.png" alt="image-20210420024955270" loading="lazy"></figure>
+<p>2）C:\Users\Administrator\ .gitconfig  ：只适用于当前登录用户的配置  --global 全局</p>
+<figure data-type="image" tabindex="9"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210420025358343.png" alt="image-20210420025358343" loading="lazy"></figure>
+<p>这里可以直接编辑配置文件，通过命令设置后会响应到这里。</p>
+<h2 id="设置用户名与邮箱必要">设置用户名与邮箱（必要）</h2>
+<p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：</p>
+<pre><code class="language-bash">git config --global user.name &quot;kimtanyo&quot;  #名称
+git config --global user.email &quot;chencandong0812@outlook.com&quot;   #邮箱
+</code></pre>
+<p>只需要做一次这个设置，如果你传递了--global 选项，因为Git将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要--global选项。<strong>总之--global为全局配置，不加为某个项目的特定配置。</strong></p>
+<h1 id="git基本理论核心">Git基本理论（核心）</h1>
+<h2 id="工作区域">工作区域</h2>
+<p>Git本地有三个工作区域：工作目录（Working Directory）、暂存区(Stage/Index)、资源库(Repository或Git Directory)。如果在加上远程的git仓库(Remote Directory)就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：</p>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/20200618233934301.png" width = "500" height = "472" alt="" align=center />
+<ul>
+<li>Workspace：工作区，就是你平时存放项目代码的地方</li>
+<li>Index / Stage：暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息</li>
+<li>Repository：仓库区（或本地仓库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本</li>
+<li>Remote Directory：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换</li>
+</ul>
+<p>我们实际操作的一般只有工作区和远程仓库，中间两个区域都在你项目初始化路径的隐藏文件夹.git下</p>
+<p>本地的三个区域确切的说应该是git仓库中HEAD指向的版本：</p>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/640.webp" width = "800" height = "539" alt="" align=center />
+<ul>
+<li>Directory：使用Git管理的一个目录，也就是一个仓库，包含我们的工作空间和Git的管理空间。</li>
+<li>WorkSpace：需要通过Git进行版本控制的目录和文件，这些目录和文件组成了工作空间。</li>
+<li>.git：存放Git管理信息的目录，初始化仓库的时候自动创建。</li>
+<li>Index/Stage：暂存区，或者叫待提交更新区，在提交进入repo之前，我们可以把所有的更新放在暂存区。</li>
+<li>Local Repo：本地仓库，一个存放在本地的版本库；HEAD会只是当前的开发分支（branch）。</li>
+<li>Stash：隐藏，是一个工作状态保存栈，用于保存/恢复WorkSpace中的临时状态。</li>
+</ul>
+<h1 id="git项目搭建">Git项目搭建</h1>
+<h2 id="创建工作目录与常用指令">创建工作目录与常用指令</h2>
+<p>工作目录（WorkSpace)一般就是你希望Git帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。</p>
+<p>日常使用只要记住下图6个命令：</p>
+<figure data-type="image" tabindex="10"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/20210303112022859.png" alt="20210303112022859" loading="lazy"></figure>
+<h2 id="本地仓库搭建">本地仓库搭建</h2>
+<p>创建本地仓库的方法有两种：一种是创建全新的仓库，另一种是克隆远程仓库。</p>
+<p>1、创建全新的仓库，需要用GIT管理的项目的根目录执行：</p>
+<pre><code class="language-bash"># 在当前目录新建一个Git代码库
+$ git init
+</code></pre>
+<p>2、执行后可以看到，仅仅在项目目录多出了一个.git目录，关于版本等的所有信息都在这个目录里面。</p>
+<h2 id="克隆远程仓库">克隆远程仓库</h2>
+<p>1、另一种方式是克隆远程目录，由于是将远程服务器上的仓库完全镜像一份至本地！</p>
+<pre><code class="language-bash"># 克隆一个项目和它的整个代码历史(版本信息)
+$ git clone [url]  # https://gitee.com/kuangstudy/openclass.git
+</code></pre>
+<p>2、去 gitee 或者 github 上克隆一个测试</p>
+<h1 id="git文件操作">Git文件操作</h1>
+<h2 id="文件的四种状态">文件的四种状态</h2>
+<p>版本控制就是对文件的版本控制，要对文件进行修改、提交等操作，首先要知道文件当前在什么状态，不然可能会提交了现在还不想提交的文件，或者要提交的文件没提交上。</p>
+<ul>
+<li><strong>Untracked</strong>: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过<code>git add</code>状态变为<code>Staged</code>.</li>
+<li><strong>Unmodify</strong>: 文件已经入库, 未修改, 即版本库（仓库）中的文件快照内容与文件夹（工作目录）中完全一致. 这种类型的文件有两种去处, 如果它被修改, 而变为<code>Modified</code>. 如果使用<code>git rm</code>移出版本库, 则成为<code>Untracked</code>文件</li>
+<li><strong>Modified</strong>: 文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过<code>git add</code>可进入暂存<code>staged</code>状态, 使用<code>git checkout</code>则丢弃修改过, 返回到<code>unmodify</code>状态, 这个<code>git checkout</code>即从库中取出文件, 覆盖当前修改 !</li>
+<li><strong>Staged</strong>: 暂存状态. 执行<code>git commit</code>则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为<code>Unmodify</code>状态. 执行<code>git reset HEAD filename</code>取消暂存, 文件状态为<code>Modified</code></li>
+</ul>
+<h2 id="git基本命令核心">Git基本命令（核心）</h2>
+<p>上面说文件有4种状态，通过如下命令可以查看到文件的状态：</p>
+<pre><code>#查看指定文件状态
+git status [filename]
+
+#查看所有文件状态
+git status
+
+git init                     初始化新建Git仓库
+git add .                    添加所有文件到暂存区
+git add [filename]           添加指定文件到暂存区
+git commit -m &quot;注释内容&quot;      提交暂存区中的内容到本地仓库 -m 提交信息（git commit -message的缩写）
+git diff                     查看文件修改的内容
+git log                      获得历史修改记录（每次commit都会有自己的版本号和注释）
+git log --pretty=oneline     使记录只显示主要的内容，一行显示
+git reset --hard HEAD^       回退到上一个版本
+git reflog                   获取历史版本号
+git reset --hard [版本号]     回退到该版本号对应的版本
+git reset --hard HEAD~100    回退到第100个版本之前
+</code></pre>
+<ul>
+<li>
+<p>git add . ：他会监控工作区的状态树，使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件。</p>
+</li>
+<li>
+<p>git add -u ：他仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区（包括删除[前提是已经被tracked]）。add -u 不会提交新文件（untracked file）。（git add --update的缩写）</p>
+</li>
+<li>
+<p>git add -A：以上两个功能的集合</p>
+</li>
+</ul>
+<h2 id="忽略文件">忽略文件</h2>
+<p>有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等</p>
+<p>在主目录下建立&quot;.gitignore&quot;文件，此文件有如下规则：</p>
+<ol>
+<li>忽略文件中的空行或以井号（#）开始的行将会被忽略。</li>
+<li>可以使用Linux通配符。例如：星号（*）代表任意多个字符，问号（？）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,...}）代表可选的字符串等。</li>
+<li>如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。</li>
+<li>如果名称的最前面是一个路径分隔符（/），表示要忽略的文件在此目录下，而子目录中的文件不忽略。</li>
+<li>如果名称的最后面是一个路径分隔符（/），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。</li>
+</ol>
+<pre><code>#为注释
+*.txt        #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！!
+lib.txt     #但lib.txt除外
+/temp        #仅忽略项目根目录下的TODO文件,不包括其它目录temp
+build/       #忽略build/目录下的所有文件
+doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+</code></pre>
+<h3 id="详细的忽略规则">详细的忽略规则</h3>
+<h4 id="gitignore-文件忽略规则">.gitignore 文件忽略规则:</h4>
+<ol>
+<li>开头的/如果不是标识文件夹，要表明仅忽略文件夹的话，需要在名称后面添加 /，而不是前面</li>
+<li>要想忽略某文件夹，但其下部分文件不能忽略。则需要添加通配符*，然后在文件下方额外添加！开头的规则，来指出不忽略的文件或文件夹，不能直接忽略整个文件夹</li>
+<li>只要写了路径，即/左右两边都有字符，那么就是指的“绝对路径”(相对仓库的，仓库.git文件夹所在目录为根目录)，但可以用*来指定层级，指定第几层子目录下的某个文件夹。</li>
+<li>空格不匹配任意文件，可作为分隔符，可用反斜杠转义</li>
+<li>#开头的模式标识注释，可以使用反斜杠进行转义</li>
+<li>! 开头的模式标识否定，该文件将会再次被包含，<strong>如果排除了该文件的父级目录，则使用 ! 也不会再次被包含</strong>。可以使用反斜杠进行转义</li>
+<li>/ 结束的模式匹配文件夹以及在该文件夹路径下的内容，也匹配子路径中的文件夹，但是不匹配该文件</li>
+<li>/ 开始的模式仅匹配当前路径下的文件夹和文件，不匹配子路径中的文件夹和文件</li>
+<li>**匹配多级目录，可在开始，中间，结束</li>
+<li>?通用匹配单个字符</li>
+<li>[]通用匹配单个字符列表</li>
+<li>{}通用匹配字符串列表</li>
+</ol>
+<p>常用匹配示例：</p>
+<ol>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">bin/: 忽略当前路径下的bin文件夹及其下内容，不忽略 bin 文件，也会忽略子路径中的bin文件夹及其下内容</span></li>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">/bin/: 仅忽略根目录下的bin文件夹及其下内容，不忽略bin文件</span></li>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">/bin: 忽略当前路径下的bin文件夹，忽略根目录下的bin文件，不忽略子路径中的bin文件夹和bin文件</span></li>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">/*.c: 忽略 cat.c，不忽略 build/cat.c</span></li>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">debug/*.obj: 忽略 debug/io.obj，不忽略 debug/common/io.obj 和 tools/debug/io.obj</span></li>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">**/foo: 忽略/foo, a/foo, a/b/foo等，目前没看出跟foo/的区别</span></li>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">a/**/b：忽略a/b，a/x/b，a/x/y/b等</span></li>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">!/bin/run.sh: 不忽略 bin 目录下的 run.sh 文件</span></li>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">*.log: 忽略所有 .log 文件</span></li>
+<li><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">config.php: 忽略当前路径的 config.php 文件</span></li>
+</ol>
+<h4 id="关于gitignore规则不生效的问题">关于.gitignore规则不生效的问题</h4>
+<p>.gitignore只能忽略那些<strong>原来没有被track的文件</strong>，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。</p>
+<p>解决方法就是先把本地缓存删除（改变成未track状态），然后再提交:</p>
+<pre><code class="language-bash">git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
+</code></pre>
+<h4 id="定义git全局的-gitignore-文件">定义Git全局的 .gitignore 文件</h4>
+<p>除了可以在项目中定义 .gitignore 文件外，还可以设置全局的 git .gitignore 文件来管理所有Git项目的行为。这种方式在不同的项目开发者之间是不共享的，是属于项目之上Git应用级别的行为。</p>
+<p>这种方式也需要创建相应的 .gitignore 文件，可以放在C:/Users/用户名/目录下。然后在使用以下命令配置Git：</p>
+<pre><code class="language-bash">git config --global core.excludesfile ~/.gitignore
+</code></pre>
+<p><strong>自用的全局 .ignore 文件:</strong></p>
+<pre><code class="language-bash">### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+modules.xml
+
+target/
+
+**/.idea
+**/*.iws
+**/*.iml
+**/*.ipr
+**/modules.xml
+
+
+**/mvnw
+**/mvnw.cmd
+**/.mvn
+**/target/
+**/.gitignore
+
+### Maven ###
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+### Java ###
+# Compiled class file
+*.class
+
+
+</code></pre>
+<h4 id="git忽略规则的优先级">Git忽略规则的优先级</h4>
+<p>在 .gitingore 文件中，每一行指定一个忽略规则，Git 检查忽略规则的时候有多个来源，它的优先级如下（由高到低）：</p>
+<ol>
+<li>从命令行中读取可用的忽略规则</li>
+<li>当前目录定义的规则</li>
+<li>父级目录定义的规则，依次递推</li>
+<li>$GIT_DIR/info/exclude 文件中定义的规则</li>
+<li>core.excludesfile中定义的全局规则</li>
+<li>Git 忽略规则匹配语法</li>
+</ol>
+<h1 id="配置ssh公钥和远程仓库">配置SSH公钥和远程仓库</h1>
+<p>github 是有墙的，比较慢，在国内一般使用 gitee ，公司中有时候会搭建自己的gitlab服务器</p>
+<p>国内找工作可以在简历上写上自己的gitee网址，国外可以写github网址（前提是项目做的比较多，对你找工作有帮助）</p>
+<p>1、设置本机绑定SSH公钥，实现免密码登录</p>
+<p>查看本地C:\Users\用户名，查看是否存在<code>.ssh</code>文件夹，如果有，查看其中是否有<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，如果也有，此步骤可以跳过。没有的话，创建.shh目录后，打开Git Bash，输入以下命令</p>
+<pre><code># 进入 C:\Users\Administrator\.ssh 目录
+# 生成公钥
+ssh-keygen  -t rsa –C “youselfemail@email.com” 
+# 其中-t表示指定加密算法 rsa为一种最常用的加密算法 -C表示Comment注释 后面一般接你的个人邮箱（最好跟Github邮箱保持一致，因为可能会被作为密钥的名字）
+</code></pre>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/uJDAUKrGC7Ksu8UlITwMlbX3kMGtZ9p0YlK4ibQ0EMs3LmRmdiahpma8ssTQedkhyShNkibTyFBvaZWicicTfNicWQIA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片" style="zoom:80%;" />
+<p>2、将公钥信息public key 添加到Github账户中</p>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/983980-20180410125740665-185456992.png" alt="img" style="zoom:80%;" />
+<figure data-type="image" tabindex="11"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/983980-20180410130010050-296709590.png" alt="img" loading="lazy"></figure>
+<p>3、使用码云创建一个自己的仓库！</p>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/983980-20180410130732211-279586489.png" alt="img" style="zoom: 80%;" />
+<p>.gitignore一般选择Java（视你的编写语言而定），License一般选择GPL或者Apache</p>
+<p>License：开源是否可以随意转载，开源但是不能商业使用，不能转载等等，加了一些使用限制，如果一个项目没有开源许可证，则等同于保留版权，也就是只能看源码，不能使用</p>
+<p>4、进入创建的仓库，点击Clone or download，找到你的仓库地址：</p>
+<figure data-type="image" tabindex="12"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/983980-20180410131307416-1794682687.png" alt="img" loading="lazy"></figure>
+<p>然后<strong>在本地仓库路径下</strong>通过Git Bash命令</p>
+<pre><code class="language-bash">git remote add origin [URL]
+</code></pre>
+<p>本地仓库和github仓库就连接好了</p>
+<p><span style="color:red;background:背景颜色;font-size:文字大小;font-family:字体;">这个操作需要对每个克隆过来的Git项目或者新建的Git项目都要做一遍</span></p>
+<h1 id="idea中集成git操作">IDEA中集成Git操作</h1>
+<p><strong>1、新建项目，绑定git</strong></p>
+<p>有两种方式：</p>
+<ul>
+<li>
+<p>第一种是在Git项目的目录下，也就是.git的同级路径，直接新建项目</p>
+</li>
+<li>
+<p>第二种是将克隆或新建的项目复制到Git项目中（除了隐藏文件夹.git不能覆盖）</p>
+</li>
+</ul>
+<p><strong>推荐第二种</strong></p>
+<p>原理是.git文件夹中的config文件指明了该Git项目远程连接的仓库地址，而本机通过SSH公钥和远程仓库绑定了（SSH公钥起到了代替Github账户密码的作用），如果复制过来用别人项目的.git覆盖了你自己的.git，会导致后续Push时是对别人Git项目绑定的远程仓库进行Push，在SSH无效的情况下会需要输入别人的Github/Gitee账户密码</p>
+<p>在Idea中可以看到工具栏中多了Git工具</p>
+<figure data-type="image" tabindex="13"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422043720151.png" alt="image-20210422043720151" loading="lazy"></figure>
+<p>在下面也可以看到多出来的Git菜单栏</p>
+<figure data-type="image" tabindex="14"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422043817739.png" alt="image-20210422043817739" loading="lazy"></figure>
+<p>左侧也有Commit栏，并且此时可以看到项目中各个文件/文件夹的名称颜色，<strong>红色是untracked，绿色是staged，黑色是unmodify，蓝色是modified</strong></p>
+<figure data-type="image" tabindex="15"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422044023406.png" alt="image-20210422044023406" loading="lazy"></figure>
+<p><strong>2、使用IDEA操作Git</strong></p>
+<p>修改或新建项目中的内容，以新建new.txt、修改.gitignore为例</p>
+<p>打开Commit栏，选中需要commit的内容（选中的操作已经表明了需要add哪些，因此不再需要单独的add操作）</p>
+<figure data-type="image" tabindex="16"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422044515020.png" alt="image-20210422044515020" loading="lazy"></figure>
+<p>在commit设置里取消这两项，否则在commit大型项目时会影响速度</p>
+<figure data-type="image" tabindex="17"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422044552518.png" alt="image-20210422044552518" loading="lazy"></figure>
+<p>然后点击commit按钮即可</p>
+<p>PS：如果习惯传统方式的，也可以在控制台输入<code>git add .</code>和<code>git commit -m &quot;注释&quot;</code>进行操作</p>
+<figure data-type="image" tabindex="18"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422044806611.png" alt="image-20210422044806611" loading="lazy"></figure>
+<p>最后进行Push操作导入到Github的远程仓库中</p>
+<pre><code class="language-bash">git push origin master
+</code></pre>
+<p><em>注意：Github对于国内进行push操作会限制速度，非常慢，所以一般需要开shadowsocks走代理，但是使用Git工具时并不会默认走SS的代理</em></p>
+<figure data-type="image" tabindex="19"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422042248736.png" alt="image-20210422042248736" loading="lazy"></figure>
+<p>因此在开启SS时需要手动配置git的代理，在Git Bash中输入以下命令：</p>
+<pre><code class="language-bash">git config --global http.proxy http://127.0.0.1:1080
+git config --global https.proxy https://127.0.0.1:1080
+#取消代理
+# git config --global --unset http.proxy
+# git config --global --unset https.proxy
+</code></pre>
+<p>正常使用 git push 即可</p>
+<figure data-type="image" tabindex="20"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422042314431.png" alt="image-20210422042314431" loading="lazy"></figure>
+<p>检查Github上的仓库可发现已成功Push</p>
+<figure data-type="image" tabindex="21"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422045315403.png" alt="image-20210422045315403" loading="lazy"></figure>
+<p><strong>以上均为单人开发的操作</strong></p>
+<h1 id="git分支">Git分支</h1>
+<figure data-type="image" tabindex="22"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/640" alt="图片" loading="lazy"></figure>
+<p>分支在GIT中相对较难，目的是为了多人协作开发，可以同时工作，然后合并代码，这需要在仓库中设置开发者权限给用户（仅限私有仓库）</p>
+<p><strong>注意：merge操作本质还是commit级别，没有到push</strong></p>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422053325690.png" alt="image-20210422053325690" style="zoom: 67%;" />
+<p>git分支中常用指令：</p>
+<pre><code># 列出所有本地分支
+git branch
+# 列出所有远程分支
+git branch -r
+# 新建一个分支，但依然停留在当前分支
+git branch [branch-name]
+# 新建一个分支，并切换到该分支
+git checkout -b [branch]
+# 合并指定分支到当前分支
+$ git merge [branch]
+# 删除分支
+$ git branch -d [branch-name]
+# 删除远程分支
+$ git push origin --delete [branch-name]
+$ git branch -dr [remote/branch]
+</code></pre>
+<p>Bash中操作</p>
+<figure data-type="image" tabindex="23"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422053733351.png" alt="image-20210422053733351" loading="lazy"></figure>
+<p>IDEA中操作</p>
+<figure data-type="image" tabindex="24"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422054704671.png" alt="image-20210422054704671" loading="lazy"></figure>
+<figure data-type="image" tabindex="25"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422054801337.png" alt="image-20210422054801337" loading="lazy"></figure>
+<p>注意：</p>
+<ul>
+<li>
+<p>如果同一个文件在合并分支时都被修改了则会引起冲突，解决的办法是我们可以修改冲突文件后重新提交，选择要保留他的代码还是你的代码。</p>
+</li>
+<li>
+<p>master主分支应该非常稳定，用来发布新版本，一般情况下不允许在上面工作，工作一般情况下在新建的dev分支上工作，工作完后，比如上要发布，或者说dev分支代码稳定后可以合并到主分支master上来。</p>
+</li>
+</ul>
+<p>额外资料：<a href="https://gitee.com/all-about-git">Git命令大全</a>，<a href="https://oschina.gitee.io/learn-git-branching/">Git命令学习</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何零基础建立个人博客(Coding Page + Gridea + COSBrowser)]]></title>
         <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/ru-he-ling-ji-chu-jian-li-ge-ren-bo-ke-coding-page-gridea-cosbrowser/</id>
@@ -703,10 +1115,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9134660"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-9134660"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4036679"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-4036679"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8932760"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-8932760"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3299976"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-3299976"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
