@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kimtanyo Blog</title>
 <meta name="description" content="📝 『分享记录DS&DE&SDE的日常』" />
-<link rel="shortcut icon" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico?v=1619042737239">
+<link rel="shortcut icon" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico?v=1619096470357">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,7 +23,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1619042737239" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1619096470357" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Kimtanyo Blog</h1>
       </div>
@@ -131,7 +131,7 @@
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
         <h1 class="text-3xl font-bold lg:mt-16">[笔记]Git简明教程</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2021-04-22 / 24 min read
+          2021-04-22 / 25 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/src=http___gitpitch.com_gpimg_enterprise-git.jpg&amp;refer=http___gitpitch.jpg" alt="">
@@ -486,8 +486,21 @@ ssh-keygen  -t rsa –C “youselfemail@email.com”
 <p>PS：如果习惯传统方式的，也可以在控制台输入<code>git add .</code>和<code>git commit -m &quot;注释&quot;</code>进行操作</p>
 <figure data-type="image" tabindex="18"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422044806611.png" alt="image-20210422044806611" loading="lazy"></figure>
 <p>最后进行Push操作导入到Github的远程仓库中</p>
-<pre><code class="language-bash">git push origin master
+<pre><code class="language-bash"># 将本地指定分支 推送到 远程指定分支上（注意：pull的冒号是远程在前本地在后，push相反）
+git push &lt;远程仓库名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
+# 将本地当前分支 推送到 远程指定分支上
+git push &lt;远程仓库名&gt; &lt;远程分支名&gt;
+# 将本地当前分支 推送到 与本地当前分支同名的远程分支上
+git push &lt;远程仓库名&gt;
+# 这里origin指的是远程主机仓库，不代表分支，master指的是本地master分支
+git push origin &lt;远程分支名&gt;
+git push origin master
 </code></pre>
+<p><strong>在克隆远程项目的时候，本地分支会自动与远程分支建立追踪关系，可以使用默认的origin来替代远程仓库名</strong></p>
+<p><strong>在自己初始化并远程连接了远程仓库和本地仓库时，也指明了origin所指的远程仓库，因此可以用默认的origin来代替远程仓库名</strong>，例如：</p>
+<pre><code class="language-bash">git remote add origin [url]
+</code></pre>
+<p>参考：<a href="http://blog.chinaunix.net/uid-31087949-id-5816994.html">git操作之pull拉取远程指定分支以及push推送到远程指定分支</a></p>
 <p><em>注意：Github对于国内进行push操作会限制速度，非常慢，所以一般需要开shadowsocks走代理，但是使用Git工具时并不会默认走SS的代理</em></p>
 <figure data-type="image" tabindex="19"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422042248736.png" alt="image-20210422042248736" loading="lazy"></figure>
 <p>因此在开启SS时需要手动配置git的代理，在Git Bash中输入以下命令：</p>
@@ -505,7 +518,15 @@ git config --global https.proxy https://127.0.0.1:1080
 <h1 id="git分支">Git分支</h1>
 <figure data-type="image" tabindex="22"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/640" alt="图片" loading="lazy"></figure>
 <p>分支在GIT中相对较难，目的是为了多人协作开发，可以同时工作，然后合并代码，这需要在仓库中设置开发者权限给用户（仅限私有仓库）</p>
-<p><strong>注意：merge操作本质还是commit级别，没有到push</strong></p>
+<p>从master主分支上新建分支，相当于此时此刻给master做了一个快照，切换到新分支在上面开发，往后commit都是对新分支进行操作，不会影响master，只有当你认为代码已经足够稳定了，可以合并到master或者和他人的开发分支合并，才需要merge到master或其他分支，</p>
+<p><strong>注意：merge操作本质还是commit级别，没有到push</strong>，push非主分支代码的时候需要指明分支名称</p>
+<pre><code class="language-bash"># 将本地指定分支 推送到 远程指定分支上（注意：pull的冒号是远程在前本地在后，push相反）
+git push &lt;远程仓库名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
+# 将本地当前分支 推送到 远程指定分支上
+git push &lt;远程仓库名&gt; &lt;远程分支名&gt;
+# 指定了origin所代表的远程仓库后
+git push origin &lt;远程分支名&gt;
+</code></pre>
 <img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210422053325690.png" alt="image-20210422053325690" style="zoom: 67%;" />
 <p>git分支中常用指令：</p>
 <pre><code># 列出所有本地分支
