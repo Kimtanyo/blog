@@ -1,0 +1,1668 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kimtanyo Blog</title>
+<meta name="description" content="📝 『分享记录DS&DE&SDE的日常』" />
+<link rel="shortcut icon" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico?v=1624696738209">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/styles/main.css">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1624696738209" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Kimtanyo Blog</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li><a href="#java%E9%A2%84%E7%A7%91">Java预科</a>
+<ul>
+<li><a href="#%E5%86%AF%E8%AF%BA%E4%BE%9D%E6%9B%BC%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84">冯诺依曼体系结构</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%9A%84dos%E5%91%BD%E4%BB%A4">基本的DOS命令</a></li>
+<li><a href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80">计算机语言</a></li>
+</ul>
+</li>
+<li><a href="#java%E5%85%A5%E9%97%A8">Java入门</a>
+<ul>
+<li><a href="#java%E4%B8%89%E5%A4%A7%E7%89%88%E6%9C%AC%E4%B8%8Ejdk-jre-jvm">Java三大版本与JDK JRE JVM</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83">安装开发环境</a></li>
+<li><a href="#helloworld">HelloWorld</a></li>
+<li><a href="#%E7%BC%96%E8%AF%91%E5%9E%8B%E5%92%8C%E8%A7%A3%E9%87%8A%E5%9E%8B">编译型和解释型</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8idea%E5%BC%80%E5%8F%91">使用IDEA开发</a></li>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a></li>
+</ul>
+</li>
+<li><a href="#java%E5%9F%BA%E7%A1%80">Java基础</a>
+<ul>
+<li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
+<li><a href="#%E6%A0%87%E8%AF%86%E7%AC%A6%E5%92%8C%E5%85%B3%E9%94%AE%E5%AD%97">标识符和关键字</a>
+<ul>
+<li><a href="#%E6%A0%87%E8%AF%86%E7%AC%A6">标识符</a>
+<ul>
+<li><a href="#1-%E5%AE%9A%E4%B9%89">1、定义</a></li>
+<li><a href="#2-%E6%A0%87%E8%AF%86%E7%AC%A6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99">2、标识符命名规则</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B3%E9%94%AE%E5%AD%97">关键字</a>
+<ul>
+<li><a href="#1-%E5%AE%9A%E4%B9%89-2">1、定义</a></li>
+<li><a href="#2-java%E7%9A%8450%E4%B8%AA%E5%85%B3%E9%94%AE%E5%AD%97">2、Java的50个关键字</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a><br>
+*
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><strong>基本类型</strong></a></li>
+<li><a href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B">==<strong>引用类型</strong>==</a></li>
+<li><a href="#%E5%AD%97%E8%8A%82">字节</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%89%A9%E5%B1%95%E5%8F%8A%E9%9D%A2%E8%AF%95%E9%A2%98%E8%AE%B2%E8%A7%A3">数据类型扩展及面试题讲解</a>
+<ul>
+<li><a href="#%E6%95%B4%E6%95%B0%E6%8B%93%E5%B1%95">整数拓展</a></li>
+<li><a href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E6%8B%93%E5%B1%95">浮点数拓展</a></li>
+<li><a href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%92%8C%E5%8D%81%E8%BF%9B%E5%88%B6%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2">二进制和十进制互相转换</a>
+<ul>
+<li><a href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0%E8%BD%AC%E6%8D%A2%E6%88%90%E5%8D%81%E8%BF%9B%E5%88%B6%E6%95%B0">二进制数转换成十进制数</a></li>
+<li><a href="#%E5%8D%81%E8%BF%9B%E5%88%B6%E6%95%B0%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%95%B0">十进制数转换为二进制数</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E6%8B%93%E5%B1%95">字符拓展</a></li>
+<li><a href="#%E5%B8%83%E5%B0%94%E5%80%BC%E6%8B%93%E5%B1%95">布尔值拓展</a></li>
+<li><a href="#%E8%B0%83%E8%AF%95">调试</a></li>
+</ul>
+</li>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">类型转换</a>
+<ul>
+<li><a href="#%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">强制类型转换</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">自动类型转换</a></li>
+<li><a href="#%E6%BA%A2%E5%87%BA%E9%97%AE%E9%A2%98">溢出问题</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%98%E9%87%8F-%E5%B8%B8%E9%87%8F-%E4%BD%9C%E7%94%A8%E5%9F%9F">变量、常量、作用域</a>
+<ul>
+<li><a href="#%E5%8F%98%E9%87%8F">变量</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F">==变量作用域==</a></li>
+<li><a href="#%E5%B8%B8%E9%87%8F">常量</a></li>
+<li><a href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83">变量的命名规范</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6">基本运算符</a>
+<ul>
+<li><a href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6">算术运算符</a></li>
+<li><a href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6">关系运算符</a></li>
+</ul>
+</li>
+<li><a href="#%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E8%BF%90%E7%AE%97%E7%AC%A6-%E5%88%9D%E8%AF%86math%E7%B1%BB">自增自减运算符、初识Math类</a></li>
+<li><a href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6-%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6">逻辑运算符、位运算符</a></li>
+<li><a href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E5%B0%8F%E7%BB%93">三元运算符及小结</a>
+<ul>
+<li><a href="#%E6%89%A9%E5%B1%95%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5%E7%AC%A6"><strong>扩展赋值运算符</strong>及<strong>字符串连接符</strong></a></li>
+<li><a href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%E6%9D%A1%E4%BB%B6%E8%BF%90%E7%AE%97%E7%AC%A6">三元运算符（条件运算符）</a></li>
+<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7">运算符优先级</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8C%85%E6%9C%BA%E5%88%B6">包机制</a></li>
+<li><a href="#javadoc%E7%94%9F%E6%88%90%E6%96%87%E6%A1%A3">JavaDoc生成文档</a>
+<ul>
+<li><a href="#%E6%96%87%E6%A1%A3%E6%B3%A8%E9%87%8A">文档注释</a></li>
+<li><a href="#javadoc%E5%91%BD%E4%BB%A4%E8%A1%8C">javadoc命令行</a></li>
+<li><a href="#idea%E7%94%9F%E6%88%90javadoc%E6%96%87%E6%A1%A3">IDEA生成JavaDoc文档</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">If you want to use any of my articles, please site the source.</div>
+    <a class="rss" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">[笔记]JavaSE - 预科+入门+基础篇</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2021-06-26 / 55 min read
+        </div>
+        
+        <div class="post-content yue">
+          <!-- more -->
+<h1 id="java预科">Java预科</h1>
+<h2 id="冯诺依曼体系结构">冯诺依曼体系结构</h2>
+<figure data-type="image" tabindex="1"><img src="https://bkimg.cdn.bcebos.com/pic/a8773912b31bb051973f1da5367adab44aede020?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5" alt="冯诺依曼体系结构" loading="lazy"></figure>
+<h2 id="基本的dos命令">基本的DOS命令</h2>
+<p>打开CMD的方式</p>
+<ol>
+<li>
+<p>开始+系统+命令提示符</p>
+</li>
+<li>
+<p>Win键+R输入cmd打开控制台（推荐使用）</p>
+</li>
+<li>
+<p>在任意的文件来下面，按住 shift键+鼠标右键点击，在此处打开命令行窗口</p>
+</li>
+<li>
+<p>资源管理器的地址输入：cmd + 空格 + 绝对路径（在运行代码文件的时候有用）</p>
+</li>
+</ol>
+<p>以管理员身份运行CMD</p>
+<p>​	按Ctrl+Q进入开始菜单的搜索栏，输入cmd，点击<code>以管理员身份运行</code></p>
+<p>常用的DOS命令</p>
+<pre><code># 盘符切换 
+D:
+C:
+E:
+
+# 查看当前目录下的所有文件 (directory)
+dir
+
+# 切换目录 (change directory)
+cd /d 完整路径
+
+# 进入当前的上一级目录
+cd ..
+
+# 进入当前的下一级目录
+cd 文件夹
+
+# 清理屏幕 (clear screen)
+cls
+
+# 退出终端
+exit
+
+# 查看电脑ip配质 (ip configure)
+ipconfig
+
+#打开应用
+    # 计算器 (calculator)
+    calc
+    # 画图工具 (Microsoft painter)
+    mspaint
+    # 记事本
+    notepad
+    
+# 网络命令
+    # ping命令 (测试网络是否互通，粗略判断传输质量)
+    ping www.baidu.com
+    # netstat命令 (查看各端口网络连接情况)
+    netstat -ano
+    # -a : 显示所有活动的 tcp 连接，以及计算机监听的 tcp 和 udp 端口
+    # -n : 只以数字形式显示所有活动的 tcp 连接的地址和端口号
+    # -o : 显示活动的 tcp 连接并包括每个连接的进程id (PID)
+    # 查找使用给定端口的活动连接和PID
+    netstat -aon|findstr &quot;1080&quot;
+    # 显示所有正在运行的进程
+    tasklist
+    # 查找给定PID对应的运行中的进程
+    tasklist|findstr &quot;4568&quot;
+    # 终止指定的进程
+    taskkill /f /im 进程名称
+    taskkill /f /pid 进程PID
+    # /f : 强制终止，有时会缺少权限无法强制终止，需要管理员权限运行
+    
+# 文件操作
+	# 新建目录 (make directory) 
+	md 目录名
+	# 移除目录 (remove directory)
+    rd 目录名
+    # 新建文件
+    cd&gt; 文件名
+    # 删除文件
+    del 文件名
+
+</code></pre>
+<p>注意DOS不区分大小写</p>
+<p>注意路径分隔符是\，而参数命令的标识符是/</p>
+<p>如何路径中含有空格，需要用双引号&quot;&quot;将整个路径括起来</p>
+<p>在DOS中不要用ctrl+c来复制ctrl+v来粘贴，因为ctrl+c会退出当前命令，用鼠标左键框选内容后，鼠标单击右键即可复制，再用鼠标单击右键即可粘贴</p>
+<h2 id="计算机语言">计算机语言</h2>
+<p>第一代语言</p>
+<p>机器语言</p>
+<pre><code>- 基本计算方式是基于二进制的方式
+- 这种代码是直接给计算机使用的，不经过任何转换
+</code></pre>
+<p>第二代语言</p>
+<p>汇编语言</p>
+<pre><code>- 解决人类无法读懂机器语言的问题
+- 指令替代二进制
+- 应用：机器人，病毒，逆向工程 (对目标产品进行逆向分析，得出该产品的各项设计流程和要素，从而做出相近但不完全一样的产品)
+</code></pre>
+<p>第三代语言</p>
+<pre><code>- 摩尔定律 (集成电路上可以容纳的晶体管数目在大约每经过18个月便会增加一倍。换言之，处理器的性能每隔两年翻一倍。)
+</code></pre>
+<p>高级语言</p>
+<p>大体上分为面向过程和面向对象的语言</p>
+<p>例如C语言是典型的面向过程的语言，C++、JAVA是典型的面向对象的语言</p>
+<p>发展历程：C语言 - C++ - JAVA - C# - Python, PHP, JavaScript</p>
+<h1 id="java入门">Java入门</h1>
+<h2 id="java三大版本与jdk-jre-jvm">Java三大版本与JDK JRE JVM</h2>
+<p>JavaSE = java standard edition</p>
+<p>JavaME = java micro edition</p>
+<p>JavaEE = java enterprise edition</p>
+<p>其中JavaME基本已经无人使用</p>
+<p>JDK = Java Development Kit</p>
+<p>JRE = Java Runtime Environment</p>
+<p>JVM =Java Virtual Machine</p>
+<p>三者是包含与被包含关系</p>
+<figure data-type="image" tabindex="2"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic002.cnblogs.com%2Fimages%2F2012%2F382439%2F2012031917123015.jpg&amp;refer=http%3A%2F%2Fpic002.cnblogs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1614878916&amp;t=986a1aa5114efe5cb3f77d1fc710c0e1" alt="JDK, JRE, JVM的关系" loading="lazy"></figure>
+<h2 id="安装开发环境">安装开发环境</h2>
+<p>在oracle官网搜索JDK8，注册账户同意协议并下载安装</p>
+<p>（因为企业基本用的都是JDK8，不要下载最新的JDK13或者15）</p>
+<p>注意选中取消公共JRE的安装</p>
+<p>（因为JDK已经有一个专用JRE了）</p>
+<p>配置环境变量：</p>
+<p>​	系统变量：名称—JAVA_HOME，值—安装目录</p>
+<p>​	系统变量下的Path：增加 %JAVA_HOME%\bin 和 %JAVA_HOME\jre\bin</p>
+<p>测试 JDK：打开cmd输入java -version</p>
+<p>另外，建议下载Notepad++作为文本编辑器</p>
+<p>Notepad++默认是单实例运行的（会打开上次未关闭的所有文件），如果想更改成记事本那样的多实例需要在设置里面更改</p>
+<p>此外，设置.java文件的默认打开方式为notepad++，方法：<a href="https://blog.csdn.net/haveanybody/article/details/84578995">win10设置文件默认打开方式为notepad++</a>，其中不设置兼容性也可，只要右键以管理员身份打开即可</p>
+<hr>
+<p>安装目录介绍：</p>
+<p>​	bin文件夹（binary）：存放二进制可执行程序exe</p>
+<p>​	include：存放c和c++的头文件，因为jdk是用c和c++编写的</p>
+<p>​	jre：Java运行环境</p>
+<p>​	lib（library）：存放Java的类库文件</p>
+<p>​	src.zip：存放Java类</p>
+<h2 id="helloworld">HelloWorld</h2>
+<p>新建一个Code文件夹用于存放代码</p>
+<p>在文件夹下新建一个Hello.txt文件后缀名改为.java</p>
+<p>用notepad++打开输入以下代码：</p>
+<pre><code class="language-java">public class Hello{
+	public static void main(String[] args){
+		System.out.print(&quot;Hello, world!&quot;);
+	}
+}
+</code></pre>
+<p>在Code文件夹下打开cmd</p>
+<p>输入javac Hello.java</p>
+<p>输入java Hello</p>
+<p>即可运行成功</p>
+<p>含义：</p>
+<p>​	javac：是编译命令，将java源文件编译成同名的class字节码文件</p>
+<p>​	例如：javac Hello.java将在java文件的同目录下生成Hello.class文件</p>
+<p>​	java：是运行class字节码文件，由java虚拟机对字节码进行解释和运行</p>
+<p>​	例如：java Hello将成功解释运行Hello.class文件，打印Hello, world!</p>
+<p>注意点：</p>
+<ol>
+<li>注意java命令后面的文件名不用加.class后缀，已经默认是.class后缀了</li>
+<li>java是大小写敏感的，所以javac和java命令内容一定要分清大小写</li>
+<li>代码内容尽量使用英文，有些缺少GBK支持可能报错</li>
+<li>注意类名必须和文件名一样，并且首字母大写</li>
+</ol>
+<h2 id="编译型和解释型">编译型和解释型</h2>
+<p>计算机运行代码需要将源代码转换成机器码，也就是二进制指令，根据转换的时机不同，编程语言可分为编译型和解释型</p>
+<ul>
+<li>编译型：必须提前将所有源代码一次性转换成二进制指令，也就是生成一个可执行程序，比如C语言、C++等</li>
+<li>解释型：可以一边执行一边转换，需要哪些源代码就转换哪些源代码，不会生成可执行程序，比如 Python、JavaScript、PHP、Shell、MATLAB等</li>
+<li>Java和 C#是一种比较奇葩的存在，它们是半编译半解释型的语言，源代码需要先转换成一种中间文件（字节码文件），然后再将中间文件拿到虚拟机中执行</li>
+</ul>
+<figure data-type="image" tabindex="3"><img src="http://c.biancheng.net/uploads/allimg/191231/1-1912311J415L7.gif" alt="编译型语言和解释型语言的执行流程" loading="lazy"></figure>
+<p><strong>优缺点：</strong></p>
+<p>编译型：</p>
+<p>​	对于编译型语言，开发完成以后需要将所有的源代码都转换成可执行程序，比如 Windows 下的<code>.exe</code>文件，可执行程序里面包含的就是机器码。只要我们拥有可执行程序，就可以随时运行，不用再重新编译了，也就是“一次编译，无限次运行”。</p>
+<p>​	在运行的时候，我们只需要编译生成的可执行程序，不再需要源代码和编译器了，所以说编译型语言可以脱离开发环境运行。</p>
+<p>​	编译型语言一般是不能跨平台的，也就是不能在不同的操作系统之间随意切换。</p>
+<p>​	编译型语言不能跨平台表现在两个方面：</p>
+<p>​		1) 可执行程序不能跨平台：因为不同操作系统对可执行文件的内部结构有着截然不同的要求（windows是.exe，linux是.elf）</p>
+<p>​		2) 源代码不能跨平台：不同平台支持的函数、类型、变量等都可能不同</p>
+<hr>
+<p>解释型：</p>
+<p>​	对于解释型语言，每次执行程序都需要一边转换一边执行，用到哪些源代码就将哪些源代码转换成机器码，用不到的不进行任何处理。每次执行程序时可能使用不同的功能，这个时候需要转换的源代码也不一样。</p>
+<p>​	因为每次执行程序都需要重新转换源代码，所以解释型语言的执行效率天生就低于编译型语言，甚至存在数量级的差距。计算机的一些底层功能，或者关键算法，一般都使用 C/C++ 实现，只有在应用层面（比如网站开发、批处理、小工具等）才会使用解释型语言。</p>
+<p>​	在运行解释型语言的时候，我们始终都需要源代码和解释器，所以说它无法脱离开发环境。</p>
+<p>​	当我们说“下载一个程序（软件）”时，不同类型的语言有不同的含义：</p>
+<p>​		1) 对于编译型语言，我们下载到的是可执行文件，源代码被作者保留，所以编译型语言的程序一般是闭源的。</p>
+<p>​		2) 对于解释型语言，我们下载到的是所有的源代码，因为作者不给源代码就没法运行，所以解释型语言的程序一般是开源的。</p>
+<p>​	相比于编译型语言，解释型语言几乎都能跨平台，“一次编写，到处运行”是真是存在的，而且比比皆是。解释型语言能跨平台要归功于解释器。</p>
+<p>​	我们所说的跨平台，是指源代码跨平台，而不是解释器跨平台。解释器用来将源代码转换成机器码，它就是一个可执行程序，是绝对不能跨平台的。</p>
+<p>​	官方需要针对不同的平台开发不同的解释器，这些解释器必须要能够遵守同样的语法，识别同样的函数，完成同样的功能，只有这样，同样的代码在不同平台的执行结果才是相同的。</p>
+<p>​	你看，解释型语言之所以能够跨平台，是因为有了解释器这个中间层。在不同的平台下，解释器会将相同的源代码转换成不同的机器码，解释器帮助我们屏蔽了不同平台之间的差异。</p>
+<p>Java程序运行机制</p>
+<figure data-type="image" tabindex="4"><img src="http://pic.qcsdn.com/img/20190525/acf7bcd08368d6a07754d86e6e08694c.jpeg" alt="img" loading="lazy"></figure>
+<p>这里的类装载器就是JVM，字节码校验器检查语法错误</p>
+<h2 id="使用idea开发">使用IDEA开发</h2>
+<p>IDE：集成开发环境，Integrated Development Environment，是用于提供程序开发环境的应用程序，例如eclispe、idea、visual studio</p>
+<p>IDEA一般被认为是最好的Java开发工具之一，公司是JetBrains，和PyCharm同一个公司</p>
+<p>百度搜索idea进入JetBrains官网，选择IntelliJ IDEA下载Ultimate版本（收费但是可以破解，参考<a href="https://shimo.im/docs/VYTcjGWCCPvXYqGy/read">三种方法</a>），不要下载community版本，因为后面的课程会用到JavaScript和SQL，而community版本虽然免费但是是没有这些功能的</p>
+<p>安装时只勾选三项64-bit launcher, Add &quot;Open Folder as Project&quot;, .java，另外不要放在C盘因为会越用越大</p>
+<hr>
+<p>新建Project时选中Java，SDK选择安装的JDK版本（一般会自动锁定）</p>
+<p>新建Hello的project</p>
+<p>在项目文件夹的src子文件夹下（类文件夹）新建Java Class（.java文件）</p>
+<p>输入psvm（缩写）或者main都可以自动补足为<code>public static void main(String[] args){}</code></p>
+<p>输入sout可以补足为<code>System.out.println();</code></p>
+<p>（println和print的唯一区别就是最后会换行，等同于print(&quot;xxx\n&quot;)，printf和C中的printf一样格式化输出）</p>
+<p>与PyCharm不同，在代码行数的绿色▶按钮即可运行.java文件</p>
+<p>设置优化IDEA，参考<a href="https://blog.csdn.net/zeal9s/article/details/83544074">IDEA的常见的设置和优化(功能)</a>和<a href="https://blog.csdn.net/bbj12345678/article/details/108304669">IntelliJ IDEA 性能优化</a></p>
+<p>其中优化类注释和方法注释：最好参考<a href="https://www.cnblogs.com/pypua/p/11048022.html">IDEA类和方法注释模板设置（非常详细）</a>，其中Param的default value改为</p>
+<pre><code>groovyScript(&quot;def result=''; def params=\&quot;${_1}\&quot;.replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 0; i &lt; params.size(); i++) {if(i==0){result+= params[i] + ((i &lt; params.size() - 1) ? '\\n' : '')}else{result+=' * @param  ' + params[i] + ((i &lt; params.size() - 1) ? '\\n' : '')}}; return result&quot;, methodParameters()) 
+</code></pre>
+<p>return的值可以改成在expression处选中methodReturnType()</p>
+<p>另外不建议方法注释的快捷键是Enter，最好用Tab，因为Enter会让多行注释不方便换行</p>
+<h2 id="快捷键">快捷键</h2>
+<ol>
+<li>Ctrl + [ 和 Ctrl + ] 分别是匹配当前指针位置的上一级左大括号和右大括号，在代码特别长的时候很有用</li>
+<li>CTRL + SHIFT + ENTER 在当前行任何地方可以快速在末尾生成分号，并且将代码规范化（添加空格）</li>
+<li>CTRL + D 是复制当前行并粘贴到下一行（Duplicate）CTRL + Y 是删除当前行，在IDEA里面的Redo被换成了Ctrl + Shift + Z</li>
+<li>ALT + ENTER 是引入(补全)局部变量，例如在<code>Math.pow(2, 3);</code>前后或者中间按下快捷键，就会变成<code>double pow = Math.pow(2, 3);</code></li>
+<li>按住CTRL鼠标左键点击工具类，可以进入类的源码，点击包，可以在左侧进入包的源路径</li>
+</ol>
+<h1 id="java基础">Java基础</h1>
+<h2 id="注释">注释</h2>
+<p>新建项目流程：</p>
+<ol>
+<li>一般新建项目不要选择Java而是选择Empty空项目</li>
+<li>而后从菜单新建module模块，选中Java和对应的SDK</li>
+<li>最后从工具栏或者菜单栏打开Project Structure - Project，选择SDK和对应的Language Level（也就是8）</li>
+<li>最后在module的src里面新建Java Class开始编写</li>
+</ol>
+<hr>
+<p>要养成书写注释（Comments）的好习惯，不然不仅是别人看不懂，自己过几天也会看不懂，增加时间成本</p>
+<p>单行注释（Line Comments）：//开头，快捷键Ctrl + /</p>
+<p>多行注释（Block Comments）：/*开头，*/接尾，快捷键Ctrl + Shift + /</p>
+<p>文档注释（JavaDoc）：/**开头再按Enter，快捷键/* + Tab（只有按照上一节<strong>使用IDEA开发</strong>设置了优化方法注释才可以）</p>
+<p>注意区分注释（Comments）和注解（Annotations），注解是会被读取运行的，注释不会</p>
+<h2 id="标识符和关键字">标识符和关键字</h2>
+<h3 id="标识符">标识符</h3>
+<h4 id="1-定义">1、定义</h4>
+<p>在Java程序中，所有的由程序员自己命名的元素统称为“标识符”</p>
+<h4 id="2-标识符命名规则">2、标识符命名规则</h4>
+<p>标识符由数字、字母、<code>_</code>和<code>$</code>组成</p>
+<p>标识符不能以数字开头</p>
+<p>标识符区分大小写</p>
+<p>标识符不能是关键字</p>
+<p><strong>注意：</strong></p>
+<p>定义类名的标识符，首字母必须大写，后面的单词首字母大写，遵循“大驼峰命名法”</p>
+<p>（例如XxxXxxx）</p>
+<p>定义方法标识符：首字母尽量小写，后面的单词首字母大写，遵循“小驼峰命名法”</p>
+<p>（例如 xxxXxx）</p>
+<p>定义变量的标识符：同小驼峰</p>
+<p>定义包名：按模块分层级，使用公司的域名倒写，（例如 com.j2008.xxx）</p>
+<p>定义项目名：尽量使用英文（Java项目可以使用中文，JavaWeb项目一定使用英文）</p>
+<p>所有标识符尽量使用英文，不建议用拼音和中文</p>
+<h3 id="关键字">关键字</h3>
+<h4 id="1-定义-2">1、定义</h4>
+<p>Java关键字是电脑语言里事先定义的，有特别意义的<a href="https://baike.baidu.com/item/%E6%A0%87%E8%AF%86%E7%AC%A6/7105638">标识符</a>，有时又叫<a href="https://baike.baidu.com/item/%E4%BF%9D%E7%95%99%E5%AD%97/7674788">保留字</a>，还有特别意义的变量。Java的关键字对Java的<a href="https://baike.baidu.com/item/%E7%BC%96%E8%AF%91%E5%99%A8/8853067">编译器</a>有特殊的意义，他们用来表示一种数据类型，或者表示程序的结构等，关键字不能用作变量名、方法名、类名、包名和参数，一共有50个关键字（48关键字+2保留字），关键字都是小写的英文单词。</p>
+<h4 id="2-java的50个关键字">2、Java的50个关键字</h4>
+<figure data-type="image" tabindex="5"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/src=http___pic2.zhimg.com_v2-8408d6adff55ca7f1772f666afae9425_b.png&amp;refer=http___pic2.zhimg.jpg" alt="src=http___pic2.zhimg.com_v2-8408d6adff55ca7f1772f666afae9425_b.png&amp;refer=http___pic2.zhimg" loading="lazy"></figure>
+<h2 id="数据类型">数据类型</h2>
+<p><strong>强类型语言</strong>：一种强制类型定义的语言，一旦某一个变量被定义类型，如果不经过强制转换，则它永远就是该数据类型了，强类型语言包括<strong>Java</strong>、.net 、Python、C++等语言</p>
+<p>例子：定义了一个整数，如果不进行强制的类型转换，则不可以将该整数转化为字符串</p>
+<p><strong>弱类型语言</strong>：一种弱类型定义的语言，某一个变量被定义类型，该变量可以根据环境变化自动进行转换，不需要经过显性强制转换。弱类型语言包括vb 、PHP、<strong>JavaScript</strong>等语言</p>
+<p>例子：</p>
+<pre><code class="language-vb">var A =5;
+var B = &quot;5&quot;;
+SumResult = A +B;
+MinResult = A -B；
+</code></pre>
+<p>输入SumResult的答案不是10，而是55，再次是将A的类型转化为了字符串，然后进行拼接。输入MinResult的答案是0，是将B的类型转化为了数字，然后进行减法。</p>
+<p>Java的数据类型分为<strong>基本类型</strong>和<strong>引用类型</strong>两大类</p>
+<h4 id="基本类型"><strong>基本类型</strong></h4>
+<p>（primitive type）</p>
+<p><font color='red'> （笔试常考） </font></p>
+<figure data-type="image" tabindex="6"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2020.cnblogs.com%2Fblog%2F1453275%2F202004%2F1453275-20200417122916656-1751498856.png&amp;refer=http%3A%2F%2Fimg2020.cnblogs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1614962258&amp;t=2ab9c9814ce3296aa4a198c0f1353114" alt="img" loading="lazy"></figure>
+<p>补充：其中boolean类型占1位</p>
+<p><mark>其中整数类型常用<strong>int</strong>（也是默认），浮点数类型常用<strong>double</strong>（也是默认）</mark></p>
+<p>范围：long&gt;int&gt;short&gt;byte，double&gt;float</p>
+<p><strong>注意定义long和float变量的时候，需要在赋值的数字后面分别加上L和F</strong>，也可以在赋值的数字前面分别加上(long)和(float)做强制转换但是不推荐（因为不是所有东西都可以强制转换）</p>
+<p>因为赋值的数字默认是int（整数）和double（小数），而赋值的时候被赋值的变量和赋值的变量（包括数字和字符串）需要是同一数据类型，例如不能将数字赋值给String变量，而Java只会<strong>自动将范围小的数据类型转为范围大的</strong>（对于int常数来说称为**<mark>Java的常量优化机制</mark>**），反过来转换需要强制转换（因为有舍入误差）</p>
+<p>如果不加L，当long变量赋值的数字在int范围内时，虽然可以将数字自动转换为long类型，再赋值给long变量；但是当数字超出int范围时，Java会认为这个数字不符合int类型，这个数字的数据类型不明确（数字本身就是一种定义，默认为int），无法进行变量定义，此时则需要在数字后面加上L，强制转换成一个long类型的数字，才能再赋值</p>
+<p>如果不加F，当float变量赋值的数字是整数在int范围内时，虽然由于float取值范围大于int，可以把数字自动转换成float再赋值；但是如果float变量赋值的数字是浮点数时，浮点数默认是double类型，而float的范围又小于double，由于只会自动将范围小的数据类型转为范围大的，所以浮点数不会自动转换成float，无法与被赋值的float变量匹配，因此无法正常定义；此外，如果float变量赋值的数字是整数但是超出int范围时，同样Java会认为这个数字不符合int类型，这个数字的数据类型不明确，无法进行变量定义，此时则需要在数字后面加上F，强制转换成一个float类型的数字，才能再赋值</p>
+<p>注意：Java的常量优化机制只有当等号右边仅含常量时才会生效，右边含有变量是不生效的</p>
+<p>例子：</p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        float a = 3.14F;
+        long b = 1000000000000L;
+        byte c = 10 + 30;
+        System.out.println(getType(a));
+        System.out.println(getType(b));
+        System.out.println(getType(c));
+    }
+    private static String getType(Object a) {
+        return a.getClass().toString();
+    }
+}
+
+//以下为错误示范，这种情况下常量优化机制是不生效的
+public class Demo1 {
+    public static void main(String[] args) {
+        int a = 10;
+        byte b = a + 30;
+    }
+}
+</code></pre>
+<p>另外注意1e3和1000是不一样的，1e3 = 1.0*Math.pow(10,3)，默认是double类型，1000默认是int类型</p>
+<p>char是字符，String才是字符串，char只能定义一个字（不能空可以空格）且必须单引号不能双引号，String不是关键字是一个类（可以空），且只能双引号不能单引号</p>
+<p>boolean是布尔值，只能赋值true或false</p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        char firstname = '陈';
+        String lastname = &quot;灿东&quot;;
+        boolean male = true;
+        boolean female = false;
+    }
+}
+</code></pre>
+<h4 id="引用类型"><mark><strong>引用类型</strong></mark></h4>
+<p>（reference type）</p>
+<figure data-type="image" tabindex="7"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fp1.jquerycn.cn%2F111cn%2F3%2F0%2F1474650195_6131.jpg&amp;refer=http%3A%2F%2Fp1.jquerycn.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1625134800&amp;t=f71a49e6a53b8a92cb05e63f77df4b8f" alt="img" loading="lazy"></figure>
+<p>这里先知道有哪些引用类型即可，后续会慢慢讲到</p>
+<h4 id="字节">字节</h4>
+<p>位（bit）：是计算机内部数据儲存的最小単位，11001100是ー个8位二进制数</p>
+<p>字节（byte）：是计算机中数据处理的基本单位，习惯上用大写B来表示</p>
+<p>1 B（byte字节）= 8 bit（位）</p>
+<p>字符：是指计算机中使用的字母、数字、字和符号</p>
+<p>例子：1个byte类型数据占1 B = 8 bit，也就是1个7位二进制数字，加上一个1位表示正负号</p>
+<ul>
+<li>1bit表示1位</li>
+<li>1Byte表示一个字节</li>
+<li>1B=8b</li>
+<li>1024B=1KB</li>
+<li>1024KB=1M</li>
+<li>1024M=1G</li>
+</ul>
+<p><strong>拓展：</strong></p>
+<p>32位系统和64位系统的含义</p>
+<p>1、32位和64位意思是处理器一次能处理的最大位数；</p>
+<p>2、32位系统的最大寻址空间是2的32次方=4294967296(bit)= 4(GB)左右；</p>
+<p>3、64位系统的最大寻址空间为2的64次方=4294967296(bit)的32次方，数值大于1亿GB。</p>
+<p>32位系统和64位系统的区别：</p>
+<p>1、CPU要求不同。CPU有32位和64位之分，32位的CPU只能安装32位系统，而64位的CPU既可以安装32位系统也可以安装64位系统。</p>
+<p>2、运算速度不同。64位CPU的指令集可以运行64位数据指令，比32位CPU提高了一倍。</p>
+<p>3、<strong>寻址</strong>能力不同。32位系统的处理器最大只支持到4G内存，而64位系统最大支持的内存高达亿位数，实际运用过程中大多数的电脑32位系统最多识别3.5GB内存，64位系统最多识别128GB内存。</p>
+<p>4、软件兼容性不同。64位系统比32位系统的软件少，主要是64位系统推出的时间不长，所以64位系统的兼容性不如32位，虽然可以兼容32位软件，但是部分32位的软件在64位系统无法运行，但是目前的Win7 64位系统兼容性好了很多。</p>
+<h2 id="数据类型扩展及面试题讲解">数据类型扩展及面试题讲解</h2>
+<h3 id="整数拓展">整数拓展</h3>
+<table>
+<thead>
+<tr>
+<th>进制</th>
+<th>二进制</th>
+<th>八进制</th>
+<th>十进制</th>
+<th>十六进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前缀</td>
+<td>0b</td>
+<td>0</td>
+<td>无</td>
+<td>0x</td>
+</tr>
+</tbody>
+</table>
+<p>注：十六进制的数字是0<sub>9和A</sub>F</p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        int a = 0b11;
+        int b = 017;
+        int c = 19;
+        int d = 0x1F;
+        System.out.println(a);// 1*2+1
+        System.out.println(b);// 1*8+7
+        System.out.println(c);// 1*10+9
+        System.out.println(d);// 1*16+15
+    }
+}
+</code></pre>
+<h3 id="浮点数拓展">浮点数拓展</h3>
+<p><mark><strong>最好完全避免使用浮点数进行比较</strong></mark></p>
+<p>因为浮点数能表示的字长是有限的（有些实数是无限的）且也是离散的（不是连续取值的）</p>
+<p>浮点数存在舍入误差，只是接近但不等于</p>
+<p>当需要比较小数的时候，一般会使用一种数学工具类<strong>BigDecimal</strong>进行比较（以后会学到），或者允许二者存在极小误差判断<strong>Math.abs(a-b) &lt; 1E-6f</strong></p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        float a = 0.1f;
+        double b = 1.0/10;
+        System.out.println(a==b);// false
+        System.out.println(&quot;0b&quot;+Long.toBinaryString(Double.doubleToRawLongBits(b)));
+        System.out.println(&quot;0b&quot;+Long.toBinaryString(Float.floatToRawIntBits(a)));
+        System.out.println(Math.abs(a-b) &lt; 1E-6f);// true
+        System.out.println(&quot;====================&quot;);
+        float c =232323232322323f;
+        float d = c + 1;
+        System.out.println(c==d);// true
+        System.out.println(&quot;0b&quot;+Long.toBinaryString(Float.floatToRawIntBits(c)));
+        System.out.println(&quot;0b&quot;+Long.toBinaryString(Float.floatToRawIntBits(d)));
+    }
+}
+/*
+浮点数a和b的二进制存储格式为
+a：0b11111110111001100110011001100110011001100110011001100110011010
+b：0b111101110011001100110011001101
+十进制转二进制可能会产生无限数（即使十进制时是有限数）
+因此由于4字节和8字节长度差异，a和b存在截断误差
+浮点数c和d和二进制存储格式为
+c：0b1010111010100110100101111111000
+d：0b1010111010100110100101111111000
+因为：
+1 浮点数存储时,按照符号，指数，位数进行存储。
+2 先将10进制数，转换成对应的二进制小数。
+3 然后将小数点移至尾数第一个有效数字的右边，如果数字太大，小数点左移动得多，科学计数法指数变大，尾数变多。
+4 当尾数太大，超过float或者double尾数表示范围时，将要做截断操作。
+5 一个超出表示范围的大数，再加一后。此时加一很有可能被截断。
+6 所有c和d没有误差
+*/
+</code></pre>
+<p>详细的浮点数内存存储格式和过程：<a href="https://www.cnblogs.com/lingyejun/p/7451021.html">Java浮点型精度丢失问题</a></p>
+<p>浮点数内存存储原理：<a href="https://blog.csdn.net/aduovip/article/details/47728921">Java 浮点数是如何存储的</a></p>
+<hr>
+<p><strong><mark>此外不能使用浮点数作为循环变量</mark></strong></p>
+<p>例如：精度问题会导致 (float)2000000000 == 2000000050为true，所以如下的循环不会执行：</p>
+<pre><code class="language-java">for (float f = (float) 2000000000; f &lt; 2000000050; f++) {
+    ...
+}
+</code></pre>
+<h3 id="二进制和十进制互相转换">二进制和十进制互相转换</h3>
+<h4 id="二进制数转换成十进制数">二进制数转换成十进制数</h4>
+<p>由二进制数转换成十进制数的基本做法是，把二进制数首先写成加权系数展开式，然后按十进制加法规则求和。这种做法称为&quot;<strong>按权相加</strong>&quot;法。</p>
+<p>例如把二进制数 110.11 转换成十进制数。</p>
+<figure data-type="image" tabindex="8"><img src="https://www.runoob.com/wp-content/uploads/2018/11/210-1.png" alt="img" loading="lazy"></figure>
+<h4 id="十进制数转换为二进制数">十进制数转换为二进制数</h4>
+<p>十进制数转换为二进制数时，由于整数和小数的转换方法不同，所以先将十进制数的整数部分和小数部分分别转换后，再加以合并。</p>
+<ul>
+<li>十进制整数转换为二进制整数</li>
+</ul>
+<p>十进制整数转换为二进制整数采用&quot;<strong>除2取余，逆序排列</strong>&quot;法。具体做法是：用2去除十进制整数，可以得到一个商和余数；再用2去除商，又会得到一个商和余数，如此进行，直到商为零时为止，然后把先得到的余数作为二进制数的低位有效位，后得到的余数作为二进制数的高位有效位，依次排列起来。</p>
+<p>例如把 (173)10 转换为二进制数。</p>
+<p>解：</p>
+<figure data-type="image" tabindex="9"><img src="https://www.runoob.com/wp-content/uploads/2018/11/210-2.png" alt="img" loading="lazy"></figure>
+<ul>
+<li>十进制小数转换为二进制小数</li>
+</ul>
+<p>十进制小数转换成二进制小数采用&quot;**乘2取整，顺序排列&quot;**法。具体做法是：用2乘十进制小数，可以得到积，将积的整数部分取出，再用2乘余下的小数 部分，又得到一个积，再将积的整数部分取出，如此进行，直到积中的小数部分为零，或者达到所要求的精度为止。</p>
+<p>然后把取出的整数部分按顺序排列起来，先取的整数作为二进制小数的高位有效位，后取的整数作为低位有效位。</p>
+<p>例如把（0.8125）转换为二进制小数。</p>
+<p>解：</p>
+<figure data-type="image" tabindex="10"><img src="https://www.runoob.com/wp-content/uploads/2018/11/210-3.png" alt="img" loading="lazy"></figure>
+<h3 id="字符拓展">字符拓展</h3>
+<p>所有字符的本质还是数字</p>
+<p>最早的<strong>ASCII编码</strong>的范围是<strong>0~127</strong>，只包含大小写字母、数字和一些符号</p>
+<p>中文字非常多1个字节不够，至少需要2个字节，中国因此制定了GB2312编码</p>
+<p>可以想得到的是，全世界有上百种语言，日本把日文编到Shift_JIS里，韩国把韩文编到Euc_kr里，各国有各国的标准，就会不可避免的出现冲突，结果就是，在多语言混合的文本中，显示出来就会有乱码。</p>
+<p>因此，Unicode应运而生。Unicode把所有的语言都统一到一套编码里，这样就不会再有乱码问题了。</p>
+<p><strong>Unicode</strong>标准也在不断发展，但最常用的是用<strong>2个字节</strong>表示1个字符（偏僻字符需要4个字节）。现代操作系统和大多数编程语言都直接支持Unicode。</p>
+<p>新的问题又出现了：如果统一成Unicode编码，乱码问题从此消失了。但是，如果你写的文本基本上全是英文的话，用Unicode编码比ASCII编码需要多一倍的存储空间，在存储和传输上就十分不划算。</p>
+<p>所以，本着节约的精神，又出现了把Unicode编码转化为“可变长编码”的UTF-8编码。UTF-8编码把一个Unicode字符根据不同的数字大小编码成1-6个字节，常用的英文字母被编码成1个字节，汉字通常是3个字节，只有很生僻的字符才会被编码成4-6个字节。如果你要传输的文本包含大量英文字符，用UTF-8编码就能节省空间。</p>
+<p>UTF-8有个额外的好处，就是ASCII编码实际上可以被看成是UTF-8的编码的一部分，所以，大量只支持ASCII编码的历史遗留软件可以在UTF-8编码下继续工作。</p>
+<figure data-type="image" tabindex="11"><img src="https://img-blog.csdnimg.cn/20190323152444231.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NoZW5ncWl1bWluZw==,size_16,color_FFFFFF,t_70" alt="img" loading="lazy"></figure>
+<p>ASCII、Unicode和UTF-8的关系是：Unicode是ASCII的扩展，UTF-8是Unicode的具体实现之一（unicode transformation format，还有utf-16和utf-32）</p>
+<p>Unicode编码一般是2字节，表的数字范围是0 ~ 65535 (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{16}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>)，一般通过转义来表示U0000 ~ UFFFF (16进制)</p>
+<p>Unicode编码可以用双引号&quot;&quot;也可以用单引号</p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        char c1 = 'a';
+        char c2 = 'A';
+        System.out.println(c1);
+        System.out.println((int)c1);// 强制转换数据类型为int 97
+        System.out.println(c2);
+        System.out.println((int)c2);// 强制转换数据类型为int 65
+        char c3 = '\u0061';// 0x0061 = 97
+        System.out.println(c3);
+    }
+}
+</code></pre>
+<hr>
+<ul>
+<li><strong>转义字符</strong></li>
+</ul>
+<p>首先很重要一点，转义字符是供编译器识别的。当java文件编译成.class文件后就不存在转义一说了。</p>
+<p>比如，定义一个字符串String a值为双引号“。由于java的语法规定，字符串字面量是要由一对双引号括起来。如果这样定义String a = &quot; &quot; &quot;；编译器肯定识别a为空字符串，后面不成对的双引号还会报错。这时候需要一个转义字符（java选择了\）来标识中间的双引号是字符串值，而不是语法中用来包裹字符串的特殊字符。而编译后的class文件保存值“到常量池中，不存在歧义的问题（具体可以看关于class文件讲解的文章）。</p>
+<p><strong>一。八进制转义序列</strong>：用于表示<strong>ascii</strong>中的字符</p>
+<p>规则： \+1到3位8进制数字；范围'\000'~'\177'</p>
+<p>编译器是会自动识别转义符号\后可用的数字。</p>
+<p>比如:&quot;\402&quot; 超过了最大值177，编译器就会识别为改字符串为空格加上一个字符”2“，再比如”\092&quot;，9不在8进制数字中，编译器就是识别为\0和字符“92”</p>
+<p><strong>二。unicode转义字符</strong>：用于表示<strong>unicode</strong>字符集中的字符</p>
+<p>规则：\u + 4个十六进制数字；范围0~65535</p>
+<p>必须要写全4个数字，即只能写\u0000而不能写\u0</p>
+<p><strong>三。特殊字符</strong>：单引号'、双引号&quot;、反斜线\</p>
+<p>java字符串定义中，双引号必须转义，即必须这样写：&quot;\&quot;&quot;；而单引号可不转义，即可以这样写&quot; ' &quot;；</p>
+<p>相同的字符定义中，单引号必须转义，' \' '；双引号可不转义' &quot; '；</p>
+<p>反斜线不管作为字符还是字符串的值都需转义</p>
+<p><strong>四。控制字符</strong></p>
+<p>\r回车</p>
+<p>\n换行</p>
+<p>\f走纸换页</p>
+<p>\t横向挑格</p>
+<p>\b退格</p>
+<p>\r移动到本行开头</p>
+<p>\0空字符</p>
+<p>这里需要注意，unicode转义字符和其他转义类型，转义的位置不同，编译器在将程序解析成各种符号之前，先将Unicode转义字符转换成为它们所表示的字符。可以理解为==<strong>编译器先将源文件中unicode转义字符转成对应字符再解析代码意义</strong>==。也就是unicode转义字符只是字符的另一种写法，即\u0022（双引号）只改变u0022的字面含义，不改变它所代表的双引号的代码含义。</p>
+<p>这就导致有些看起来语法是错的语句但实际上可以编译运行，例如</p>
+<pre><code class="language-java">System.out.println(&quot;\u0022.length());
+// 看起来显然缺少一个双引号，但是由于\u0022本身就是双引号，因此可以编译运行
+</code></pre>
+<p>反之，也会导致一些看起来没问题的语句报错，例如</p>
+<pre><code class="language-java">System.out.println(&quot;\u0022&quot;);  报“未结束字符串”错误
+</code></pre>
+<p>unicode转义字符有点类似于SAS的宏变量，替换过程发生在编译代码之前</p>
+<p><strong>拓展（以后会讲到）</strong></p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        String sa = new String(&quot;hello world&quot;);
+        String sb = new String(&quot;hello world&quot;);
+        System.out.println(sa==sb);// false
+        String sc = &quot;hello world&quot;;
+        String sd = &quot;hello world&quot;;
+        System.out.println(sc==sd);// true
+    }
+}
+</code></pre>
+<p>当&quot;==&quot;比较的是基本数据类型时，比较的是数值是否一致；当比较的是引用数据类型，则比较的是对象的地址是否一致。这里new String表示根据已有的字符串original来创建String对象，会创建一个新的内存地址，不管字符串是否相同，所以二者不一致。</p>
+<h3 id="布尔值拓展">布尔值拓展</h3>
+<p>一般只有新手才会写if (flag == true) {}这种语句，因为它完全等价于 if (flag){}，此外注意与Python不一样，不可以写if (flag==1){}，因为在Java中boolean true和false不对应任何数值，非要对应只能自己自定义函数</p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        boolean flag =true;
+        if (flag == true){
+            System.out.println(&quot;rookie&quot;);
+        }
+        if (flag){
+            System.out.println(&quot;veteran&quot;);
+        }
+    }
+}
+</code></pre>
+<h3 id="调试">调试</h3>
+<p>在代码左侧行数右侧设置断点之后，点击Debug (Shift+F9) 按钮（小虫子图样）即可调试代码，会运行代码直到断点行，并显示参数和变量的变化过程，<strong>注意断点所在行是不会运行的</strong></p>
+<h2 id="类型转换">类型转换</h2>
+<p>由于Java是强类型语言，所以在进行一些运算的时候需要进行类型转换</p>
+<p><strong>运算中，不同类型的数据先转化为同一类型，然后再运算</strong></p>
+<figure data-type="image" tabindex="12"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Faliyunzixunbucket.oss-cn-beijing.aliyuncs.com%2Fjpg%2F658471cd016370563925b23bcd827d69.jpg%3Fx-oss-process%3Dimage%2Fresize%2Cp_100%2Fauto-orient%2C1%2Fquality%2Cq_90%2Fformat%2Cjpg%2Fwatermark%2Cimage_eXVuY2VzaGk%3D%2Ct_100&amp;refer=http%3A%2F%2Faliyunzixunbucket.oss-cn-beijing.aliyuncs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1615224789&amp;t=07374b6820bf95526f795940641d824d" alt="img" loading="lazy"></figure>
+<center> 从左到右依次 : 数据表示的范围从小到大 </center>
+<h3 id="强制类型转换">强制类型转换</h3>
+<p>强制转换的格式：<strong>（类型）变量名</strong></p>
+<p>一般是<strong>从大范围到小范围</strong>进行转换（因为通常伴有截断误差）</p>
+<p>例如</p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        int i = 128;
+        byte b = (byte)i;// 内存溢出
+        // 强制转换 （类型）变量名
+        System.out.println(i);// 128
+        System.out.println(b);// -128
+    }
+}
+</code></pre>
+<p>其中由于byte类型的范围是-128 ~ 127，因此<strong>内存溢出</strong></p>
+<p>即128 = 127 + 1 = 0111 1111（原码）+ 0b 0000 0001（原码） = 0b 0000 0001（补码） + 0b 0111 1111（补码） = 0b 1000 0000（补码）</p>
+<p><mark><strong>在计算机中所有数都是以补码形式表示和储存的</strong></mark>，具体机制参考<a href="https://blog.csdn.net/zl10086111/article/details/80907428">原码、反码、补码知识详细讲解</a></p>
+<ul>
+<li>8位二进制数的取值范围为[1111 1111 , 0111 1111]（原码） = [1000 0000 , 0000 0000]（反码） = [-127 , 127]，其中+0原码（0000 0000）和-0原码（1000 0000）的取值不一样</li>
+<li>而使用补码时，0的值唯一等于0000 0000（原码&amp;补码），原本-0的补码1 0000 0000截断后同样等于000 0000（补码），[1000 0000]（补码）则用来表示-128
+<ul>
+<li>-128 = (-1) + (-127) = [1000 0001]原 + [1111 1111]原 = [1111 1111]补 + [1000 0001]补 = [1000 0000]补（1 1000 0000截断后）</li>
+</ul>
+</li>
+<li>因此用补码表示的8位二进制数的取值范围是[1000 0000 , 0111 1111]（补码） = [-128 , 127]</li>
+<li>只有补码可以带符号位一起运算</li>
+<li>-128没有反码和原码表示，1000 0000（补码）计算的原码是0000 0000（原码），但其实是不对的，因为把-0和+0区分开了</li>
+</ul>
+<p>因此计算机将内存溢出的128认为是127+1，计算得到的补码是1000 0000（补码），即为-128</p>
+<h3 id="自动类型转换">自动类型转换</h3>
+<p>只能是<strong>从小范围到大范围</strong>进行转换</p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        int i = 128;
+        double b = i;
+        System.out.println(i);// 128
+        System.out.println(b);// 128
+        // 精度误差
+        System.out.println((int)28.7);// 28
+        System.out.println((int)-45.89f);// 45
+    }
+}
+</code></pre>
+<p>注意点</p>
+<ol>
+<li>不能对布尔值进行转换</li>
+<li>不能把对象类型转换为不相干的类型</li>
+<li>在把高容量转换到低容量的时候，强制转换</li>
+<li>转换的时候可能存在内存溢出，或者精度问题</li>
+</ol>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        char a = 'a';
+        int b = a + 1;
+        System.out.println(b);// 98
+        System.out.println((char)b);// b
+    }
+}
+</code></pre>
+<h3 id="溢出问题">溢出问题</h3>
+<p>操作比较大的数字时，注意溢出问题</p>
+<p>解决方法：定义成容量更大的数据类型，并将运算表达式中任意一处数字强制转换成该类型</p>
+<pre><code class="language-java">public class Demo1 {
+    public static void main(String[] args) {
+        // JDK7的新特性，数字中间可以用下划线分割
+        int money = 1_000_000_000;
+        int years = 20;
+        int total1 = money * years;// -1474836480 
+        long total2 = money * years;// -1474836480 因为先运算再定义为long，运算结果已经是int上限了
+        long total3 = money * (long)years;// 20000000000
+        long total4 = (long)money * years;// 20000000000
+        System.out.println(total1);
+        System.out.println(total2);
+        System.out.println(total3);
+        System.out.println(total4);
+    }
+}
+</code></pre>
+<h2 id="变量-常量-作用域">变量、常量、作用域</h2>
+<p>Java是强类型语言，每个变量都必须声明其类型</p>
+<p>Java变量是程序中最基本的存储单元，要素包括==<strong>变量名、变量类型和作用域</strong>==</p>
+<h3 id="变量">变量</h3>
+<pre><code class="language-Java">type varName [=value] [{,varName=[value]}];
+//数据类型 变量=值 （可以用逗号隔开来声明多个同类型变量，注意跟python的格式区别）
+</code></pre>
+<p>注意：</p>
+<ol>
+<li>每个变量都必须说明类型，可以是基本类型也可以是引用类型</li>
+<li>不建议一行定义多个变量，影响程序可读性</li>
+<li>可以只定义变量名和数据类型，不定义值(局部变量例外)</li>
+</ol>
+<h3 id="变量作用域"><mark>变量作用域</mark></h3>
+<ul>
+<li>类变量：独立于方法之外的变量，用 static 修饰</li>
+<li>实例变量：独立于方法之外的变量，不过没有 static 修饰</li>
+<li>局部变量：类的方法中的变量</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>定义位置</th>
+<th>初始化值</th>
+<th>生命周期</th>
+<th>作用范围</th>
+<th>内存位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类变量</td>
+<td>类中方法外以static关键字声明</td>
+<td>有默认的初始化的值</td>
+<td>第一次访问时创建,在程序结束时销毁</td>
+<td>整个类中有效</td>
+<td>静态存储区</td>
+</tr>
+<tr>
+<td>实例变量</td>
+<td>类中方法外</td>
+<td>有默认的初始化的值</td>
+<td>对象的存在而存在,随着对象的消失而消失</td>
+<td>整个类中有效</td>
+<td>堆内存</td>
+</tr>
+<tr>
+<td>局部变量</td>
+<td>方法内</td>
+<td>不赋值不能用</td>
+<td>方法的调用而存在,方法调用完毕而消失</td>
+<td>所在方法有用</td>
+<td>栈内存</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-Java">public class Variable{
+    // 在类中方法之外的是属性（一种特定变量）
+    static int allClicks=0;     // 类变量
+    String str=&quot;hello world&quot;;   // 实例变量
+    
+    public void method(){
+        int i=0;                // 局部变量
+    }
+}
+</code></pre>
+<pre><code class="language-Java">public class Demo08 {
+    // 类变量 static
+    static double salary = 25_000;
+
+    // 实例变量：从属于对象；如果不自行初始化，这类型的默认值为 整数(0) 浮点数(0.0) 字符(''=无) 布尔值(False)
+    // 除了基本类型，其余默认都是null（包括String）
+    String name;
+    int age;
+
+    // main方法
+    public static void main(String[] args) {
+        // 局部变量：必须声明和初始化值
+        int i =10;
+        System.out.println(i);
+
+        // 变量类型可以是自己定义的类
+        // 变量类型 变量名字 = new Demo08(); 只有变量名字可以随意命名
+        Demo08 demo08 = new Demo08();
+        System.out.println(demo08.age);
+        System.out.println(demo08.name);
+        // 类变量 static
+        System.out.println(salary);   // 注意类变量不用new一个实例出来再调用
+    }
+
+    // 其他方法
+    public void add(){
+    //    System.out.println(i);
+    //    此处报错，因为i的作用域只在定义的main方法内
+    }
+}
+
+</code></pre>
+<p><mark>还有一种<strong>静态代码块</strong>也可以定义变量，以后再说</mark></p>
+<p>以上在面向对象中会再详细说</p>
+<h3 id="常量">常量</h3>
+<p>常量(constant)：初始化(initialize)后不能再改变值，是不会变动的值</p>
+<p>所谓常量可以理解成一种特殊的变量，它的值被设定之后，在程序运行过程中不允许被改变</p>
+<p>关键字（修饰符）：final</p>
+<pre><code class="language-Java">// final 常量名 = 值;
+final double PI = 3.14;
+</code></pre>
+<p><strong><mark>常量名一般使用全大写字符</mark></strong></p>
+<pre><code class="language-Java">public class Demo09 {
+
+    // 修饰符不存在先后顺序 static和final先后顺序无所谓（包括public和private）
+    static final double PI = 3.14;
+
+    public static void main(String[] args) {
+        System.out.println(PI);
+    }
+}
+</code></pre>
+<h3 id="变量的命名规范">变量的命名规范</h3>
+<ul>
+<li>所有变量、方法、类名：见名知意</li>
+<li>类成员变量：首字母小写和驼峰原则：monthSalary</li>
+<li>局部变量：首字母小写和驼峰原则：lastName</li>
+<li><strong>常量：大写字母和下划线：MAX_VALUE</strong></li>
+<li><strong>类名：首字母大写和驼峰原则：GoodMan</strong></li>
+<li>方法名：首字母小写和驼峰原则：runFirst()</li>
+</ul>
+<h2 id="基本运算符">基本运算符</h2>
+<p>Java语言支持如下运算符</p>
+<ul>
+<li><strong>算术运算符：+，-，*，/，%，++，--</strong></li>
+<li><strong>赋值运算符：=</strong></li>
+<li><strong>关系运算符：&gt;，&lt;，&gt;=，&lt;=，==，!=，instanceof</strong></li>
+<li><strong>逻辑运算符：&amp;&amp;，||，！</strong></li>
+<li>位运算符：&amp;，|，^，~，&gt;&gt;，&lt;&lt;，&gt;&gt;&gt;（了解为主）</li>
+<li>条件运算符：？：</li>
+<li>扩展赋值运算符：+=，-=，*=，/=</li>
+</ul>
+<p>扩展：在src下新建package等同于新建子文件夹用于分类整理</p>
+<figure data-type="image" tabindex="13"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210610205156100.png" alt="image-20210610205156100" loading="lazy"></figure>
+<p><strong>注意：不同package中的Java文件名和类名可以重复，但不能删除第一句声明package的语句</strong></p>
+<figure data-type="image" tabindex="14"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210610205438794.png" alt="image-20210610205438794" loading="lazy"></figure>
+<h3 id="算术运算符">算术运算符</h3>
+<pre><code class="language-Java">package operator;
+
+public class Demo01 {
+    public static void main(String[] args){
+    //    二元运算符 + - * / %
+        int a = 10;
+        int b = 20;
+        int c = 25;
+        int d = 25;
+        System.out.println(a+b);
+        System.out.println(a-b);
+        System.out.println(a*b);
+        System.out.println(a/(double)b);
+    }
+}
+/*
+* 30
+* -10
+* 200
+* 0.5
+* */
+// 如果直接 a/b 结果会是0 因为int运算是舍去小数部分的
+</code></pre>
+<pre><code class="language-Java">package operator;
+
+public class Demo02 {
+    public static void main(String[] args) {
+        long a = 1231231232123123L;
+        int b = 123;
+        short c = 10;
+        byte d = 8;
+
+        System.out.println(a + b + c + d);  // long
+        System.out.println(b + c + d);  // int
+        System.out.println(c + d);  // int
+        // System.out.println((String)(c + d));  // Inconvertible types; cannot cast 'int' to 'java.lang.String'
+        // 算数运算中只要含任何一个long类型变量 结果就是long类型
+        // 只要不含long类型 整数的算数运算结果一定是int类型 无论有没有int类型的运算变量
+        float e = 0.5F;
+        double f = 2.5;
+        float g = 1.5F;
+
+        System.out.println(e+f);
+        System.out.println(e+g);
+        // System.out.println((String)(e+g);  // Inconvertible types; cannot cast 'double' to 'java.lang.String'
+        // 同理 算数运算中只要含任何一个double类型变量 结果就是double类型
+        // 但是 不同的是 如果运算只含float类型变量 结果仍然为float类型
+    }
+}
+
+</code></pre>
+<ul>
+<li>整数运算
+<ul>
+<li>运算中只要含任何一个long类型变量，结果就是long类型</li>
+<li>只要不含long类型，运算结果一定是int类型，无论有没有int类型的运算变量</li>
+</ul>
+</li>
+<li>浮点数运算
+<ul>
+<li>运算中只要含任何一个double类型变量，结果就是double类型</li>
+<li>只要不含double类型，运算结果一定是float类型</li>
+</ul>
+</li>
+<li>整数和浮点数运算之后，结果是浮点数</li>
+</ul>
+<h3 id="关系运算符">关系运算符</h3>
+<pre><code class="language-Java">package operator;
+
+public class Demmo03 {
+    public static void main(String[] args) {
+        // 关系运算符返回结果是Boolean值
+        int a = 10;
+        int b = 20;
+        int c = 21;
+
+        System.out.println(c%a);// %称为模运算符 是一种算术运算符
+        // 注意跟数论里面一般的模运算不太一样 余数可以小于0 除数和被除数也都可以小于0
+
+        System.out.println(a&gt;b);
+        System.out.println(a&lt;b);
+        System.out.println(a==b);
+        System.out.println(a!=b);
+    }
+}
+/*
+* false
+* true
+* false
+* true
+* */
+
+
+</code></pre>
+<pre><code class="language-java">package operator;
+
+class Bird{//父类
+
+}
+class BigBird extends Bird{//Bird的子类
+
+}
+class LittleBird extends Bird implements BirdFly{//Bird的子类加上BirdFly接口
+
+}
+interface BirdFly{
+
+}
+public class JavaKWinstanceof {
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        JavaKWinstanceof myThis=new JavaKWinstanceof();
+        Bird myBird=new Bird();
+        BigBird myBigBird=new BigBird();
+        LittleBird myLittleBird=new LittleBird();
+        //打印各实例与类之间的关系
+        System.out.println(myThis instanceof JavaKWinstanceof);;//打印结果：true
+        System.out.println(myBird instanceof Bird);//打印结果：true
+        System.out.println(myBigBird instanceof Bird);//打印结果：true     子类实例出的对象也是父类的实例
+        System.out.println(myBird instanceof BigBird);//打印结果：false      父类实例出的对象不是子类的实例
+        System.out.println(myLittleBird instanceof Bird);//打印结果：true  子类加上其它接口后实例出的对象也是父类的实例
+
+    }
+}
+
+</code></pre>
+<h2 id="自增自减运算符-初识math类">自增自减运算符、初识Math类</h2>
+<pre><code class="language-Java">package operator;
+
+public class Demo04 {
+    public static void main(String[] args) {
+
+    //    一元运算符  ++  --  自增  自减
+        int a = 3;
+        int b = a++;  // 先执行完等号右边的代码，给b赋值，再自增
+        // 等价于int b = a; a = a + 1;
+        System.out.println(a);
+        // 等价于a = a + 1; int c = a;
+        int c = ++a;  // 先自增，执行完等号右边的代码，再给b赋值
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+
+
+    //    很多运算会使用一些工具类操作 例如数学运算会经常使用Math类
+    //    幂运算  2^3 = 2**3 = 2*2*2 = 8
+        double pow = Math.pow(2, 3);
+        System.out.println(pow);
+
+
+    }
+}
+/*
+* 4
+* 5
+* 3
+* 5
+* 8.0
+* */
+</code></pre>
+<h2 id="逻辑运算符-位运算符">逻辑运算符、位运算符</h2>
+<p><strong>注意：</strong></p>
+<ul>
+<li><strong>逻辑与运算如果第一个变量是false，则结果一定是false，因此不会运行第二个变量</strong></li>
+<li><strong>逻辑或运算如果第一个变量是true，则结果一定是true，因此不会运行第二个变量</strong></li>
+</ul>
+<p>称为<strong>短路运算</strong></p>
+<pre><code class="language-java">package operator;
+
+// 逻辑运算符
+public class Demo05 {
+    public static void main(String[] args) {
+    //    与 (and)  或 (or)  非 (取反)
+        boolean a = true;
+        boolean b = false;
+
+        System.out.println(&quot;a &amp;&amp; b : &quot; + (a &amp;&amp; b));  // 逻辑与运算：两个变量都为真结果才为true
+        System.out.println(&quot;a || b : &quot; + (a || b));  // 逻辑或运算：两个变量有一个为真，则结果才会true
+        System.out.println(&quot;!(a &amp;&amp; b) : &quot; + !(a &amp;&amp; b));  // 逻辑非运算：假if真，真if假
+
+    //    短路运算
+        int c = 5;
+        boolean d = (c &lt; 4) &amp;&amp; (c++ &lt; 4);
+        System.out.println(d);  // 与运算的第一个变量已经是false了，结果一定是false
+        System.out.println(c);  // c仍然为5说明根本没执行 &amp;&amp; 后面的内容
+
+        boolean e = (c &gt; 4) || (c++ &lt; 4);
+        System.out.println(e);  // 或运算的第一个变量已经是true了，结果一定是true
+        System.out.println(c);  // c仍然为5说明根本没执行 || 后面的内容
+    }
+}
+/*
+* a &amp;&amp; b : false
+* a || b : true
+* !(a &amp;&amp; b) : true
+* false
+* 5
+* true
+* 5
+* */
+</code></pre>
+<p><font color='red'> （面试常考） </font></p>
+<p>提问：2 * 8 = 16怎么运算最快</p>
+<p>答：用2&lt;&lt;3代替2*8，因为位运算最快，效率最高</p>
+<p><mark><strong>注意：以下位运算实际都是对补码做的</strong></mark>，只是除了<strong>位取反</strong>之外，其他位运算对原码和补码计算结果都一样</p>
+<pre><code class="language-java">package operator;
+
+// 位运算符：跟二进制有关
+public class Demo06 {
+    public static void main(String[] args) {
+    //   按位与&amp;  按位或|  按位非~  按位异或^  按位取反~（连带符号位一起取反）
+        /*
+        * A = 0011 1100
+        * B = 0000 1101
+        *
+        * A&amp;B = 0000 1100
+        * A|B = 0011 1101
+        * A^B = 0011 0001 （异或是二者不一样为1，一样为0）
+        * ~B = 1111 0010 
+        * */
+        int A = 0b00111100;
+        int B = 0b00001101;
+        String str1 = Integer.toBinaryString(A &amp; B);
+        String str2 = Integer.toBinaryString(A | B);
+        String str3 = Integer.toBinaryString(A ^ B);
+        String str4 = Integer.toBinaryString(~B);
+        int i1 = Integer.parseInt(str1);
+        int i2 = Integer.parseInt(str2);
+        int i3 = Integer.parseInt(str3);
+        // 这里因为 ~B 是负数-14，int类型占内存空间32位按补码形式存储（负数的补码前面有很多1），若按字符转为int会超出int的上限，所以直接截取后8位即可
+        String r1 = String.format(&quot;%08d&quot;, i1);
+        String r2 = String.format(&quot;%08d&quot;, i2);
+        String r3 = String.format(&quot;%08d&quot;, i3);
+        String r4 = str4.substring(str4.length()-8, str4.length());
+        System.out.println(&quot;A &amp; B : &quot;+(A&amp;B)+&quot; = &quot;+r1);
+        System.out.println(&quot;A | B : &quot;+(A|B)+&quot; = &quot;+r2);
+        System.out.println(&quot;A ^ B : &quot;+(A^B)+&quot; = &quot;+r3);
+        System.out.println(&quot;~B : &quot;+(~B)+&quot; = &quot;+r4);
+        // A &amp; B : 12 = 00001100
+        // A | B : 61 = 00111101
+        // A ^ B : 49 = 00110001
+        // ~B : -14 = 11110010
+
+
+    //   提问：2 * 8 = 16怎么运算最快  答：用2&lt;&lt;3代替2*8，因为位运算最快，效率最高
+    //   左移&lt;&lt;  有符号右移&gt;&gt;  无符号右移&gt;&gt;&gt;
+        /*
+        * 0000 0000    0
+        * 0000 0001    1
+        * 0000 0010    2
+        * 0000 0011    3
+        * 0000 0100    4
+        * 0000 1000    8
+        * 0001 0000    16
+        * a&lt;&lt;b就是把a的二进制数字往左移动b位，等同于a * Math.pow(2,b)，右侧补000…
+        * a&gt;&gt;b就是把a的二进制数字往右移动b位，等同于a / Math.pow(2,b)，右侧舍去，左侧用符号位补所有空缺的位置
+        * &gt;&gt;&gt;是无符号右移  &gt;&gt;是有符号右移 没有无符号左移
+        * 有符号右移&gt;&gt;就是右移之后，左边的补上符号位，正数补000…，负数补111…
+        * 无符号右移&gt;&gt;&gt;就是右移之后，无论该数为正还是为负，右移之后左边都是补上000…
+        * 左移&lt;&lt;不区分有符号和无符号，都是左移之后右边补上0，最左边的符号位也直接移走，所以大数字左移有可能会导致符号变化
+        * a&gt;&gt;&gt;b无法写成等价的数学运算形式，但是对于a&gt;0来说，与a&gt;&gt;b是一样的
+        * */
+
+        System.out.println(&quot;java 右移&quot;);
+        int a = -5;
+        System.out.println(Integer.toBinaryString(a));
+        System.out.println(Integer.toBinaryString(a &gt;&gt; 2)); // 有符号右移
+        System.out.println(Integer.toBinaryString(a &gt;&gt;&gt; 2)); // 无符号右移
+
+        //        java 右移
+        //        11111111111111111111111111111011
+        //        11111111111111111111111111111110
+        //        111111111111111111111111111110      注：前边的两个0被省略了
+
+
+        System.out.println(&quot;java 负数 左移&quot;);
+        int b = Integer.MIN_VALUE;
+        System.out.println(Integer.toBinaryString(b));
+        System.out.println(Integer.toBinaryString(b &lt;&lt; 2));
+        //      java 负数 左移
+        //      10000000000000000000000000000000   // 前面说过，用1000……0000来表示最小值的目的是为了区分+0和-0
+        //      0                                  注：不保留符号位，符号位直接移走
+
+        System.out.println(&quot;java 正数 左移&quot;);
+        int c = 5;
+        System.out.println(Integer.toBinaryString(c));
+        System.out.println(Integer.toBinaryString(c &lt;&lt; 2));
+        //      java 正数 左移
+        //      101
+        //      10100
+
+    }
+}
+
+</code></pre>
+<p>手动计算位取反结果方法：</p>
+<p>​	先将数字化为二进制补全应有的字节（int是32位），根据数字的原码计算补码，然后将补码各位置取反，再根据取反后的补码计算原码，将原码化作十进制即可</p>
+<p>例如：上例中B=13，即0000 1101，补码等于本身，~0000 1101 =  1111 0010，1111 0010（补码）=1111 0001（反码）=1000 1110（原码）= -14，即~B = -14，计算过程实际是32位但是这楼里省略了中间的0000……和1111……结果是一样的</p>
+<h2 id="三元运算符及小结">三元运算符及小结</h2>
+<p>以下运算符都是用来偷懒的</p>
+<h3 id="扩展赋值运算符及字符串连接符"><strong>扩展赋值运算符</strong>及<strong>字符串连接符</strong></h3>
+<pre><code class="language-java">package operator;
+
+public class Demo07 {
+    public static void main(String[] args) {
+        int a =10;
+        int b =20;
+
+        a+=b; // a = a+b
+        System.out.println(a);
+        // 30
+
+        a-=b; // a = a-b
+        System.out.println(a);
+        // 10
+
+        // 字符串连接符 + 只要两侧有一个变量是String类型，就会把另一侧的变量也自动转换为String，再进行连接
+        System.out.println(a+b);
+        // 30
+        System.out.println(&quot;&quot;+a+b);// 这里&quot;&quot;先和a进行连接，变成&quot;10&quot;，再和20进行连接
+        // 1020
+        System.out.println(a+b+&quot;&quot;);// 这里a+b先进行计算，得到30，再和&quot;&quot;进行字符连接
+        // 30
+    }
+}
+
+</code></pre>
+<h3 id="三元运算符条件运算符">三元运算符（条件运算符）</h3>
+<pre><code class="language-java">package operator;
+
+public class Demo08 {
+    public static void main(String[] args) {
+    //    x ? y : z
+    //    如果x==true，则结果为y，否则结果为z
+
+        int score = 80;
+        String type = score &lt; 60 ? &quot;不及格&quot; : &quot;及格&quot;;
+        // 等同于if语句
+        System.out.println(type);
+        // 及格
+    }
+}
+
+</code></pre>
+<h3 id="运算符优先级">运算符优先级</h3>
+<p>运算符大致优先级：括号，一元运算符，一般二元运算符，三元运算符，赋值运算符与扩展赋值运算符</p>
+<p>结合性：同等优先级情况下，在代码中的计算顺序（一般是从左向右计算，但有例外）</p>
+<p>详细如下：（优先级2中的+和-不是算数运算符而是一元运算符，表示正负号）</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>运算符</th>
+<th>结合性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>()、[]、{}</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>2</td>
+<td>!、+、-、~、++、--</td>
+<td>从右向左</td>
+</tr>
+<tr>
+<td>3</td>
+<td>*、/、%</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>4</td>
+<td>+、-</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>5</td>
+<td>«、»、&gt;&gt;&gt;</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&lt;、&lt;=、&gt;、&gt;=、instanceof</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>7</td>
+<td>==、!=</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&amp;</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>9</td>
+<td>^</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>10</td>
+<td>|</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>11</td>
+<td>&amp;&amp;</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>12</td>
+<td>||</td>
+<td>从左向右</td>
+</tr>
+<tr>
+<td>13</td>
+<td>?:</td>
+<td>从右向左</td>
+</tr>
+<tr>
+<td>14</td>
+<td>=、+=、-=、*=、/=、&amp;=、|=、^=、~=、«=、»=、&gt;&gt;&gt;=</td>
+<td>从右向左</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：多数运算符具有左结合性，一元运算符、三元运算符、赋值运算符具有右结合性</strong></p>
+<pre><code class="language-java">package operator;
+
+public class RightAssociation {
+    public static void main(String[] args) {
+        // 结合性问题
+        // 三目运算	？：
+        int a = 3;
+        int b = 2;
+        int c = 1;
+        int result = a &gt; b ? a : b &gt; c ? b : c;
+        //如果是左结合：
+        // a &gt; b ? a : b 先计算，得到结果是a
+        // a &gt; c ? b : c 后计算，得到结果是b
+        // result = b = 2
+
+        // 如果是右结合：
+        // b &gt; c ? b : c 先计算，得到结果是b
+        // a &gt; b ? a : b 后计算，得到结果是a
+        // result = a =3
+
+        System.out.println(&quot;result=&quot; + result);//结果是3，证明三目运算符是右结合的，即从右向左运算
+
+
+        //单目运算符 ++	--	~	!	(type)	sizeof
+
+        int single = 2;
+        int re = ~ single ++;
+        //左结合的话：
+        // ~ single 先计算，得到结果是-3;single=2 （计算取反结果：~00…0010 -&gt; 11…1101 -&gt; 11…1100 -&gt; 10…0011 = 等于-3）
+        // re = -3++后计算，得到结果是re=-3;single=3;
+
+        //右结合的话：
+        //temp=single;single=single+1;	其结果temp=2;single=3
+        //re = ~ temp;~00000010（正数补码等于原码）得到11111101(补码)，11111100(反码)，10000011(原码)，即 re = -3
+        System.out.println(&quot;re=&quot; + re);//re =-3
+        System.out.println(&quot;single=&quot; + single);//single=-3
+        
+        /*
+        * 计算错了
+        * 以上举例不能体现单目运算符的右结合性，但是对于理解&quot;后加加&quot;赋值的过程很有帮助
+        * */
+    }
+}
+
+</code></pre>
+<h2 id="包机制">包机制</h2>
+<p>为了更好地组织类，Java提供了包机制，用于区别类名的命名空间</p>
+<p>包(package)的本质就是文件夹</p>
+<p>包语句的语法格式为：</p>
+<pre><code class="language-java">package pkg1[.pkg2[.pkg3…]];
+//  其中.是区分包的上下级路径分隔符
+</code></pre>
+<p><font color="red"><strong>规范：一般利用公司域名倒置座位包名</strong></font></p>
+<p>例如www.baidu.com是公司域名，那包名就为com.baidu.www</p>
+<p>如果无法创建多级空包，则在 project面板 &gt; show options menu齿轮 &gt; compact middle packages 取消勾选</p>
+<figure data-type="image" tabindex="15"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210612000122987.png" alt="image-20210612000122987" loading="lazy"></figure>
+<p>正确建立com.baidu.www的包，应该如下</p>
+<figure data-type="image" tabindex="16"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210612000456738.png" alt="image-20210612000456738" loading="lazy"></figure>
+<p>同理可以建立com.baidu.wenku或者com.baidu.zhidao等等其他包，等效于在baidu下面新建子包</p>
+<p>然后按照规范重新格式化之前的包名如下</p>
+<figure data-type="image" tabindex="17"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210612000820218.png" alt="image-20210612000820218" loading="lazy"></figure>
+<p>其中的java类在idea中经过refractor，会在最上方自动补充一句<code>package com.kimtanyo.operator;</code>（但是要刷题要记得手动加）<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210612001001677.png" alt="image-20210612001001677" loading="lazy"></p>
+<p>为了能够使用某一个包的成员，我们需要在Java程序中明确导入该包，使用import语句可以完成此功能</p>
+<pre><code class="language-java">import package1[.package2…].(classname|*)
+</code></pre>
+<p>例如：</p>
+<figure data-type="image" tabindex="18"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210626152256.png" alt="微信截图_20210626152256" loading="lazy"></figure>
+<p>也可以导入自定义包中的java文件，但是注意导入的java文件所定义的类名不可以和当前java文件的类名重复</p>
+<figure data-type="image" tabindex="19"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210626152824427.png" alt="image-20210626152824427" loading="lazy"></figure>
+<p>另外如果想导入某个包下所有的成员，可以使用通配符<code>*</code></p>
+<figure data-type="image" tabindex="20"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210626154328569.png" alt="image-20210626154328569" loading="lazy"></figure>
+<p><strong>注意：如果导入的包中有类名和当前java文件类名重复，此时不会报错，但是在引用的使用会优先使用当前java文件的类</strong></p>
+<p><mark><strong>课后：看阿里巴巴Java开发手册</strong></mark></p>
+<h2 id="javadoc生成文档">JavaDoc生成文档</h2>
+<p>JavaDoc命令是用来生成自己API文档的</p>
+<p>参数信息</p>
+<ul>
+<li>@author 作者名</li>
+<li>@version 版本号</li>
+<li>@since 指明最早需要使用的jdk版本</li>
+<li>@param 参数名</li>
+<li>@return 返回值情况</li>
+<li>@throws 异常抛出情况</li>
+</ul>
+<p>jdk8 API文档：<a href="https://docs.oracle.com/javase/8/docs/api/">官方地址</a>，<a href="https://www.matools.com/api/java8">中文翻译</a></p>
+<h3 id="文档注释">文档注释</h3>
+<p>文档注释分为类注释和方法注释，注意类注释写在类定义前面，方法注释写在方法定义前面，中间不要隔其他内容</p>
+<p>快捷键是输入<code>/**</code>，然后回车，尤其是方法注释会自动补全内容</p>
+<pre><code class="language-java">package com.kimtanyo.base;
+
+/**
+ * @author kimtanyo
+ * @version 1.0
+ * @since 1.8
+ */
+public class Doc {
+    String name;
+
+    /**
+     *
+     * @param name
+     * @return
+     * @throws Exception
+     */
+
+    public String test(String name)throws Exception{
+        return name;
+    }
+}
+
+</code></pre>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210626160520494.png" alt="image-20210626160520494" style="zoom:67%;" />
+<h3 id="javadoc命令行">javadoc命令行</h3>
+<p>打开java文件所在文件夹</p>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210626161313958.png" alt="image-20210626161313958" style="zoom: 67%;" />
+<p>在文件夹导航栏输入cmd，在当前java文件的路径打开命令行，输入javadoc命令，生成指定java文件的文档，但是如果java文件中有中文，防止出现乱码，因此要用UTF-8编码且让字符集也为UTF-8</p>
+<pre><code class="language-bash"># 格式：javadoc 参数 java文件名
+javadoc -encoding UTF-8 -charset UTF-8 Doc.java
+</code></pre>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210626162213896.png" alt="image-20210626162213896"  />
+<figure data-type="image" tabindex="21"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210626162243547.png" alt="image-20210626162243547" loading="lazy"></figure>
+<p>生成成功以后打开目录索引页index.html，会得到一个跟官方API文档极其类似的文档，打开index中的Doc类，会得到一些说明</p>
+<figure data-type="image" tabindex="22"><img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210626162414833.png" alt="image-20210626162414833" loading="lazy"></figure>
+<h3 id="idea生成javadoc文档">IDEA生成JavaDoc文档</h3>
+<p>打开Tools -&gt; Generate JavaDoc，选中java文件、输出路径和参数即可生成</p>
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210626163304748.png" alt="image-20210626163304748" style="zoom: 67%;" />
+<img src="https://picgallery-1257216000.cos.ap-hongkong.myqcloud.com/Git%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B/image-20210626163211337.png" alt="image-20210626163211337" style="zoom:67%;" />
+        </div>
+
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+            <div class="next-post">
+              <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/bi-ji-git-jian-ming-jiao-cheng/">
+                <h3 class="post-title">
+                  [笔记]Git简明教程
+                  <i class="ri-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '90e31f206302cdb803ba',
+    clientSecret: '89d1ba49f8520e87eeef23227c3eb90c5ca6adda',
+    repo: 'Gitalk-System',
+    owner: 'Kimtanyo',
+    admin: ['Kimtanyo'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>
