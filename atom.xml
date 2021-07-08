@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com</id>
     <title>Kimtanyo Blog</title>
-    <updated>2021-06-29T13:20:30.208Z</updated>
+    <updated>2021-07-08T16:16:50.755Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com"/>
     <link rel="self" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml"/>
@@ -16,9 +16,9 @@
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/bi-ji-javase-ji-chu-pian/">
         </link>
         <updated>2021-06-26T08:34:31.000Z</updated>
-        <summary type="html"><![CDATA[<p>个人笔记记录，大部分内容非原创，未获得狂神授权禁止转载</p>
+        <summary type="html"><![CDATA[<p>个人笔记记录</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>个人笔记记录，大部分内容非原创，未获得狂神授权禁止转载</p>
+        <content type="html"><![CDATA[<p>个人笔记记录</p>
 <!-- more -->
 <h1 id="java预科">Java预科</h1>
 <h2 id="冯诺依曼体系结构">冯诺依曼体系结构</h2>
@@ -1356,9 +1356,9 @@ javadoc -encoding UTF-8 -charset UTF-8 Doc.java
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/bi-ji-git-jian-ming-jiao-cheng/">
         </link>
         <updated>2021-04-21T21:55:12.000Z</updated>
-        <summary type="html"><![CDATA[<p>最近被朋友发了个Git Basic的英文笔记，很多地方懵逼，因为原来也只是学了点皮毛，用得稀碎还不懂原理，因此抽空系统地学了一下Git的入门知识（划重点），以狂神的课和课件为蓝本总结一下（大部分从课件直接copy的，仅个人纪录用，未取得狂神授权，严禁转载）</p>
+        <summary type="html"><![CDATA[<p>最近被朋友发了个Git Basic的英文笔记，很多地方懵逼，因为原来也只是学了点皮毛，用得稀碎还不懂原理，因此抽空摸鱼学了一下Git的入门知识，以下是对狂神的课程进行的个人总结（很多内容是从课件直接copy的，仅个人纪录用，未取得狂神授权，严禁转载）</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>最近被朋友发了个Git Basic的英文笔记，很多地方懵逼，因为原来也只是学了点皮毛，用得稀碎还不懂原理，因此抽空系统地学了一下Git的入门知识（划重点），以狂神的课和课件为蓝本总结一下（大部分从课件直接copy的，仅个人纪录用，未取得狂神授权，严禁转载）</p>
+        <content type="html"><![CDATA[<p>最近被朋友发了个Git Basic的英文笔记，很多地方懵逼，因为原来也只是学了点皮毛，用得稀碎还不懂原理，因此抽空摸鱼学了一下Git的入门知识，以下是对狂神的课程进行的个人总结（很多内容是从课件直接copy的，仅个人纪录用，未取得狂神授权，严禁转载）</p>
 <!-- more -->
 <h1 id="版本控制">版本控制</h1>
 <h2 id="什么是版本控制">什么是版本控制</h2>
@@ -1789,9 +1789,9 @@ $ git branch -dr [remote/branch]
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/ru-he-ling-ji-chu-jian-li-ge-ren-bo-ke-coding-page-gridea-cosbrowser/">
         </link>
         <updated>2021-03-29T19:08:35.000Z</updated>
-        <summary type="html"><![CDATA[<p>在建博客的道路上也踩了几个小坑，本着纯粹建博客给自己看的原则，本篇主要讨论<strong>如何以最低的成本制作一个完整的个人博客</strong>，不差钱的壕和前端大佬除外</p>
+        <summary type="html"><![CDATA[<p>在建博客的道路上也踩了几个小坑，本着纯粹建博客给自己记录的原则，本篇主要介绍<strong>如何以最低的学习成本制作一个完整的个人博客</strong>，无需了解前端</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>在建博客的道路上也踩了几个小坑，本着纯粹建博客给自己看的原则，本篇主要讨论<strong>如何以最低的成本制作一个完整的个人博客</strong>，不差钱的壕和前端大佬除外</p>
+        <content type="html"><![CDATA[<p>在建博客的道路上也踩了几个小坑，本着纯粹建博客给自己记录的原则，本篇主要介绍<strong>如何以最低的学习成本制作一个完整的个人博客</strong>，无需了解前端</p>
 <!-- more -->
 <h1 id="前言">前言</h1>
 <p>很多人会质疑都2021年了，有必要建个人博客吗，又没有人看。我个人认为，个人博客对于像我这样从其他领域转码的rookie来说，还是很有必要的，可以记录自己的一些经验，防止以后忘记，方便自我回顾。同时，自学转码的路上，光看视频或网课是远远不够的，必须要做实操项目，而实操项目和视频网课之间的鸿沟巨大，个人博客就是很好的一个过渡，可以巩固知识点，加深记忆和熟练掌握的程度。</p>
@@ -1944,12 +1944,12 @@ $ git branch -dr [remote/branch]
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/">
         </link>
         <updated>2021-01-23T16:09:13.000Z</updated>
-        <summary type="html"><![CDATA[<p>前几天有朋友在群里发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多，尤其是我这种懒癌患者的福音</p>
+        <summary type="html"><![CDATA[<p>前几天有朋友发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多</p>
 <blockquote>
 <p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
 </blockquote>
 ]]></summary>
-        <content type="html"><![CDATA[<p>前几天有朋友在群里发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多，尤其是我这种懒癌患者的福音</p>
+        <content type="html"><![CDATA[<p>前几天有朋友发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多</p>
 <blockquote>
 <p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
 </blockquote>
@@ -2171,11 +2171,9 @@ def macro_with_shortcut():
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/">
         </link>
         <updated>2020-08-26T03:23:55.000Z</updated>
-        <summary type="html"><![CDATA[<p>上手Jupyter Lab半小时之后，果断抛弃了Notebook，界面简直友好得不要太多，功能升级得也更加完善</p>
-<p>且Lab向下兼容Notebook，文件类型仍为ipynb</p>
+        <summary type="html"><![CDATA[<p>上手Jupyter Lab半小时之后，抛弃了Notebook，界面友好太多，功能升级得也更加完善，且向下兼容Notebook</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>上手Jupyter Lab半小时之后，果断抛弃了Notebook，界面简直友好得不要太多，功能升级得也更加完善</p>
-<p>且Lab向下兼容Notebook，文件类型仍为ipynb</p>
+        <content type="html"><![CDATA[<p>上手Jupyter Lab半小时之后，抛弃了Notebook，界面友好太多，功能升级得也更加完善，且向下兼容Notebook</p>
 <!-- more -->
 <h1 id="一-安装及设置右键菜单">一、安装及设置右键菜单</h1>
 <p>与Jupyter Notebook相仿，通过pip安装</p>
@@ -2282,20 +2280,14 @@ def macro_with_shortcut():
 <img src="https://raw.githubusercontent.com/krassowski/jupyterlab-lsp/master/examples/screenshots/panel.png" alt="panel" style="max-width:100%;">]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Github访问缓慢及图片无法加载的解决方案]]></title>
+        <title type="html"><![CDATA[Github下载缓慢及图片无法加载的解决方案（翻墙无效）]]></title>
         <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/</id>
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/github-fang-wen-huan-man-tu-pian-wu-fa-jia-zai-jie-jue-fang-an/">
         </link>
         <updated>2020-07-30T12:57:08.000Z</updated>
-        <summary type="html"><![CDATA[<p>在度娘上找了很多解决方案，殊途同归，基本都是修改系统hosts文件，绕过国内dns解析，直接访问GitHub的CDN节点。只不过解析对应的链接大都不全，故在此记录分享完整版的dns解析地址。</p>
-<blockquote>
-<p>前一段时间在github上想clone一个项目代码，下载速度3kb/s，并且Readme.md页面还无法加载图片。虽然以前也很慢，大概100kb/s的样子，但这个3kb/s着实过分😒。</p>
-</blockquote>
+        <summary type="html"><![CDATA[<p>两种方法 ——主要记录油猴插件地址和完整版的dns解析地址</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>在度娘上找了很多解决方案，殊途同归，基本都是修改系统hosts文件，绕过国内dns解析，直接访问GitHub的CDN节点。只不过解析对应的链接大都不全，故在此记录分享完整版的dns解析地址。</p>
-<blockquote>
-<p>前一段时间在github上想clone一个项目代码，下载速度3kb/s，并且Readme.md页面还无法加载图片。虽然以前也很慢，大概100kb/s的样子，但这个3kb/s着实过分😒。</p>
-</blockquote>
+        <content type="html"><![CDATA[<p>两种方法 ——主要记录油猴插件地址和完整版的dns解析地址</p>
 <!-- more -->
 <h1 id="推荐法一油猴github镜像脚本插件">(推荐)法一：油猴github镜像脚本插件</h1>
 <h2 id="一-下载脚本插件管理器">一、下载脚本插件管理器</h2>
@@ -2376,7 +2368,7 @@ cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
 </div>
 现在尝试重新clone和刷新页面，clone速度应当一定程度上提高了，图片可以加载出来。
 <h2 id="四-如果无效提速不够">四、如果无效/提速不够</h2>
-<p>不太可能完全无效，但如果觉得速度还是太慢，你就还是需要一个SSR或者VPN了，推荐环日+ShadowsocksR，多的不说了= =。</p>
+<p>以上方法不太可能完全无效，但如果觉得速度还是太慢，尝试打开SSR或者VPN的全局模式代理，工具推荐环日+ShadowsocksR，或者XShell+Vultr。</p>
 ]]></content>
     </entry>
     <entry>
@@ -2476,10 +2468,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-405234"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-405234"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5366027"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-5366027"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5274200"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-5274200"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4723223"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-4723223"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>

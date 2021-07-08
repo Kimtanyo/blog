@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kimtanyo Blog</title>
 <meta name="description" content="📝 『分享记录DS&DE&SDE的日常』" />
-<link rel="shortcut icon" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico?v=1624972686187">
+<link rel="shortcut icon" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico?v=1625761000791">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,7 +23,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1624972686187" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png?v=1625761000791" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Kimtanyo Blog</h1>
       </div>
@@ -97,18 +97,15 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">Github访问缓慢及图片无法加载的解决方案</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">Github下载缓慢及图片无法加载的解决方案（翻墙无效）</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2020-07-30 / 4 min read
+          2020-07-30 / 3 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://picb.zhimg.com/80/v2-0d264a4b3c0a4717548bda5a0d3dfe5c_720w.jpg" alt="">
         
         <div class="post-content yue">
-          <p>在度娘上找了很多解决方案，殊途同归，基本都是修改系统hosts文件，绕过国内dns解析，直接访问GitHub的CDN节点。只不过解析对应的链接大都不全，故在此记录分享完整版的dns解析地址。</p>
-<blockquote>
-<p>前一段时间在github上想clone一个项目代码，下载速度3kb/s，并且Readme.md页面还无法加载图片。虽然以前也很慢，大概100kb/s的样子，但这个3kb/s着实过分😒。</p>
-</blockquote>
+          <p>两种方法 ——主要记录油猴插件地址和完整版的dns解析地址</p>
 <!-- more -->
 <h1 id="推荐法一油猴github镜像脚本插件">(推荐)法一：油猴github镜像脚本插件</h1>
 <h2 id="一-下载脚本插件管理器">一、下载脚本插件管理器</h2>
@@ -189,7 +186,7 @@ cloud.githubusercontent.com（注意这条Domain的IP会重复用到）
 </div>
 现在尝试重新clone和刷新页面，clone速度应当一定程度上提高了，图片可以加载出来。
 <h2 id="四-如果无效提速不够">四、如果无效/提速不够</h2>
-<p>不太可能完全无效，但如果觉得速度还是太慢，你就还是需要一个SSR或者VPN了，推荐环日+ShadowsocksR，多的不说了= =。</p>
+<p>以上方法不太可能完全无效，但如果觉得速度还是太慢，尝试打开SSR或者VPN的全局模式代理，工具推荐环日+ShadowsocksR，或者XShell+Vultr。</p>
 
         </div>
 
