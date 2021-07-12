@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com</id>
     <title>Kimtanyo Blog</title>
-    <updated>2021-07-12T17:17:34.930Z</updated>
+    <updated>2021-07-12T17:19:58.734Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com"/>
     <link rel="self" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml"/>
@@ -1459,9 +1459,9 @@ javadoc -encoding UTF-8 -charset UTF-8 Doc.java
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/bi-ji-git-jian-ming-jiao-cheng/">
         </link>
         <updated>2021-04-21T21:55:12.000Z</updated>
-        <summary type="html"><![CDATA[<p>最近被朋友发了个Git Basic的英文笔记，很多地方懵逼，因为原来也只是学了点皮毛，用得稀碎还不懂原理，因此抽空摸鱼学了一下Git的入门知识，以下是对狂神的课程进行的个人总结（很多内容是从课件直接copy的，仅个人纪录用，未取得狂神授权，严禁转载）</p>
+        <summary type="html"><![CDATA[<p>Git入门知识总结</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>最近被朋友发了个Git Basic的英文笔记，很多地方懵逼，因为原来也只是学了点皮毛，用得稀碎还不懂原理，因此抽空摸鱼学了一下Git的入门知识，以下是对狂神的课程进行的个人总结（很多内容是从课件直接copy的，仅个人纪录用，未取得狂神授权，严禁转载）</p>
+        <content type="html"><![CDATA[<p>Git入门知识总结</p>
 <!-- more -->
 <h1 id="版本控制">版本控制</h1>
 <h2 id="什么是版本控制">什么是版本控制</h2>
@@ -1892,9 +1892,9 @@ $ git branch -dr [remote/branch]
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/ru-he-ling-ji-chu-jian-li-ge-ren-bo-ke-coding-page-gridea-cosbrowser/">
         </link>
         <updated>2021-03-29T19:08:35.000Z</updated>
-        <summary type="html"><![CDATA[<p>在建博客的道路上也踩了几个小坑，本着纯粹建博客给自己记录的原则，本篇主要介绍<strong>如何以最低的学习成本制作一个完整的个人博客</strong>，无需了解前端</p>
+        <summary type="html"><![CDATA[<p>本篇主要介绍<strong>如何以最低的学习成本制作一个完整的个人博客</strong>，无需了解前端</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>在建博客的道路上也踩了几个小坑，本着纯粹建博客给自己记录的原则，本篇主要介绍<strong>如何以最低的学习成本制作一个完整的个人博客</strong>，无需了解前端</p>
+        <content type="html"><![CDATA[<p>本篇主要介绍<strong>如何以最低的学习成本制作一个完整的个人博客</strong>，无需了解前端</p>
 <!-- more -->
 <h1 id="前言">前言</h1>
 <p>很多人会质疑都2021年了，有必要建个人博客吗，又没有人看。我个人认为，个人博客对于像我这样从其他领域转码的rookie来说，还是很有必要的，可以记录自己的一些经验，防止以后忘记，方便自我回顾。同时，自学转码的路上，光看视频或网课是远远不够的，必须要做实操项目，而实操项目和视频网课之间的鸿沟巨大，个人博客就是很好的一个过渡，可以巩固知识点，加深记忆和熟练掌握的程度。</p>
@@ -2047,15 +2047,9 @@ $ git branch -dr [remote/branch]
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/excel-qian-ru-shi-jupyter-gong-ju-pyxll/">
         </link>
         <updated>2021-01-23T16:09:13.000Z</updated>
-        <summary type="html"><![CDATA[<p>前几天有朋友发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多</p>
-<blockquote>
-<p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
-</blockquote>
+        <summary type="html"><![CDATA[<p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>前几天有朋友发了一个关于Pyxll的链接，了解之后发现确实比VBA和win32com好用太多</p>
-<blockquote>
-<p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
-</blockquote>
+        <content type="html"><![CDATA[<p>Pyxll优势：比VBA方便调试，界面的用户交互性更好；比win32com语法和逻辑简单，可以内嵌在excel中开着表的同时使用</p>
 <!-- more -->
 <h1 id="一-安装pyxll">一、安装Pyxll</h1>
 <p><strong>1. 首先需要通过pip安装pyxll</strong></p>
@@ -2274,9 +2268,9 @@ def macro_with_shortcut():
         <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/jupyter-lab-ji-chu-shi-yong-yu-cha-jian-kuo-zhan/">
         </link>
         <updated>2020-08-26T03:23:55.000Z</updated>
-        <summary type="html"><![CDATA[<p>上手Jupyter Lab半小时之后，抛弃了Notebook，界面友好太多，功能升级得也更加完善，且向下兼容Notebook</p>
+        <summary type="html"><![CDATA[<p>比Notebook界面友好，功能升级得也更加完善，且向下兼容Notebook</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>上手Jupyter Lab半小时之后，抛弃了Notebook，界面友好太多，功能升级得也更加完善，且向下兼容Notebook</p>
+        <content type="html"><![CDATA[<p>比Notebook界面友好，功能升级得也更加完善，且向下兼容Notebook</p>
 <!-- more -->
 <h1 id="一-安装及设置右键菜单">一、安装及设置右键菜单</h1>
 <p>与Jupyter Notebook相仿，通过pip安装</p>
@@ -2571,10 +2565,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8564211"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-8564211"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1700617"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-1700617"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9364983"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-9364983"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9227373"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-9227373"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
