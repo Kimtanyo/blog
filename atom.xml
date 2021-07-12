@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com</id>
     <title>Kimtanyo Blog</title>
-    <updated>2021-07-12T19:20:18.458Z</updated>
+    <updated>2021-07-12T19:30:49.462Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com"/>
     <link rel="self" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml"/>
@@ -23,7 +23,7 @@
 <h1 id="1-更新或安装wget">1. 更新或安装wget</h1>
 <pre><code class="language-bash">yum -y install wget
 </code></pre>
-<h2 id="2-安装网卡工具">2. 安装网卡工具</h2>
+<h1 id="2-安装网卡工具">2. 安装网卡工具</h1>
 <pre><code class="language-bash">yum install net-tools -y
 </code></pre>
 <p>然后断开服务器重连</p>
@@ -2573,10 +2573,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2390989"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-2390989"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9956192"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-9956192"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-894639"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-894639"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3450564"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-3450564"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
