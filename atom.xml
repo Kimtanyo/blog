@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com</id>
     <title>Kimtanyo Blog</title>
-    <updated>2021-07-08T16:16:50.755Z</updated>
+    <updated>2021-07-12T17:17:34.930Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com"/>
     <link rel="self" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml"/>
@@ -10,6 +10,109 @@
     <logo>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png</logo>
     <icon>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico</icon>
     <rights>All rights reserved 2021, Kimtanyo Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[CentOS7安装ShadowSocksR和Google BBR]]></title>
+        <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/centos7-an-zhuang-shadowsocksr-he-google-bbr/</id>
+        <link href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/centos7-an-zhuang-shadowsocksr-he-google-bbr/">
+        </link>
+        <updated>2021-07-12T17:11:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>去美国之前想做个国内服务器的个人VPS方便翻墙回来，记录一下关于国内服务器在没有代理情况下出现的许多connection failed的解决方法</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>去美国之前想做个国内服务器的个人VPS方便翻墙回来，记录一下关于国内服务器在没有代理情况下出现的许多connection failed的解决方法</p>
+<!-- more -->
+<h1 id="1-更新或安装wget">1. 更新或安装wget</h1>
+<pre><code class="language-bash">yum -y install wget
+</code></pre>
+<h2 id="2-安装网卡工具">2. 安装网卡工具</h2>
+<pre><code class="language-bash">yum install net-tools -y
+</code></pre>
+<p>然后断开服务器重连</p>
+<h1 id="3-安装ssr">3. 安装SSR</h1>
+<ul>
+<li>国内服务器</li>
+</ul>
+<pre><code class="language-bash">wget https://github.com/mu228/ssr/raw/master/ssr.sh &amp;&amp; bash ssr.sh
+# 如果connection failed可添加参数-N --no-check-certificate
+</code></pre>
+<ul>
+<li>国外服务器</li>
+</ul>
+<pre><code class="language-bash">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh
+# 或者
+wget --no-check-certificate https://www.aloneray.com/wp-content/uploads/2019/01/shadowsocksR_CN.sh &amp;&amp; chmod +x shadowsocksR_CN.sh &amp;&amp; ./shadowsocksR_CN.sh
+</code></pre>
+<p>调出ShadowsocksR一键管理脚本页面：</p>
+<pre><code class="language-bash">bash ssr.sh
+</code></pre>
+<h1 id="4-安装bbr国内服务器">4. 安装BBR（国内服务器）</h1>
+<p>Google 开源了其 TCP BBR 拥塞控制算法，并提交到了 Linux 内核，从 4.9 开始，Linux 内核已经用上了该算法，因此先检查CentOS系统内核是否在4.9以上</p>
+<ul>
+<li>检查更新内核</li>
+</ul>
+<p><strong>查看当前核心</strong></p>
+<pre><code class="language-bash">uname -r
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://www.vultrclub.com/wp-content/uploads/2017/01/bbr-1.jpg" alt="Vultr CentOS7安装Google BBR加速工具方法" loading="lazy"></figure>
+<p>这里我们看到当前CENTOS7核心是<strong>3.10.0</strong>-514.2.2.el7.x86_64，这个核心是不可以安装BBR的。</p>
+<p><strong>更新内核</strong></p>
+<pre><code class="language-bash">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://www.vultrclub.com/wp-content/uploads/2017/01/bbr-2.jpg" alt="Vultr CentOS7安装Google BBR加速工具方法" loading="lazy"></figure>
+<p><strong>安装最新内核</strong></p>
+<pre><code class="language-bash">yum --enablerepo=elrepo-kernel install kernel-ml -y
+</code></pre>
+<p>BBR目前只支持4.9.0以上的内核，其他内核是不行的，需要更换内核才可以。</p>
+<figure data-type="image" tabindex="3"><img src="https://www.vultrclub.com/wp-content/uploads/2017/01/bbr-3.jpg" alt="Vultr CentOS7安装Google BBR加速工具方法" loading="lazy"></figure>
+<p><strong>检查内核是否更新</strong></p>
+<pre><code class="language-bash">rpm -qa | grep kernel
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://www.vultrclub.com/wp-content/uploads/2017/01/bbr-4.jpg" alt="Vultr CentOS7安装Google BBR加速工具方法" loading="lazy"></figure>
+<p>我们看到了有4.9.0以上版本的内核，需要启动才可以</p>
+<pre><code class="language-bash">grub2-set-default 1
+</code></pre>
+<p><strong>重启</strong></p>
+<pre><code class="language-bash">shutdown -r now
+</code></pre>
+<p><strong>检查内核是否生效</strong></p>
+<pre><code class="language-bash">uname -r
+</code></pre>
+<p>当前内核是<strong>4.9.4</strong>-1.el7.elrepo.x86_64，在4.9.0以上可以继续</p>
+<figure data-type="image" tabindex="5"><img src="https://www.vultrclub.com/wp-content/uploads/2017/01/bbr-5.jpg" alt="Vultr CentOS7安装Google BBR加速工具方法" loading="lazy"></figure>
+<ul>
+<li>安装Google BBR</li>
+</ul>
+<p><strong>安装BBR工具</strong></p>
+<pre><code class="language-bash">echo 'net.core.default_qdisc=fq' | sudo tee -a /etc/sysctl.conf
+echo 'net.ipv4.tcp_congestion_control=bbr' | sudo tee -a /etc/sysctl.conf
+sysctl -p
+</code></pre>
+<figure data-type="image" tabindex="6"><img src="https://www.vultrclub.com/wp-content/uploads/2017/01/bbr-6.jpg" alt="Vultr CentOS7安装Google BBR加速工具方法" loading="lazy"></figure>
+<p><strong>检查BBR是否成功</strong></p>
+<p>执行命令，看看是否是提示&quot;net.ipv4.tcp_available_congestion_control = bbr cubic reno&quot;</p>
+<pre><code class="language-bash">sysctl net.ipv4.tcp_available_congestion_control
+</code></pre>
+<p>执行命令，是否提示bbr</p>
+<pre><code class="language-bash">sysctl -n net.ipv4.tcp_congestion_control
+</code></pre>
+<p>执行命令，是否看到BBR提示</p>
+<pre><code class="language-bash">lsmod | grep bbr
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://www.vultrclub.com/wp-content/uploads/2017/01/bbr-7.jpg" alt="img" loading="lazy"></figure>
+<p>有提示bbr，则说明已经开启成功了</p>
+<h1 id="5-安装bbr国外服务器">5. 安装BBR（国外服务器）</h1>
+<p>安装BBR工具，增加可执行权限，开启BBR</p>
+<pre><code class="language-bash">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+chmod +x bbr.sh
+./bbr.sh
+</code></pre>
+<p>判断BBR加速有没有开启成功。输入以下命令：</p>
+<pre><code class="language-bash">sysctl net.ipv4.tcp_available_congestion_control
+</code></pre>
+<p>如果返回值为<code>net.ipv4.tcp_available_congestion_control = bbr cubic reno</code></p>
+<p>后面有bbr，则说明已经开启成功了</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[[笔记]JavaSE 01- 预科+入门+基础篇]]></title>
         <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/bi-ji-javase-ji-chu-pian/</id>
@@ -2468,10 +2571,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5366027"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-5366027"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8564211"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-8564211"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4723223"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-4723223"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9364983"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-9364983"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
