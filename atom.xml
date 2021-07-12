@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com</id>
     <title>Kimtanyo Blog</title>
-    <updated>2021-07-12T19:11:51.673Z</updated>
+    <updated>2021-07-12T19:19:01.067Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com"/>
     <link rel="self" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml"/>
@@ -41,7 +41,15 @@
 # 或者
 wget --no-check-certificate https://www.aloneray.com/wp-content/uploads/2019/01/shadowsocksR_CN.sh &amp;&amp; chmod +x shadowsocksR_CN.sh &amp;&amp; ./shadowsocksR_CN.sh
 </code></pre>
-<p>调出ShadowsocksR一键管理脚本页面：</p>
+<p>安装完毕自动调出SSR界面，配置SSR账户信息如下</p>
+<p><strong>用户	    : 自定义</strong><br>
+<strong>端口	    : 1024</strong><br>
+<strong>密码	    : 自定义</strong><br>
+<strong>加密	    : aes-256-cfb</strong><br>
+<strong>协议	    : auth_sha1_v4</strong><br>
+<strong>混淆	    : plain</strong><br>
+<strong>兼容	    : Yes</strong></p>
+<p>配置完毕后，调出ShadowsocksR一键管理脚本页面：</p>
 <pre><code class="language-bash">bash ssr.sh
 </code></pre>
 <h1 id="4-安装bbr国内服务器">4. 安装BBR（国内服务器）</h1>
@@ -2565,10 +2573,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7627955"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-7627955"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8867503"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-8867503"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-220174"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-220174"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8769588"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-8769588"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
