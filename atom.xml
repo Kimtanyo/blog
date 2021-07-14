@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com</id>
-    <title>Kimtanyo Blog</title>
-    <updated>2021-07-12T19:30:49.462Z</updated>
+    <title>Kimtanyo的记事本</title>
+    <updated>2021-07-14T16:02:28.006Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com"/>
     <link rel="self" href="https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/atom.xml"/>
-    <subtitle>📝 『分享记录DS&amp;DE&amp;SDE的日常』</subtitle>
+    <subtitle>📝 『记录DS&amp;SDE的修炼日程』</subtitle>
     <logo>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/images/avatar.png</logo>
     <icon>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/favicon.ico</icon>
-    <rights>All rights reserved 2021, Kimtanyo Blog</rights>
+    <rights>All rights reserved 2021, Kimtanyo的记事本</rights>
     <entry>
         <title type="html"><![CDATA[CentOS7安装SSR和Google BBR（外翻内）]]></title>
         <id>https://coding-pages-bucket-3541328-8521428-15072-548659-1257216000.cos-website.ap-hongkong.myqcloud.com/post/centos7-an-zhuang-shadowsocksr-he-google-bbr/</id>
@@ -2573,10 +2573,10 @@ hack方法比上面2种方法稳定得多，但是语义化太差。</p>
 <p>效果如下：</p>
 <ul class="contains-task-list">
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9956192"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-9956192"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
+<p><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-460644"> 任务一 未做任务 <label class="task-list-item-label" for="task-item-460644"> 任务一 未做任务 `- + 空格 + [ ]`</label></p>
 </li>
 <li class="task-list-item">
-<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3450564"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-3450564"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
+<p><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4537326"> 任务二 已做任务 <label class="task-list-item-label" for="task-item-4537326"> 任务二 已做任务 `- + 空格 + [x]`</label></p>
 </li>
 </ul>
 <h3 id="23-缩进-换行-空行-对齐方式">2.3 缩进、换行、空行、对齐方式</h3>
